@@ -1,0 +1,2980 @@
+{
+  "name": "Powerbuilding 4x/Week \u2014 Alternating Full Body / Push-Pull",
+  "description": "9-week wave-loaded program. Odd weeks = Full Body x4. Even weeks = Push/Pull x4. Deload week 5, taper week 9, optional max testing week 10.",
+  "units": "lbs",
+  "tracked_lifts": [
+    "squat",
+    "bench",
+    "deadlift",
+    "hip_thrust"
+  ],
+  "load_rounding": 5,
+  "inferred_1rms_lbs": {
+    "squat": 260,
+    "bench": 180,
+    "deadlift": 275,
+    "hip_thrust": 275
+  },
+  "weeks": [
+    {
+      "number": 1,
+      "label": "Week 1 \u2014 Full Body",
+      "days": [
+        {
+          "label": "FULL BODY 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "5",
+              "load": 185,
+              "pct_1rm": 0.711,
+              "source_lift": "squat",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+            },
+            {
+              "name": "Romanian Deadlift",
+              "warmup_sets": null,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 160,
+              "pct_1rm": 0.586,
+              "source_lift": "deadlift",
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
+              "logged": "1 set back sore"
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "10",
+              "load": "50 55 55",
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": "Chest-Supported Row",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": 45,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together.",
+              "logged": "Chess supported standing"
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": "185 205 205",
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "logged": "15 reps 10 reps 10 reps"
+            },
+            {
+              "name": "Hanging Knee Raise (AMRAP)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "AMRAP",
+              "load": 9,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "3",
+              "load": 150,
+              "pct_1rm": 0.836,
+              "source_lift": "bench",
+              "rpe": "7",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Seated DB Shoulder Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": 30,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure.",
+              "logged": "Pretty light"
+            },
+            {
+              "name": "Barbell Hip Thrust (Backoff)",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 190,
+              "pct_1rm": 0.686,
+              "source_lift": "hip_thrust",
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+            },
+            {
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": "6 4 5",
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed.",
+              "logged": "Pull-ups neutral grip"
+            },
+            {
+              "name": "Cable Triceps Pressdown",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": "38.5",
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned, full lockout each rep."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Lead with the elbows, control the negative."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "FULL BODY 3",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "3",
+              "load": 230,
+              "pct_1rm": 0.836,
+              "source_lift": "deadlift",
+              "rpe": "7",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "logged": 235
+            },
+            {
+              "name": "Touch-and-Go Deadlift",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "6",
+              "load": 175,
+              "pct_1rm": 0.636,
+              "source_lift": "deadlift",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep.",
+              "logged": "185. Rep 8"
+            },
+            {
+              "name": "Bulgarian Split Squat",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10 each",
+              "load": 20,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+            },
+            {
+              "name": "Seal Row (or Chest-Supported Row)",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": 35,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum.",
+              "logged": "DB"
+            },
+            {
+              "name": "Standing Calf Raise",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": 100,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 4",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust (Top Set)",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "3",
+              "load": 230,
+              "pct_1rm": 0.836,
+              "source_lift": "hip_thrust",
+              "rpe": "7",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+            },
+            {
+              "name": "Back Squat (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 165,
+              "pct_1rm": 0.636,
+              "source_lift": "squat",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Controlled tempo, full depth, no grinders."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 3,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 130,
+              "pct_1rm": 0.711,
+              "source_lift": "bench",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Helms Row (or One-Arm DB Row)",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Easy on the lower back by design \u2014 stay strict."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            },
+            {
+              "name": "Barbell (or EZ-Bar) Curl",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned at your sides, no swinging."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "label": "Week 2 \u2014 Push / Pull",
+      "days": [
+        {
+          "label": "PUSH 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "3",
+              "load": 220,
+              "pct_1rm": 0.851,
+              "source_lift": "squat",
+              "rpe": "7.5",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent."
+            },
+            {
+              "name": "Barbell Bench Press (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 125,
+              "pct_1rm": 0.701,
+              "source_lift": "bench",
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Volume pressing at ~65-75% \u2014 leave 2-3 reps in the tank early in the block."
+            },
+            {
+              "name": "Seated DB Shoulder Press",
+              "warmup_sets": null,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+            },
+            {
+              "name": "Standing Calf Raise",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+            },
+            {
+              "name": "Cable Triceps Pressdown",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned, full lockout each rep."
+            }
+          ]
+        },
+        {
+          "label": "PULL 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "3",
+              "load": 235,
+              "pct_1rm": 0.851,
+              "source_lift": "deadlift",
+              "rpe": "7.5",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+            },
+            {
+              "name": "Seated Leg Curl",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Knee flexion only \u2014 hamstring work with zero spinal load after the deadlifts."
+            },
+            {
+              "name": "Pendlay Row",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Reset on the floor each rep. Flat back."
+            },
+            {
+              "name": "Lat Pulldown (Wide Grip)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Lead with your elbows, no body English."
+            },
+            {
+              "name": "Barbell (or EZ-Bar) Curl",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned at your sides, no swinging."
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+            },
+            {
+              "name": "Hanging Knee Raise (AMRAP)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "AMRAP",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "PUSH 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "3",
+              "load": 155,
+              "pct_1rm": 0.851,
+              "source_lift": "bench",
+              "rpe": "7.5",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 130,
+              "pct_1rm": 0.726,
+              "source_lift": "bench",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Back Squat (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 170,
+              "pct_1rm": 0.651,
+              "source_lift": "squat",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Controlled tempo, full depth, no grinders."
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            }
+          ]
+        },
+        {
+          "label": "PULL 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust (Top Set)",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "3",
+              "load": 235,
+              "pct_1rm": 0.851,
+              "source_lift": "hip_thrust",
+              "rpe": "7.5",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze."
+            },
+            {
+              "name": "Barbell RDL",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 165,
+              "pct_1rm": 0.601,
+              "source_lift": "deadlift",
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+            },
+            {
+              "name": "Bulgarian Split Squat",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10 each",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+            },
+            {
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar."
+            },
+            {
+              "name": "Chest-Supported Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Pause and squeeze the shoulder blades together."
+            },
+            {
+              "name": "Cable Face Pull",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "label": "Week 3 \u2014 Full Body",
+      "days": [
+        {
+          "label": "FULL BODY 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 230,
+              "pct_1rm": 0.892,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent."
+            },
+            {
+              "name": "Back Squat (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "5",
+              "load": 200,
+              "pct_1rm": 0.767,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": null,
+              "warmup_sets": null,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together."
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+            },
+            {
+              "name": "Hanging Knee Raise (AMRAP)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "AMRAP",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 160,
+              "pct_1rm": 0.892,
+              "source_lift": "bench",
+              "rpe": "8",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Seated DB Shoulder Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+            },
+            {
+              "name": "Barbell Hip Thrust (Backoff)",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 205,
+              "pct_1rm": 0.742,
+              "source_lift": "hip_thrust",
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+            },
+            {
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed."
+            },
+            {
+              "name": "Cable Triceps Pressdown",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned, full lockout each rep."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Lead with the elbows, control the negative."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "FULL BODY 3",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 245,
+              "pct_1rm": 0.892,
+              "source_lift": "deadlift",
+              "rpe": "8",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+            },
+            {
+              "name": "Touch-and-Go Deadlift",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "6",
+              "load": 190,
+              "pct_1rm": 0.692,
+              "source_lift": "deadlift",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep."
+            },
+            {
+              "name": "Bulgarian Split Squat",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10 each",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+            },
+            {
+              "name": "Neutral-Grip Pulldown",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Pull your elbows down and back against your sides."
+            },
+            {
+              "name": "Seal Row (or Chest-Supported Row)",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 4",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust (Top Set)",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 245,
+              "pct_1rm": 0.892,
+              "source_lift": "hip_thrust",
+              "rpe": "8",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+            },
+            {
+              "name": "Back Squat (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 180,
+              "pct_1rm": 0.692,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Controlled tempo, full depth, no grinders."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 3,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 140,
+              "pct_1rm": 0.767,
+              "source_lift": "bench",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Helms Row (or One-Arm DB Row)",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Easy on the lower back by design \u2014 stay strict."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            },
+            {
+              "name": "Barbell (or EZ-Bar) Curl",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned at your sides, no swinging."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "label": "Week 4 \u2014 Push / Pull",
+      "days": [
+        {
+          "label": "PUSH 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 235,
+              "pct_1rm": 0.907,
+              "source_lift": "squat",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent."
+            },
+            {
+              "name": "Back Squat (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "5",
+              "load": 205,
+              "pct_1rm": 0.782,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Crisp bar speed \u2014 don't let form drift."
+            },
+            {
+              "name": "Barbell Bench Press (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 135,
+              "pct_1rm": 0.757,
+              "source_lift": "bench",
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Volume pressing at ~65-75% \u2014 leave 2-3 reps in the tank early in the block."
+            },
+            {
+              "name": "Standing Calf Raise",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+            },
+            {
+              "name": null,
+              "warmup_sets": null,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned, full lockout each rep."
+            }
+          ]
+        },
+        {
+          "label": "PULL 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 250,
+              "pct_1rm": 0.907,
+              "source_lift": "deadlift",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+            },
+            {
+              "name": "Seated Leg Curl",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Knee flexion only \u2014 hamstring work with zero spinal load after the deadlifts."
+            },
+            {
+              "name": "Pendlay Row",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Reset on the floor each rep. Flat back."
+            },
+            {
+              "name": "Lat Pulldown (Wide Grip)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Lead with your elbows, no body English."
+            },
+            {
+              "name": "Barbell (or EZ-Bar) Curl",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned at your sides, no swinging."
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+            },
+            {
+              "name": "Hanging Knee Raise (AMRAP)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "AMRAP",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "PUSH 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 165,
+              "pct_1rm": 0.907,
+              "source_lift": "bench",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 140,
+              "pct_1rm": 0.782,
+              "source_lift": "bench",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Back Squat (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 185,
+              "pct_1rm": 0.707,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Controlled tempo, full depth, no grinders."
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Strict, controlled \u2014 these are a weekly staple."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            }
+          ]
+        },
+        {
+          "label": "PULL 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell RDL",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 180,
+              "pct_1rm": 0.657,
+              "source_lift": "deadlift",
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+            },
+            {
+              "name": "Bulgarian Split Squat",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10 each",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+            },
+            {
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar."
+            },
+            {
+              "name": "Chest-Supported Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Pause and squeeze the shoulder blades together."
+            },
+            {
+              "name": "Cable Face Pull",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "label": "Week 5 \u2014 Deload (Full Body)",
+      "days": [
+        {
+          "label": "FULL BODY 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "5",
+              "load": 170,
+              "pct_1rm": 0.65,
+              "source_lift": "squat",
+              "rpe": "6",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent."
+            },
+            {
+              "name": "Back Squat (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "5",
+              "load": 135,
+              "pct_1rm": 0.525,
+              "source_lift": "squat",
+              "rpe": "6",
+              "rest": "2-4min",
+              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+            },
+            {
+              "name": "Barbell RDL",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "8",
+              "load": 110,
+              "pct_1rm": 0.4,
+              "source_lift": "deadlift",
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 2,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+            },
+            {
+              "name": null,
+              "warmup_sets": null,
+              "working_sets": 2,
+              "reps": "AMRAP",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "1-2min",
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "5",
+              "load": 115,
+              "pct_1rm": 0.65,
+              "source_lift": "bench",
+              "rpe": "6",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Seated DB Shoulder Press",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+            },
+            {
+              "name": "Barbell Hip Thrust (Backoff)",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "6",
+              "load": 140,
+              "pct_1rm": 0.5,
+              "source_lift": "hip_thrust",
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+            },
+            {
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed."
+            },
+            {
+              "name": "Cable Triceps Pressdown",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned, full lockout each rep."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Lead with the elbows, control the negative."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "FULL BODY 3",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "5",
+              "load": 180,
+              "pct_1rm": 0.65,
+              "source_lift": "deadlift",
+              "rpe": "6",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+            },
+            {
+              "name": "Touch-and-Go Deadlift",
+              "warmup_sets": 0,
+              "working_sets": 1,
+              "reps": "6",
+              "load": 125,
+              "pct_1rm": 0.45,
+              "source_lift": "deadlift",
+              "rpe": "6",
+              "rest": "2-4min",
+              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep."
+            },
+            {
+              "name": "Bulgarian Split Squat",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10 each",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "1-2min",
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+            },
+            {
+              "name": "Neutral-Grip Pulldown",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "1-2min",
+              "coach_notes": "Pull your elbows down and back against your sides."
+            },
+            {
+              "name": "Seal Row (or Chest-Supported Row)",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "1-2min",
+              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum."
+            },
+            {
+              "name": "Standing Calf Raise",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 4",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust (Top Set)",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "5",
+              "load": 180,
+              "pct_1rm": 0.65,
+              "source_lift": "hip_thrust",
+              "rpe": "6",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 3,
+              "working_sets": 2,
+              "reps": "6",
+              "load": 95,
+              "pct_1rm": 0.525,
+              "source_lift": "bench",
+              "rpe": "6",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Helms Row (or One-Arm DB Row)",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Easy on the lower back by design \u2014 stay strict."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            },
+            {
+              "name": "Barbell (or EZ-Bar) Curl",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned at your sides, no swinging."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "label": "Week 6 \u2014 Push / Pull",
+      "days": [
+        {
+          "label": "PUSH 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 235,
+              "pct_1rm": 0.907,
+              "source_lift": "squat",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent."
+            },
+            {
+              "name": "Back Squat (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "5",
+              "load": 205,
+              "pct_1rm": 0.782,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Crisp bar speed \u2014 don't let form drift."
+            },
+            {
+              "name": "Barbell Bench Press (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 135,
+              "pct_1rm": 0.757,
+              "source_lift": "bench",
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Volume pressing at ~65-75% \u2014 leave 2-3 reps in the tank early in the block."
+            },
+            {
+              "name": "Seated DB Shoulder Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+            },
+            {
+              "name": "Standing Calf Raise",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+            }
+          ]
+        },
+        {
+          "label": "PULL 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 250,
+              "pct_1rm": 0.907,
+              "source_lift": "deadlift",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+            },
+            {
+              "name": null,
+              "warmup_sets": null,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Knee flexion only \u2014 hamstring work with zero spinal load after the deadlifts."
+            },
+            {
+              "name": "Pendlay Row",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Reset on the floor each rep. Flat back."
+            },
+            {
+              "name": "Lat Pulldown (Wide Grip)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Lead with your elbows, no body English."
+            },
+            {
+              "name": "Barbell (or EZ-Bar) Curl",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned at your sides, no swinging."
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+            },
+            {
+              "name": "Hanging Knee Raise (AMRAP)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "AMRAP",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "PUSH 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 165,
+              "pct_1rm": 0.907,
+              "source_lift": "bench",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 140,
+              "pct_1rm": 0.782,
+              "source_lift": "bench",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Back Squat (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 185,
+              "pct_1rm": 0.707,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Controlled tempo, full depth, no grinders."
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Strict, controlled \u2014 these are a weekly staple."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            }
+          ]
+        },
+        {
+          "label": "PULL 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust (Top Set)",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "2",
+              "load": 250,
+              "pct_1rm": 0.907,
+              "source_lift": "hip_thrust",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze."
+            },
+            {
+              "name": "Barbell RDL",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 180,
+              "pct_1rm": 0.657,
+              "source_lift": "deadlift",
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+            },
+            {
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar."
+            },
+            {
+              "name": "Chest-Supported Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Pause and squeeze the shoulder blades together."
+            },
+            {
+              "name": "Cable Face Pull",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "label": "Week 7 \u2014 Full Body",
+      "days": [
+        {
+          "label": "FULL BODY 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 245,
+              "pct_1rm": 0.939,
+              "source_lift": "squat",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent."
+            },
+            {
+              "name": "Back Squat (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "5",
+              "load": 210,
+              "pct_1rm": 0.814,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+            },
+            {
+              "name": "Barbell RDL",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 190,
+              "pct_1rm": 0.689,
+              "source_lift": "deadlift",
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": "Chest-Supported Row",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together."
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 170,
+              "pct_1rm": 0.939,
+              "source_lift": "bench",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Seated DB Shoulder Press",
+              "warmup_sets": null,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+            },
+            {
+              "name": "Barbell Hip Thrust (Backoff)",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 215,
+              "pct_1rm": 0.789,
+              "source_lift": "hip_thrust",
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+            },
+            {
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed."
+            },
+            {
+              "name": "Cable Triceps Pressdown",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned, full lockout each rep."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Lead with the elbows, control the negative."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "FULL BODY 3",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 260,
+              "pct_1rm": 0.939,
+              "source_lift": "deadlift",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+            },
+            {
+              "name": "Touch-and-Go Deadlift",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "6",
+              "load": 205,
+              "pct_1rm": 0.739,
+              "source_lift": "deadlift",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep."
+            },
+            {
+              "name": "Bulgarian Split Squat",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10 each",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+            },
+            {
+              "name": "Neutral-Grip Pulldown",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Pull your elbows down and back against your sides."
+            },
+            {
+              "name": "Seal Row (or Chest-Supported Row)",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum."
+            },
+            {
+              "name": "Standing Calf Raise",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 4",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust (Top Set)",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 260,
+              "pct_1rm": 0.939,
+              "source_lift": "hip_thrust",
+              "rpe": "8.5",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+            },
+            {
+              "name": "Back Squat (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 190,
+              "pct_1rm": 0.739,
+              "source_lift": "squat",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Controlled tempo, full depth, no grinders."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 3,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 145,
+              "pct_1rm": 0.814,
+              "source_lift": "bench",
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            },
+            {
+              "name": "Barbell (or EZ-Bar) Curl",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned at your sides, no swinging."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "label": "Week 8 \u2014 Push / Pull",
+      "days": [
+        {
+          "label": "PUSH 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 250,
+              "pct_1rm": 0.955,
+              "source_lift": "squat",
+              "rpe": "9",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent."
+            },
+            {
+              "name": "Back Squat (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "5",
+              "load": 215,
+              "pct_1rm": 0.83,
+              "source_lift": "squat",
+              "rpe": "9",
+              "rest": "2-4min",
+              "coach_notes": "Crisp bar speed \u2014 don't let form drift."
+            },
+            {
+              "name": "Barbell Bench Press (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 145,
+              "pct_1rm": 0.805,
+              "source_lift": "bench",
+              "rpe": "9",
+              "rest": "2-3min",
+              "coach_notes": "Volume pressing at ~65-75% \u2014 leave 2-3 reps in the tank early in the block."
+            },
+            {
+              "name": "Seated DB Shoulder Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "2-3min",
+              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+            },
+            {
+              "name": "Standing Calf Raise",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+            },
+            {
+              "name": "Cable Triceps Pressdown",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned, full lockout each rep."
+            }
+          ]
+        },
+        {
+          "label": "PULL 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 265,
+              "pct_1rm": 0.955,
+              "source_lift": "deadlift",
+              "rpe": "9",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+            },
+            {
+              "name": "Pendlay Row",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "2-3min",
+              "coach_notes": "Reset on the floor each rep. Flat back."
+            },
+            {
+              "name": null,
+              "warmup_sets": null,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Lead with your elbows, no body English."
+            },
+            {
+              "name": "Barbell (or EZ-Bar) Curl",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned at your sides, no swinging."
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+            },
+            {
+              "name": "Hanging Knee Raise (AMRAP)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "AMRAP",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "PUSH 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 170,
+              "pct_1rm": 0.955,
+              "source_lift": "bench",
+              "rpe": "9",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "6",
+              "load": 150,
+              "pct_1rm": 0.83,
+              "source_lift": "bench",
+              "rpe": "9",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Back Squat (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 195,
+              "pct_1rm": 0.755,
+              "source_lift": "squat",
+              "rpe": "9",
+              "rest": "2-4min",
+              "coach_notes": "Controlled tempo, full depth, no grinders."
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Strict, controlled \u2014 these are a weekly staple."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            }
+          ]
+        },
+        {
+          "label": "PULL 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust (Top Set)",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 265,
+              "pct_1rm": 0.955,
+              "source_lift": "hip_thrust",
+              "rpe": "9",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze."
+            },
+            {
+              "name": "Barbell RDL",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "8",
+              "load": 195,
+              "pct_1rm": 0.705,
+              "source_lift": "deadlift",
+              "rpe": "9",
+              "rest": "2-3min",
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+            },
+            {
+              "name": "Bulgarian Split Squat",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10 each",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+            },
+            {
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "warmup_sets": 1,
+              "working_sets": 4,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar."
+            },
+            {
+              "name": "Cable Face Pull",
+              "warmup_sets": 0,
+              "working_sets": 3,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9",
+              "rest": "1-2min",
+              "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "label": "Week 9 \u2014 Taper",
+      "days": [
+        {
+          "label": "FULL BODY 1",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 230,
+              "pct_1rm": 0.892,
+              "source_lift": "squat",
+              "rpe": "7",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent."
+            },
+            {
+              "name": "Back Squat (Backoff)",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "5",
+              "load": 200,
+              "pct_1rm": 0.767,
+              "source_lift": "squat",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+            },
+            {
+              "name": "Barbell RDL",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "8",
+              "load": 175,
+              "pct_1rm": 0.642,
+              "source_lift": "deadlift",
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+            },
+            {
+              "name": "Incline Dumbbell Press",
+              "warmup_sets": 2,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+            },
+            {
+              "name": "Chest-Supported Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together."
+            },
+            {
+              "name": "Ab Crunch Machine  (superset \u2193)",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "\u2014",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+            },
+            {
+              "name": "Hanging Knee Raise (AMRAP)",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "AMRAP",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 2",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 160,
+              "pct_1rm": 0.892,
+              "source_lift": "bench",
+              "rpe": "7",
+              "rest": "3-5min",
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+            },
+            {
+              "name": "Barbell Hip Thrust (Backoff)",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "6",
+              "load": 205,
+              "pct_1rm": 0.742,
+              "source_lift": "hip_thrust",
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+            },
+            {
+              "name": null,
+              "warmup_sets": null,
+              "working_sets": 3,
+              "reps": "8",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed."
+            },
+            {
+              "name": "Cable Triceps Pressdown",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Elbows pinned, full lockout each rep."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Lead with the elbows, control the negative."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "FULL BODY 3",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift (Top Set)",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 245,
+              "pct_1rm": 0.892,
+              "source_lift": "deadlift",
+              "rpe": "7",
+              "rest": "3-5min",
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+            },
+            {
+              "name": "Touch-and-Go Deadlift",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "6",
+              "load": 190,
+              "pct_1rm": 0.692,
+              "source_lift": "deadlift",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep."
+            },
+            {
+              "name": "Bulgarian Split Squat",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10 each",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+            },
+            {
+              "name": "Neutral-Grip Pulldown",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Pull your elbows down and back against your sides."
+            },
+            {
+              "name": "Seal Row (or Chest-Supported Row)",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum."
+            },
+            {
+              "name": "Standing Calf Raise",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+            }
+          ]
+        },
+        {
+          "label": "FULL BODY 4",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust (Top Set)",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "1",
+              "load": 245,
+              "pct_1rm": 0.892,
+              "source_lift": "hip_thrust",
+              "rpe": "7",
+              "rest": "3-5min",
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+            },
+            {
+              "name": "Back Squat (Volume)",
+              "warmup_sets": 2,
+              "working_sets": 2,
+              "reps": "8",
+              "load": 180,
+              "pct_1rm": 0.692,
+              "source_lift": "squat",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Controlled tempo, full depth, no grinders."
+            },
+            {
+              "name": "Strict Bench Press (Backoff)",
+              "warmup_sets": 3,
+              "working_sets": 2,
+              "reps": "6",
+              "load": 140,
+              "pct_1rm": 0.767,
+              "source_lift": "bench",
+              "rpe": "7",
+              "rest": "2-4min",
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+            },
+            {
+              "name": "Helms Row (or One-Arm DB Row)",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Easy on the lower back by design \u2014 stay strict."
+            },
+            {
+              "name": "Overhead Cable Triceps Extension",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "8",
+              "rest": "1-2min",
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+            }
+          ]
+        },
+        {
+          "label": "2 Rest Days",
+          "type": "rest"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "label": "Week 10: Max Testing",
+      "days": [
+        {
+          "label": "SQUAT TEST",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 5,
+              "working_sets": 1,
+              "reps": "1+",
+              "load": 260,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9.5-10",
+              "rest": "4-6min",
+              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10. Spotter + safeties."
+            },
+            {
+              "name": "Seated Leg Curl",
+              "warmup_sets": 1,
+              "working_sets": 2,
+              "reps": "10",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Light \u2014 testing day, not a volume day."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "BENCH TEST",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Bench Press",
+              "warmup_sets": 5,
+              "working_sets": 1,
+              "reps": "1+",
+              "load": 180,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9.5-10",
+              "rest": "4-6min",
+              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10. Use a spotter."
+            },
+            {
+              "name": "Dumbbell Lateral Raise",
+              "warmup_sets": 0,
+              "working_sets": 2,
+              "reps": "15-20",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Kept light."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "DEADLIFT TEST",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Deadlift",
+              "warmup_sets": 5,
+              "working_sets": 1,
+              "reps": "1+",
+              "load": 275,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9.5-10",
+              "rest": "4-6min",
+              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10."
+            },
+            {
+              "name": "Chest-Supported Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "10-12",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "7",
+              "rest": "1-2min",
+              "coach_notes": "Kept light \u2014 priority today is the pull."
+            }
+          ]
+        },
+        {
+          "label": "Rest Day",
+          "type": "rest"
+        },
+        {
+          "label": "HIP THRUST TEST",
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Barbell Hip Thrust",
+              "warmup_sets": 4,
+              "working_sets": 1,
+              "reps": "1+",
+              "load": 275,
+              "pct_1rm": null,
+              "source_lift": null,
+              "rpe": "9.5-10",
+              "rest": "4-6min",
+              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
