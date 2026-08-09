@@ -16,6 +16,6 @@ public class HomeViewModelFactory implements ViewModelProvider.Factory {
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new HomeViewModel(container.programRepository, container.databaseExecutor);
+        return (T) new HomeViewModel(container.programRepository, container.workoutRepository, container.databaseExecutor);
     }
 }

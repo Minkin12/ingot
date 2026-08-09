@@ -61,4 +61,8 @@ public class WorkoutRepository {
     public LiveData<List<SessionCoordinates>> observeStartedSessions(){
         return performedSetEventDao.observeStartedSessionCoordinates();
     }
+
+    public LiveData<List<SessionCoordinates>> observeCompletedSessions(){
+        return workoutCompletedEventDao.observeCompletedSessionCoordinates();
+    }
 }

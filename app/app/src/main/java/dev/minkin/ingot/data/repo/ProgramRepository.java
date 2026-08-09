@@ -31,6 +31,8 @@ public class ProgramRepository {
     private TrainingMaxDao trainingMaxDao;
     private ExecutorService executor;
     private AssetManager assetManager;
+    private Program program;
+
     public ProgramRepository(ProgramTemplateDao programTemplateDao, TrainingMaxDao trainingMaxDao, ExecutorService executor, AssetManager assetManager){
         this.programTemplateDao = programTemplateDao;
         this.trainingMaxDao = trainingMaxDao;
@@ -76,15 +78,7 @@ public class ProgramRepository {
     }
 
     public MaterializedSession materializeSession(int weekNumber, int dayNumber) throws IOException {
-        ProgramTemplateEntity entity = programTemplateDao.selectProgramTemplate();
-        if (entity == null){
-            throw new IllegalStateException("Program template not seeded");
-        }
-        Program program = ProgramLoader.loadProgram(
-                new ByteArrayInputStream(entity.jsonBlob.getBytes(StandardCharsets.UTF_8)));
-
-
-        return Materializer.materialize(program, getCurrentMaxes(), weekNumber,dayNumber);
+        return Materializer.materialize(getProgram(), getCurrentMaxes(), weekNumber,dayNumber);
     }
 
     public MaterializedSession enrich(MaterializedSession session,
@@ -110,6 +104,18 @@ public class ProgramRepository {
         trainingMaxEntity.valueLbs = newMaxWeight;
         trainingMaxEntity.effectiveAt = System.currentTimeMillis();
         trainingMaxDao.insertMax(trainingMaxEntity);
+    }
+
+    public Program getProgram() throws IOException {
+        if (this.program == null){
+            ProgramTemplateEntity entity = programTemplateDao.selectProgramTemplate();
+            if (entity == null){
+                throw new IllegalStateException("Program template not seeded");
+            }
+            this.program = ProgramLoader.loadProgram(
+                    new ByteArrayInputStream(entity.jsonBlob.getBytes(StandardCharsets.UTF_8)));
+        }
+        return this.program;
     }
 
     private String readAssetAsString(String filename) {

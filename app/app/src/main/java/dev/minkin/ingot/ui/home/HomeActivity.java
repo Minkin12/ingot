@@ -1,63 +1,62 @@
 package dev.minkin.ingot.ui.home;
 
 import android.os.Bundle;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dev.minkin.ingot.AppContainer;
 import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
-import dev.minkin.ingot.engine.model.Exercise;
-import dev.minkin.ingot.engine.model.MaterializedExercise;
+import dev.minkin.ingot.ui.home.types.HomeUiState;
 
 public class HomeActivity extends AppCompatActivity {
+    private RecyclerView weekStrip;
+    private RecyclerView workoutList;
+    private WeekPillAdapter pillAdapter;
+    private WorkoutRowAdapter rowAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        weekStrip = findViewById(R.id.weekStrip);
+        workoutList = findViewById(R.id.workoutList);
+        weekStrip.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        workoutList.setLayoutManager(new LinearLayoutManager(this));
 
         AppContainer appContainer = ((IngotApplication) getApplication()).container;
         HomeViewModel viewModel = new ViewModelProvider(this, new HomeViewModelFactory(appContainer))
                 .get(HomeViewModel.class);
 
-        LinearLayout container = (LinearLayout) findViewById(R.id.exerciseContainer);
-        viewModel.getSession().observe(this, materializedSession -> {
-           container.removeAllViews();
+        pillAdapter = new WeekPillAdapter(weekNumbers(1, 10), 1, week -> viewModel.selectWeek(week));
+        weekStrip.setAdapter(pillAdapter);
 
-            TextView header = new TextView(this);
-            header.setText(materializedSession.getLabel());
-            header.setTextSize(20);
-            container.addView(header);
-
-            for (MaterializedExercise me : materializedSession.getExercises()) {
-                TextView row = new TextView(this);
-                row.setPadding(0, 12, 0, 12);
-                row.setText(formatRow(me));
-                container.addView(row);
-            }
+        rowAdapter = new WorkoutRowAdapter(row -> {
+            // todo launch WorkoutActivity with row's coordinates, later
         });
+        workoutList.setAdapter(rowAdapter);
+
+        viewModel.getUiState().observe(this, this::render);
     }
 
-    private String formatRow(MaterializedExercise me) {
-        Exercise ex = me.getExercise();
-        String loadText = me.getLoad() != null
-                ? String.format("%s lbs", me.getLoad())
-                : "—";
-        return String.format("%s — %d×%s @ %s",
-                ex.getName(), ex.getWorkingSets(), ex.getReps(), loadText);
+    private void render(HomeUiState state) {
+        ((TextView) findViewById(R.id.weekLabel)).setText("Week " + state.getSelectedWeekNumber());
+        pillAdapter.setSelectedWeek(state.getSelectedWeekNumber());
+        rowAdapter.submitList(state.getWorkouts());
+        // todo bind upNextCard's views similarly, from state.getUpNext()
+    }
+
+    private List<Integer> weekNumbers(int from, int to) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = from; i <= to; i++) list.add(i);
+        return list;
     }
 }
