@@ -22,8 +22,9 @@ import java.util.concurrent.ExecutorService;
 
 import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.db.entity.WorkoutCompletedEventEntity;
-import dev.minkin.ingot.data.repo.PerformedSetEventDao;
-import dev.minkin.ingot.data.repo.WorkoutCompletedEventDao;
+import dev.minkin.ingot.data.db.dao.PerformedSetEventDao;
+import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
+import dev.minkin.ingot.data.repo.WorkoutRepository;
 
 public class WorkoutRepositoryTest {
 

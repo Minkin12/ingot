@@ -1,4 +1,4 @@
-package dev.minkin.ingot.data.db.repo;
+package dev.minkin.ingot.data.repo;
 
 import android.content.res.AssetManager;
 
@@ -11,14 +11,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 
 import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
 import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
-import dev.minkin.ingot.data.repo.ProgramTemplateDao;
-import dev.minkin.ingot.data.repo.TrainingMaxDao;
+import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
+import dev.minkin.ingot.data.db.dao.TrainingMaxDao;
 import dev.minkin.ingot.engine.Materializer;
 import dev.minkin.ingot.engine.ProgramLoader;
 import dev.minkin.ingot.engine.model.MajorLift;

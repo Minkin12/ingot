@@ -22,23 +22,15 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 
 import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
 import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
-import dev.minkin.ingot.data.repo.ProgramTemplateDao;
-import dev.minkin.ingot.data.repo.TrainingMaxDao;
+import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
+import dev.minkin.ingot.data.db.dao.TrainingMaxDao;
+import dev.minkin.ingot.data.repo.ProgramRepository;
 import dev.minkin.ingot.engine.model.MajorLift;
 import dev.minkin.ingot.engine.model.Maxes;
 

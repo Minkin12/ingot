@@ -1,4 +1,4 @@
-package dev.minkin.ingot.data.repo;
+package dev.minkin.ingot.data.db.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;

@@ -9,8 +9,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import dev.minkin.ingot.data.db.IngotDatabase;
-import dev.minkin.ingot.data.db.repo.ProgramRepository;
-import dev.minkin.ingot.data.db.repo.WorkoutRepository;
+import dev.minkin.ingot.data.repo.ProgramRepository;
+import dev.minkin.ingot.data.repo.WorkoutRepository;
 
 public class AppContainer {
     public final ExecutorService databaseExecutor;

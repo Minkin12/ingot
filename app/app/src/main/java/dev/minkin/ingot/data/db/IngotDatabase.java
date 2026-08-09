@@ -13,10 +13,10 @@ import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
 import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
 import dev.minkin.ingot.data.db.entity.WorkoutCompletedEventEntity;
-import dev.minkin.ingot.data.repo.PerformedSetEventDao;
-import dev.minkin.ingot.data.repo.ProgramTemplateDao;
-import dev.minkin.ingot.data.repo.TrainingMaxDao;
-import dev.minkin.ingot.data.repo.WorkoutCompletedEventDao;
+import dev.minkin.ingot.data.db.dao.PerformedSetEventDao;
+import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
+import dev.minkin.ingot.data.db.dao.TrainingMaxDao;
+import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
 
 @Database(version = 1, entities = {TrainingMaxEntity.class, ProgramTemplateEntity.class, PerformedSetEventEntity.class, WorkoutCompletedEventEntity.class},exportSchema = false)
 public abstract class IngotDatabase extends RoomDatabase {

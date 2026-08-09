@@ -1,17 +1,16 @@
-package dev.minkin.ingot.data.db.repo;
+package dev.minkin.ingot.data.repo;
 
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 
 import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.db.entity.WorkoutCompletedEventEntity;
 import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
-import dev.minkin.ingot.data.repo.PerformedSetEventDao;
-import dev.minkin.ingot.data.repo.WorkoutCompletedEventDao;
+import dev.minkin.ingot.data.db.dao.PerformedSetEventDao;
+import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
 
 public class WorkoutRepository {
     private PerformedSetEventDao performedSetEventDao;
