@@ -12,6 +12,10 @@ public enum MajorLift {
         this.jsonName = jsonName;
     }
 
+    public String getJsonName() {
+        return jsonName;
+    }
+
     /** Maps a source_lift string from program.json to a Lift.
      *  Returns null for accessories (no source_lift in the JSON). */
     public static MajorLift fromJson(String value) {

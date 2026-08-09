@@ -47,14 +47,14 @@ class MaterializerTest {
     void computesTrackedLiftLoadFromPercentage() {
         // Week 1, day 1: Back Squat (Backoff) — 0.711 × 260 = 184.86 → 185
         MaterializedSession s = Materializer.materialize(program, seedMaxes, 1, 1);
-        assertEquals(185.0, exerciseNamed(s, "Back Squat (Backoff)").getLoad());
+        assertEquals("185.0", exerciseNamed(s, "Back Squat (Backoff)").getLoad());
     }
 
     @Test
     void derivedLiftUsesItsSourceLiftsMax() {
         // Week 1 RDL draws from the DEADLIFT max: 0.586 × 275 = 161.15 → 160
         MaterializedSession s = Materializer.materialize(program, seedMaxes, 1, 1);
-        assertEquals(160.0, exerciseNamed(s, "Romanian Deadlift").getLoad());
+        assertEquals("160.0", exerciseNamed(s, "Romanian Deadlift").getLoad());
     }
 
     @Test
@@ -68,7 +68,7 @@ class MaterializerTest {
     void deloadWeekUsesItsOwnPercentages() {
         // Week 5 (deload), day 1: squat top set — 0.65 × 260 = 169 → 170
         MaterializedSession s = Materializer.materialize(program, seedMaxes, 5, 1);
-        assertEquals(170.0, exerciseNamed(s, "Back Squat (Top Set)").getLoad());
+        assertEquals("170.0", exerciseNamed(s, "Back Squat (Top Set)").getLoad());
     }
 
     @Test
@@ -98,10 +98,10 @@ class MaterializerTest {
                 "bench", 180.0,
                 "deadlift", 275.0,
                 "hip_thrust", 275.0));
-        double before = exerciseNamed(
-                Materializer.materialize(program, seedMaxes, 2, 1), "Back Squat (Top Set)").getLoad();
-        double after = exerciseNamed(
-                Materializer.materialize(program, stronger, 2, 1), "Back Squat (Top Set)").getLoad();
+        double before = Double.parseDouble(exerciseNamed(
+                Materializer.materialize(program, seedMaxes, 2, 1), "Back Squat (Top Set)").getLoad());
+        double after = Double.parseDouble(exerciseNamed(
+                Materializer.materialize(program, stronger, 2, 1), "Back Squat (Top Set)").getLoad());
         assertTrue(after > before,
                 "stronger maxes should raise the squat top set (" + before + " -> " + after + ")");
     }
@@ -145,7 +145,7 @@ class MaterializerTest {
                     // Only percentage-driven rows are materialization outputs;
                     // ex.getLoad() here is the stored spreadsheet value (oracle data).
                     if (ex.getPctOneRepMax() != null && ex.getLoad() != null) {
-                        assertEquals(ex.getLoad(), String.format("%.0f",me.getLoad()),
+                        assertEquals(Double.parseDouble(ex.getLoad()), Double.parseDouble(me.getLoad()),
                                 "week " + week.getNumber()
                                         + " day " + day.getDayNumber()
                                         + " — " + ex.getName());

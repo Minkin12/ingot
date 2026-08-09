@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @AllArgsConstructor
-@Builder
+@Builder(toBuilder = true)
 public class MaterializedSession {
     private final int weekNumber;
     private final int dayNumber;
