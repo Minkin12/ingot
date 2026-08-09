@@ -5,6 +5,7 @@ import android.content.res.AssetManager;
 
 import androidx.room.Room;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -17,8 +18,8 @@ public class AppContainer {
     public final ProgramRepository programRepository;
     public final WorkoutRepository workoutRepository;
 
-    public AppContainer(Context context) {
-        IngotDatabase db = Room.databaseBuilder(context, IngotDatabase.class, "ingot.db").build();
+    public AppContainer(Context context) throws IOException {
+        IngotDatabase db = Room.databaseBuilder(context, IngotDatabase.class, "ingot_db").build();
         AssetManager assets = context.getAssets();
 
         databaseExecutor = Executors.newFixedThreadPool(4);
@@ -27,5 +28,12 @@ public class AppContainer {
                 db.programTemplateDao(), db.trainingMaxDao(), databaseExecutor, assets);
         workoutRepository = new WorkoutRepository(
                 db.performedSetEventDao(), db.workoutCompletedEventDao(), databaseExecutor);
+       databaseExecutor.execute(() -> {
+           try {
+               programRepository.ensureSeeded();
+           } catch (IOException e) {
+               throw new RuntimeException(e);
+           }
+       });
     }
 }

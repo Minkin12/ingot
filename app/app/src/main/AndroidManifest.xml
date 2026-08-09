@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ingot">
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
