@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace 'dev.Minkin.ingot'
+    namespace 'dev.minkin.ingot'
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId "dev.Minkin.ingot"
+        applicationId "dev.minkin.ingot"
         minSdk 34
         targetSdk 37
         versionCode 1
@@ -26,8 +26,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
@@ -39,4 +39,5 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.espresso.core
     androidTestImplementation libs.ext.junit
+    implementation project(':engine')
 }

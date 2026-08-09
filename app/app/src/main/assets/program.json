@@ -22,6 +22,7 @@
       "days": [
         {
           "label": "FULL BODY 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -103,6 +104,7 @@
         },
         {
           "label": "FULL BODY 2",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -182,11 +184,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "FULL BODY 3",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -256,6 +255,7 @@
         },
         {
           "label": "FULL BODY 4",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -331,10 +331,6 @@
               "coach_notes": "Elbows pinned at your sides, no swinging."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -344,6 +340,7 @@
       "days": [
         {
           "label": "PUSH 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -410,6 +407,7 @@
         },
         {
           "label": "PULL 1",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -499,11 +497,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "PUSH 2",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -570,6 +565,7 @@
         },
         {
           "label": "PULL 2",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -645,10 +641,6 @@
               "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -658,6 +650,7 @@
       "days": [
         {
           "label": "FULL BODY 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -736,6 +729,7 @@
         },
         {
           "label": "FULL BODY 2",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -813,11 +807,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "FULL BODY 3",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -884,6 +875,7 @@
         },
         {
           "label": "FULL BODY 4",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -959,10 +951,6 @@
               "coach_notes": "Elbows pinned at your sides, no swinging."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -972,6 +960,7 @@
       "days": [
         {
           "label": "PUSH 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -1038,6 +1027,7 @@
         },
         {
           "label": "PULL 1",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -1127,11 +1117,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "PUSH 2",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -1210,6 +1197,7 @@
         },
         {
           "label": "PULL 2",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -1273,10 +1261,6 @@
               "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -1286,6 +1270,7 @@
       "days": [
         {
           "label": "FULL BODY 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -1364,6 +1349,7 @@
         },
         {
           "label": "FULL BODY 2",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -1441,11 +1427,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "FULL BODY 3",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -1524,6 +1507,7 @@
         },
         {
           "label": "FULL BODY 4",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -1587,10 +1571,6 @@
               "coach_notes": "Elbows pinned at your sides, no swinging."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -1600,6 +1580,7 @@
       "days": [
         {
           "label": "PUSH 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -1666,6 +1647,7 @@
         },
         {
           "label": "PULL 1",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -1755,11 +1737,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "PUSH 2",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -1838,6 +1817,7 @@
         },
         {
           "label": "PULL 2",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -1901,10 +1881,6 @@
               "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -1914,6 +1890,7 @@
       "days": [
         {
           "label": "FULL BODY 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -1992,6 +1969,7 @@
         },
         {
           "label": "FULL BODY 2",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -2069,11 +2047,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "FULL BODY 3",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -2152,6 +2127,7 @@
         },
         {
           "label": "FULL BODY 4",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -2215,10 +2191,6 @@
               "coach_notes": "Elbows pinned at your sides, no swinging."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -2228,6 +2200,7 @@
       "days": [
         {
           "label": "PUSH 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -2306,6 +2279,7 @@
         },
         {
           "label": "PULL 1",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -2383,11 +2357,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "PUSH 2",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -2466,6 +2437,7 @@
         },
         {
           "label": "PULL 2",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -2529,10 +2501,6 @@
               "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -2542,6 +2510,7 @@
       "days": [
         {
           "label": "FULL BODY 1",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -2632,6 +2601,7 @@
         },
         {
           "label": "FULL BODY 2",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -2697,11 +2667,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "FULL BODY 3",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -2780,6 +2747,7 @@
         },
         {
           "label": "FULL BODY 4",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {
@@ -2843,10 +2811,6 @@
               "coach_notes": "Big stretch behind the head, constant tension on the triceps."
             }
           ]
-        },
-        {
-          "label": "2 Rest Days",
-          "type": "rest"
         }
       ]
     },
@@ -2856,6 +2820,7 @@
       "days": [
         {
           "label": "SQUAT TEST",
+          "day_number": 1,
           "type": "workout",
           "exercises": [
             {
@@ -2885,11 +2850,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "BENCH TEST",
+          "day_number": 2,
           "type": "workout",
           "exercises": [
             {
@@ -2919,11 +2881,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "DEADLIFT TEST",
+          "day_number": 3,
           "type": "workout",
           "exercises": [
             {
@@ -2953,11 +2912,8 @@
           ]
         },
         {
-          "label": "Rest Day",
-          "type": "rest"
-        },
-        {
           "label": "HIP THRUST TEST",
+          "day_number": 4,
           "type": "workout",
           "exercises": [
             {

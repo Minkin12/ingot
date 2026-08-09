@@ -1,4 +1,4 @@
-package dev.Minkin.ingot;
+package dev.minkin.ingot;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("dev.Minkin.ingot", appContext.getPackageName());
+        assertEquals("dev.minkin.ingot", appContext.getPackageName());
     }
 }

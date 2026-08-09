@@ -1,4 +1,4 @@
-package dev.Minkin.ingot;
+package dev.minkin.ingot;
 
 import org.junit.Test;
 

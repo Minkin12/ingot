@@ -24,3 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Ingot"
 include ':app'
+include ':engine'
+project(':engine').projectDir = new File(rootDir, '../engine')
