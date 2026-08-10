@@ -1,5 +1,6 @@
 package dev.minkin.ingot.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -14,7 +15,11 @@ import java.util.List;
 import dev.minkin.ingot.AppContainer;
 import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
+import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
+import dev.minkin.ingot.engine.model.MaterializedSession;
 import dev.minkin.ingot.ui.home.types.HomeUiState;
+import dev.minkin.ingot.ui.home.types.WorkoutState;
+import dev.minkin.ingot.ui.workout.WorkoutActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private RecyclerView weekStrip;
@@ -39,8 +44,20 @@ public class HomeActivity extends AppCompatActivity {
         pillAdapter = new WeekPillAdapter(weekNumbers(1, 10), 1, week -> viewModel.selectWeek(week));
         weekStrip.setAdapter(pillAdapter);
 
-        rowAdapter = new WorkoutRowAdapter(row -> {
-            // todo launch WorkoutActivity with row's coordinates, later
+        rowAdapter = new WorkoutRowAdapter(new WorkoutRowAdapter.OnRowClicked() {
+            @Override
+            public void onClicked(WorkoutState row) {
+                MaterializedSession s = row.getSession();
+                viewModel.selectWorkout(new SessionCoordinates(s.getWeekNumber(), s.getDayNumber()));
+            }
+
+            @Override
+            public void onStartClicked(MaterializedSession session) {
+                Intent intent = new Intent(HomeActivity.this, WorkoutActivity.class);
+                intent.putExtra("weekNumber", session.getWeekNumber());
+                intent.putExtra("dayNumber", session.getDayNumber());
+                startActivity(intent);
+            }
         });
         workoutList.setAdapter(rowAdapter);
 
@@ -50,8 +67,7 @@ public class HomeActivity extends AppCompatActivity {
     private void render(HomeUiState state) {
         ((TextView) findViewById(R.id.weekLabel)).setText("Week " + state.getSelectedWeekNumber());
         pillAdapter.setSelectedWeek(state.getSelectedWeekNumber());
-        rowAdapter.submitList(state.getWorkouts());
-        // todo bind upNextCard's views similarly, from state.getUpNext()
+        rowAdapter.submitList(state.getWorkouts(), state.getHeroCoords());
     }
 
     private List<Integer> weekNumbers(int from, int to) {

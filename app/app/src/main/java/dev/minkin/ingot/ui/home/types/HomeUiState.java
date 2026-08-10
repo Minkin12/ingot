@@ -9,5 +9,5 @@ import lombok.Value;
 public class HomeUiState {
     int selectedWeekNumber;
     List<WorkoutState> workouts;
-    SessionCoordinates upNext;
+    SessionCoordinates heroCoords;
 }

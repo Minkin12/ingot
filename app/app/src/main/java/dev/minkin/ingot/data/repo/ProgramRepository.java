@@ -13,11 +13,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
-import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
-import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
-import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
 import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
 import dev.minkin.ingot.data.db.dao.TrainingMaxDao;
+import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
+import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
 import dev.minkin.ingot.engine.Materializer;
 import dev.minkin.ingot.engine.ProgramLoader;
 import dev.minkin.ingot.engine.model.MajorLift;
@@ -82,19 +81,15 @@ public class ProgramRepository {
     }
 
     public MaterializedSession enrich(MaterializedSession session,
-                                                    Map<String, PerformedSetEventEntity> lastPerformedByExercise) throws IOException {
-
+                                      Map<String, String> lastWeightByExercise) {
         List<MaterializedExercise> enriched = new ArrayList<>();
         for (MaterializedExercise me : session.getExercises()) {
-            if (me.getLoad() == null) {
-                PerformedSetEventEntity last = lastPerformedByExercise.get(me.getExercise().getName());
-                if (last != null) {
-                    me = me.toBuilder().load(last.weightLbs).build();
-                }
+            if (me.getLoad() == null && lastWeightByExercise.containsKey(me.getExercise().getName())) {
+                enriched.add(me.toBuilder().load(lastWeightByExercise.get(me.getExercise().getName())).build());
+            } else {
+                enriched.add(me);
             }
-            enriched.add(me);
         }
-
         return session.toBuilder().exercises(enriched).build();
     }
 
