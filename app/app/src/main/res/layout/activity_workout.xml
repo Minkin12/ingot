@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/workoutTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:padding="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exerciseList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/sessionNoteInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Session note — how did it go?" />
+
+        <Button
+            android:id="@+id/finishButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Finish workout" />
+    </LinearLayout>
+
+</LinearLayout>

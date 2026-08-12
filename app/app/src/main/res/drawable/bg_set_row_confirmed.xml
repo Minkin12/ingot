@@ -1,0 +1,5 @@
+<!-- res/drawable/bg_set_row_confirmed.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="8dp" />
+    <solid android:color="#E8F5E9" />
+</shape>

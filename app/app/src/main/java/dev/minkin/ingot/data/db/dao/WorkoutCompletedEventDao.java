@@ -13,7 +13,7 @@ import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
 
 @Dao
 public interface WorkoutCompletedEventDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertWorkoutCompletedEvent(WorkoutCompletedEventEntity workoutCompletedEventEntity);
 
     @Query("Select distinct weekNumber, dayNumber from workout_completed_event order by weekNumber, dayNumber")

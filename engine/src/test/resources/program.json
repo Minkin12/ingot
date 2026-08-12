@@ -690,7 +690,7 @@
               "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
             },
             {
-              "name": null,
+              "name": "Chest-Supported Row",
               "warmup_sets": null,
               "working_sets": 4,
               "reps": "8",
@@ -1012,7 +1012,7 @@
               "coach_notes": "Full stretch at the bottom, pause hard at the top."
             },
             {
-              "name": null,
+              "name": "Cable Triceps Pressdown",
               "warmup_sets": null,
               "working_sets": 3,
               "reps": "12",
@@ -1334,7 +1334,7 @@
               "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
             },
             {
-              "name": null,
+              "name": "Hanging Knee Raise (AMRAP)",
               "warmup_sets": null,
               "working_sets": 2,
               "reps": "AMRAP",
@@ -1663,7 +1663,7 @@
               "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
             },
             {
-              "name": null,
+              "name": "Seated Leg Curl",
               "warmup_sets": null,
               "working_sets": 3,
               "reps": "10",
@@ -2307,7 +2307,7 @@
               "coach_notes": "Reset on the floor each rep. Flat back."
             },
             {
-              "name": null,
+              "name": "Lat Pulldown (Wide Grip)",
               "warmup_sets": null,
               "working_sets": 3,
               "reps": "10",
@@ -2629,7 +2629,7 @@
               "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
             },
             {
-              "name": null,
+              "name": "Weighted Pull-Up (or Lat Pulldown)",
               "warmup_sets": null,
               "working_sets": 3,
               "reps": "8",

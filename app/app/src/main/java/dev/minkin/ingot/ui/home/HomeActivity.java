@@ -17,6 +17,8 @@ import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
 import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
 import dev.minkin.ingot.engine.model.MaterializedSession;
+import dev.minkin.ingot.ui.home.adapters.WeekPillAdapter;
+import dev.minkin.ingot.ui.home.adapters.WorkoutRowAdapter;
 import dev.minkin.ingot.ui.home.types.HomeUiState;
 import dev.minkin.ingot.ui.home.types.WorkoutState;
 import dev.minkin.ingot.ui.workout.WorkoutActivity;

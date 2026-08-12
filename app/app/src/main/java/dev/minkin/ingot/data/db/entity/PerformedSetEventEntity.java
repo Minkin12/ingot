@@ -6,8 +6,10 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "performed_set_event",
-        indices = {@Index({"exerciseName", "loggedAt"})})
+        indices = {@Index({"exerciseName", "loggedAt"}),
+        @Index(value = {"weekNumber", "dayNumber", "exerciseName", "setNumber"}, unique = true)})
 public class PerformedSetEventEntity {
+
     @PrimaryKey
     @NonNull
     public String eventId;

@@ -19,7 +19,7 @@ public class AppContainer {
     public final WorkoutRepository workoutRepository;
 
     public AppContainer(Context context) throws IOException {
-        IngotDatabase db = Room.databaseBuilder(context, IngotDatabase.class, "ingot_db").build();
+        IngotDatabase db = Room.databaseBuilder(context, IngotDatabase.class, "ingot_db").fallbackToDestructiveMigration().build();
         AssetManager assets = context.getAssets();
 
         databaseExecutor = Executors.newFixedThreadPool(4);

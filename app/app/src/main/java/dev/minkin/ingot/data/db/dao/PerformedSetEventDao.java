@@ -13,7 +13,7 @@ import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
 
 @Dao
 public interface PerformedSetEventDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertPerformedSetEvent(PerformedSetEventEntity performedSetEventEntity);
 
     @Query("Select * from performed_set_event where weekNumber == :weekNumber and dayNumber == :dayNumber order by loggedAt desc")

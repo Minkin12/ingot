@@ -12,7 +12,7 @@ import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
 import dev.minkin.ingot.data.db.dao.TrainingMaxDao;
 import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
 
-@Database(version = 1, entities = {TrainingMaxEntity.class, ProgramTemplateEntity.class, PerformedSetEventEntity.class, WorkoutCompletedEventEntity.class},exportSchema = false)
+@Database(version = 2, entities = {TrainingMaxEntity.class, ProgramTemplateEntity.class, PerformedSetEventEntity.class, WorkoutCompletedEventEntity.class},exportSchema = false)
 public abstract class IngotDatabase extends RoomDatabase {
     public abstract TrainingMaxDao trainingMaxDao();
     public abstract ProgramTemplateDao programTemplateDao();

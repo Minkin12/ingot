@@ -1,4 +1,4 @@
-package dev.minkin.ingot.ui.home;
+package dev.minkin.ingot.ui.home.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
