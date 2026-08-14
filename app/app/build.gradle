@@ -40,7 +40,8 @@ dependencies {
     testImplementation libs.mockito.core
     androidTestImplementation libs.espresso.core
     androidTestImplementation libs.ext.junit
-    implementation project(':engine')
+    // implementation project(':engine')
+    implementation 'dev.minkin.ingot:engine'
 
     implementation libs.room.runtime
     annotationProcessor libs.room.compiler
