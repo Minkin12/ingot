@@ -1,0 +1,18 @@
+spring:
+  application.name: ingot-backend
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: false
+    show-sql: false
+  flyway:
+    enabled: true
+    schemas: ingot
+    default-schema: ingot
+
+logging:
+  level:
+    root: info
+    dev.minkin.ingot: info
