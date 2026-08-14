@@ -21,6 +21,8 @@ public class WorkoutCompletedEventEntity {
     // nullable — "gym packed, subbed leg press"
     public String sessionNote;
 
+    public String workoutLabel;
+
     // epoch millis
     public long completedAt;
 }

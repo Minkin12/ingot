@@ -9,5 +9,5 @@ public class Event {
     private UUID eventId;
     private String eventType;
     private String payload;
-    private long occurredAt;
+    private long completedAt;
 }

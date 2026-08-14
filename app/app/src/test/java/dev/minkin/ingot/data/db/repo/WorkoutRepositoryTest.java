@@ -70,7 +70,7 @@ public class WorkoutRepositoryTest {
 
     @Test
     public void logCompletedWorkout_insertsWorkoutCompletedEvent() {
-        workoutRepository.logCompletedWorkout(1, 2, "Good session");
+        workoutRepository.logCompletedWorkout(1, 2, "Good session", "FULL BODY 2");
         
         ArgumentCaptor<WorkoutCompletedEventEntity> captor = ArgumentCaptor.forClass(WorkoutCompletedEventEntity.class);
         verify(workoutCompletedEventDao, times(1)).insertWorkoutCompletedEvent(captor.capture());

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import tools.jackson.databind.ObjectMapper;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class IngestController {
 
     EventRepository eventRepository;
     JetStream jetStream;
+    ObjectMapper objectMapper;
 
 
     @PostMapping("/batchInsertEvents")
@@ -35,19 +37,23 @@ public class IngestController {
         for (Event event : batchRequest.getEvents()) {
             try {
                 eventRepository.insertEventIfNew(event);
-                completedEvents.add(event.getEventId());
+                String eventString = objectMapper.writeValueAsString(event);
                 switch (event.getEventType()) {
                     case "performed_set":
-                        jetStream.publish("events.performed_set", event.getPayload().getBytes(StandardCharsets.UTF_8));
+                        jetStream.publish("events.performed_set", eventString.getBytes(StandardCharsets.UTF_8));
+                        completedEvents.add(event.getEventId());
                         break;
                     case "workout_completed":
-                        jetStream.publish("events.workout_completed", event.getPayload().getBytes(StandardCharsets.UTF_8));
+                        jetStream.publish("events.workout_completed", eventString.getBytes(StandardCharsets.UTF_8));
+                        completedEvents.add(event.getEventId());
                         break;
                     case "training_max_updated":
-                        jetStream.publish("events.training_max_updated", event.getPayload().getBytes(StandardCharsets.UTF_8));
+                        jetStream.publish("events.training_max_updated", eventString.getBytes(StandardCharsets.UTF_8));
+                        completedEvents.add(event.getEventId());
                         break;
                     default:
                         log.warn("Unknown event type: {}", event.getEventType());
+                        failedEvents.add(event.getEventId());
                         break;
 
                 }

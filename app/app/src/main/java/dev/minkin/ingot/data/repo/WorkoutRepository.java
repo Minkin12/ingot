@@ -38,12 +38,13 @@ public class WorkoutRepository {
         executor.execute(() -> performedSetEventDao.insertPerformedSetEvent(performedSetEventEntity));
     }
 
-    public void logCompletedWorkout(int weekNumber, int dayNumber, String sessionNote){
+    public void logCompletedWorkout(int weekNumber, int dayNumber, String sessionNote, String workoutLabel){
         WorkoutCompletedEventEntity workoutCompletedEventEntity = new WorkoutCompletedEventEntity();
         workoutCompletedEventEntity.eventId = UUID.randomUUID().toString();
         workoutCompletedEventEntity.weekNumber = weekNumber;
         workoutCompletedEventEntity.dayNumber = dayNumber;
         workoutCompletedEventEntity.sessionNote = sessionNote;
+        workoutCompletedEventEntity.workoutLabel = workoutLabel;
         workoutCompletedEventEntity.completedAt = System.currentTimeMillis();
 
         executor.execute(() -> workoutCompletedEventDao.insertWorkoutCompletedEvent(workoutCompletedEventEntity));

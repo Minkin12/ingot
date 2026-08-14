@@ -29,10 +29,10 @@ public class WorkoutViewModel extends ViewModel {
     private final ExecutorService executor;
     private final int weekNumber;
     private final int dayNumber;
-
     private MaterializedSession enrichedSession;
     private int activeExerciseIndex = 0;
     private String sessionNote = "";
+    private String workoutLabel = "";
 
     private final Map<String, String> pendingWeights = new HashMap<>();
     private final Map<String, Integer> pendingReps = new HashMap<>();
@@ -63,6 +63,7 @@ public class WorkoutViewModel extends ViewModel {
                 MaterializedSession session = programRepo.materializeSession(weekNumber, dayNumber);
                 Map<String, String> prefill = buildPrefillMap(session);
                 enrichedSession = programRepo.enrich(session, prefill);
+                workoutLabel = enrichedSession.getLabel();
                 recompute(liveSets.getValue());
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -198,8 +199,9 @@ public class WorkoutViewModel extends ViewModel {
 
     public void finishWorkout(String note) {
         this.sessionNote = note;
+
         executor.execute(() -> {
-            workoutRepo.logCompletedWorkout(weekNumber, dayNumber, note);
+            workoutRepo.logCompletedWorkout(weekNumber, dayNumber, note, workoutLabel);
             finishComplete.postValue(true);
         });
     }

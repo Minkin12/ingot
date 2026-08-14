@@ -1,10 +1,12 @@
 package dev.minkin.ingot.backend.configuration;
 
 import io.nats.client.*;
-import io.nats.client.api.*;
+import io.nats.client.api.RetentionPolicy;
+import io.nats.client.api.StorageType;
+import io.nats.client.api.StreamConfiguration;
+import io.nats.client.api.StreamInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -39,25 +41,29 @@ public class NatsJetStreamConfiguration {
     }
 
     @Bean
-    public ApplicationRunner jetStreamInfrastructureSetup(JetStreamManagement jsm) {
-        return args -> {
-            log.debug("running the infra setup");
-            try {
-                StreamConfiguration streamConfig = StreamConfiguration.builder()
-                        .name("INGOT_EVENT_STREAM")
-                        .subjects("events.*")
-                        .storageType(StorageType.File)
-                        .retentionPolicy(RetentionPolicy.Limits)
-                        .maxAge(Duration.ofDays(30))
-                        .build();
+    public StreamInfo ingotEventStream(JetStreamManagement jsm) throws Exception {
 
-                jsm.addStream(streamConfig);
+        StreamConfiguration streamConfig = StreamConfiguration.builder()
+                .name("INGOT_EVENT_STREAM")
+                .subjects("events.*")
+                .storageType(StorageType.File)
+                .retentionPolicy(RetentionPolicy.WorkQueue) //this deletes message when they are acked, use LIMITS to keep them till max age
+                .maxAge(Duration.ofDays(30))
+                .build();
 
-                ;
-                log.info("Infra setup completed");
-            } catch (Exception e) {
-                log.debug("Failed to provision NATS infrastructure: {}", e.getMessage());
+        try {
+          return jsm.addStream(streamConfig);
+        } catch (JetStreamApiException e) {
+            if (e.getApiErrorCode() == 10058) {
+                try {
+                   return jsm.updateStream(streamConfig);
+                } catch (JetStreamApiException updateError) {
+                    log.error("Stream exists with incompatible config (likely retention policy) — manual reset required: {}", updateError.getMessage());
+                    throw updateError;
+                }
+            } else {
+                throw e;
             }
-        };
+        }
     }
 }

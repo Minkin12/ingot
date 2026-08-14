@@ -17,14 +17,14 @@ public class EventRepository {
             return false;
         }
         int rows = jdbcClient.sql("""
-                INSERT INTO events (event_id, event_type, payload, occurred_at, recorded_at)
+                INSERT INTO ingot.events (event_id, event_type, payload, occurred_at, recorded_at)
                 VALUES (:id, :type, :payload::jsonb, :occurredAt, :recordedAt)
                 ON CONFLICT (event_id) DO NOTHING
                 """)
                 .param("id", event.getEventId())
                 .param("type", event.getEventType())
                 .param("payload", event.getPayload())
-                .param("occurredAt", event.getOccurredAt())
+                .param("occurredAt", event.getCompletedAt())
                 .param("recordedAt", System.currentTimeMillis())
                 .update();
         return rows > 0;
