@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,6 +55,13 @@ public class WorkoutActivity extends AppCompatActivity {
             String note = sessionNoteInput.getText().toString();
             viewModel.finishWorkout(note);
         });
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        toolbar.getNavigationIcon().setTint(getResources().getColor(android.R.color.white, getTheme()));
 
         viewModel.getUiState().observe(this, this::render);
     }
@@ -100,7 +109,16 @@ public class WorkoutActivity extends AppCompatActivity {
     }
 
     private void render(WorkoutUiState state) {
-        workoutTitle.setText(state.getWorkoutLabel());
+//        workoutTitle.setText(state.getWorkoutLabel());
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(state.getWorkoutLabel());
+        }
         adapter.submitList(state.getExercises(), state.getActiveExerciseIndex());
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        OnBackPressedDispatcher obpd = getOnBackPressedDispatcher();
+        obpd.onBackPressed();
+        return true;
     }
 }

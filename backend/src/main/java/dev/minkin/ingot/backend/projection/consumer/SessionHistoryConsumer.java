@@ -29,7 +29,7 @@ public class SessionHistoryConsumer {
                 msg.ack();
             } catch (Exception e) {
                 log.error("Event failed", e);
-                msg.ack();
+                msg.nak();
             }
         };
         PushSubscribeOptions options = PushSubscribeOptions.builder()

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".IngotApplication"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ingot">
+
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true"
@@ -22,7 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="dev.minkin.ingot.ui.workout.WorkoutActivity" />
+        <activity
+            android:name=".ui.workout.WorkoutActivity"
+            android:parentActivityName=".ui.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.history.HistoryActivity"
+            android:parentActivityName=".ui.home.HomeActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package dev.minkin.ingot.ui;
+package dev.minkin.ingot.ui.formatting;
 
 import java.util.Locale;
 

@@ -18,7 +18,7 @@ import dev.minkin.ingot.data.repo.WorkoutRepository;
 import dev.minkin.ingot.engine.model.MaterializedExercise;
 import dev.minkin.ingot.engine.model.MaterializedSession;
 
-import dev.minkin.ingot.ui.ExerciseFormatter;
+import dev.minkin.ingot.ui.formatting.ExerciseFormatter;
 import dev.minkin.ingot.ui.workout.types.ExerciseUiState;
 import dev.minkin.ingot.ui.workout.types.SetRowUiState;
 import dev.minkin.ingot.ui.workout.types.WorkoutUiState;

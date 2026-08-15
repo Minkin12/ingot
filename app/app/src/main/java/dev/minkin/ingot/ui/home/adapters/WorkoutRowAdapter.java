@@ -17,7 +17,7 @@ import dev.minkin.ingot.R;
 import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
 import dev.minkin.ingot.engine.model.MaterializedExercise;
 import dev.minkin.ingot.engine.model.MaterializedSession;
-import dev.minkin.ingot.ui.ExerciseFormatter;
+import dev.minkin.ingot.ui.formatting.ExerciseFormatter;
 import dev.minkin.ingot.ui.home.types.Status;
 import dev.minkin.ingot.ui.home.types.WorkoutState;
 

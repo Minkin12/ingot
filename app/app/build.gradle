@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias libs.plugins.android.secrets
 }
 
 android {
@@ -29,6 +30,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+    buildFeatures {
+        buildConfig = true // Enables the generation of the BuildConfig class
+    }
+
+
 }
 
 dependencies {
@@ -40,8 +46,9 @@ dependencies {
     testImplementation libs.mockito.core
     androidTestImplementation libs.espresso.core
     androidTestImplementation libs.ext.junit
-    // implementation project(':engine')
-    implementation 'dev.minkin.ingot:engine'
+    implementation libs.engine
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.jackson
 
     implementation libs.room.runtime
     annotationProcessor libs.room.compiler

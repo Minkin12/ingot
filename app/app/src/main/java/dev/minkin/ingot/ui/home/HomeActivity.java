@@ -17,6 +17,7 @@ import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
 import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
 import dev.minkin.ingot.engine.model.MaterializedSession;
+import dev.minkin.ingot.ui.history.HistoryActivity;
 import dev.minkin.ingot.ui.home.adapters.WeekPillAdapter;
 import dev.minkin.ingot.ui.home.adapters.WorkoutRowAdapter;
 import dev.minkin.ingot.ui.home.types.HomeUiState;
@@ -38,6 +39,8 @@ public class HomeActivity extends AppCompatActivity {
         workoutList = findViewById(R.id.workoutList);
         weekStrip.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         workoutList.setLayoutManager(new LinearLayoutManager(this));
+        findViewById(R.id.viewHistoryButton).setOnClickListener(v ->
+                startActivity(new Intent(HomeActivity.this, HistoryActivity.class)));
 
         AppContainer appContainer = ((IngotApplication) getApplication()).container;
         HomeViewModel viewModel = new ViewModelProvider(this, new HomeViewModelFactory(appContainer))
@@ -62,6 +65,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         workoutList.setAdapter(rowAdapter);
+
 
         viewModel.getUiState().observe(this, this::render);
     }
