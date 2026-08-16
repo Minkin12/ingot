@@ -10,6 +10,8 @@ import static org.mockito.Mockito.when;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
@@ -20,10 +22,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 
-import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
-import dev.minkin.ingot.data.db.entity.WorkoutCompletedEventEntity;
+import dev.minkin.ingot.data.db.dao.OutboxDao;
 import dev.minkin.ingot.data.db.dao.PerformedSetEventDao;
 import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
+import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
+import dev.minkin.ingot.data.db.entity.WorkoutCompletedEventEntity;
 import dev.minkin.ingot.data.repo.WorkoutRepository;
 
 public class WorkoutRepositoryTest {
@@ -32,6 +35,8 @@ public class WorkoutRepositoryTest {
     private PerformedSetEventDao performedSetEventDao;
     @Mock
     private WorkoutCompletedEventDao workoutCompletedEventDao;
+    @Mock
+    private OutboxDao outboxDao;
     @Mock
     private ExecutorService executorService;
 
@@ -52,7 +57,7 @@ public class WorkoutRepositoryTest {
     }
 
     @Test
-    public void logSet_insertsPerformedSetEvent() {
+    public void logSet_insertsPerformedSetEvent() throws JsonProcessingException {
         workoutRepository.logSet(1, 2, "Squat", 1, "100", 5, "Felt good");
         
         ArgumentCaptor<PerformedSetEventEntity> captor = ArgumentCaptor.forClass(PerformedSetEventEntity.class);
@@ -69,7 +74,7 @@ public class WorkoutRepositoryTest {
     }
 
     @Test
-    public void logCompletedWorkout_insertsWorkoutCompletedEvent() {
+    public void logCompletedWorkout_insertsWorkoutCompletedEvent() throws JsonProcessingException {
         workoutRepository.logCompletedWorkout(1, 2, "Good session", "FULL BODY 2");
         
         ArgumentCaptor<WorkoutCompletedEventEntity> captor = ArgumentCaptor.forClass(WorkoutCompletedEventEntity.class);

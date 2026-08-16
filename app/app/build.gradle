@@ -49,6 +49,7 @@ dependencies {
     implementation libs.engine
     implementation libs.retrofit
     implementation libs.retrofit.converter.jackson
+    implementation libs.work.manager.runtime
 
     implementation libs.room.runtime
     annotationProcessor libs.room.compiler

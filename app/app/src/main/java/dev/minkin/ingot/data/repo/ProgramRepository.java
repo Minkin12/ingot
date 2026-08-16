@@ -2,6 +2,9 @@ package dev.minkin.ingot.data.repo;
 
 import android.content.res.AssetManager;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -11,10 +14,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 
+import dev.minkin.ingot.data.db.EventType;
 import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
 import dev.minkin.ingot.data.db.dao.TrainingMaxDao;
+import dev.minkin.ingot.data.db.entity.OutboxEntity;
 import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
 import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
 import dev.minkin.ingot.engine.Materializer;
@@ -31,6 +37,7 @@ public class ProgramRepository {
     private ExecutorService executor;
     private AssetManager assetManager;
     private Program program;
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     public ProgramRepository(ProgramTemplateDao programTemplateDao, TrainingMaxDao trainingMaxDao, ExecutorService executor, AssetManager assetManager){
         this.programTemplateDao = programTemplateDao;
@@ -93,12 +100,21 @@ public class ProgramRepository {
         return session.toBuilder().exercises(enriched).build();
     }
 
-    public void recordNewMax(MajorLift lift, double newMaxWeight){
+    public void recordNewMax(MajorLift lift, double newMaxWeight) throws JsonProcessingException {
+        long currentTimeMillis = System.currentTimeMillis();
+
         TrainingMaxEntity trainingMaxEntity = new TrainingMaxEntity();
         trainingMaxEntity.lift = lift.getJsonName();
         trainingMaxEntity.valueLbs = newMaxWeight;
-        trainingMaxEntity.effectiveAt = System.currentTimeMillis();
-        trainingMaxDao.insertMax(trainingMaxEntity);
+        trainingMaxEntity.effectiveAt = currentTimeMillis;
+
+        OutboxEntity outboxEntity = new OutboxEntity();
+        outboxEntity.eventId = UUID.randomUUID().toString();
+        outboxEntity.eventType = EventType.TRAINING_MAX_UPDATED.getJsonName();
+        outboxEntity.payload = objectMapper.writeValueAsString(trainingMaxEntity);
+        outboxEntity.createdAt = currentTimeMillis;
+
+        trainingMaxDao.insertMaxAndQueue(trainingMaxEntity, outboxEntity);
     }
 
     public Program getProgram() throws IOException {

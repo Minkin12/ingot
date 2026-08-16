@@ -12,6 +12,8 @@ import static org.mockito.Mockito.when;
 
 import android.content.res.AssetManager;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
@@ -139,7 +141,7 @@ public class ProgramRepositoryTest {
     }
 
     @Test
-    public void recordNewMax_insertsMax() {
+    public void recordNewMax_insertsMax() throws JsonProcessingException {
         programRepository.recordNewMax(MajorLift.SQUAT, 200.0);
         verify(trainingMaxDao, times(1)).insertMax(any(TrainingMaxEntity.class));
     }

@@ -2,20 +2,26 @@ package dev.minkin.ingot.data.repo;
 
 import androidx.lifecycle.LiveData;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 
+import dev.minkin.ingot.data.db.EventType;
+import dev.minkin.ingot.data.db.dao.PerformedSetEventDao;
+import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
+import dev.minkin.ingot.data.db.entity.OutboxEntity;
 import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.db.entity.WorkoutCompletedEventEntity;
 import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
-import dev.minkin.ingot.data.db.dao.PerformedSetEventDao;
-import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
 
 public class WorkoutRepository {
     private PerformedSetEventDao performedSetEventDao;
     private WorkoutCompletedEventDao workoutCompletedEventDao;
     private ExecutorService executor;
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     public WorkoutRepository(PerformedSetEventDao performedSetEventDao, WorkoutCompletedEventDao workoutCompletedEventDao, ExecutorService executor){
         this.performedSetEventDao = performedSetEventDao;
@@ -23,9 +29,12 @@ public class WorkoutRepository {
         this.executor = executor;
     }
 
-    public void logSet(int weekNumber, int dayNumber, String exercise, int setNumber, String weight, int reps, String note){
+    public void logSet(int weekNumber, int dayNumber, String exercise, int setNumber, String weight, int reps, String note) throws JsonProcessingException {
+        String eventId = UUID.randomUUID().toString();
+        long currentTimeMillis = System.currentTimeMillis();;
+
         PerformedSetEventEntity performedSetEventEntity = new PerformedSetEventEntity();
-        performedSetEventEntity.eventId = UUID.randomUUID().toString();
+        performedSetEventEntity.eventId = eventId;
         performedSetEventEntity.weekNumber = weekNumber;
         performedSetEventEntity.dayNumber = dayNumber;
         performedSetEventEntity.exerciseName = exercise;
@@ -33,21 +42,40 @@ public class WorkoutRepository {
         performedSetEventEntity.weightLbs = weight;
         performedSetEventEntity.reps = reps;
         performedSetEventEntity.note = note;
-        performedSetEventEntity.loggedAt = System.currentTimeMillis();
+        performedSetEventEntity.loggedAt = currentTimeMillis;
 
-        executor.execute(() -> performedSetEventDao.insertPerformedSetEvent(performedSetEventEntity));
+        OutboxEntity outboxEntity = new OutboxEntity();
+        outboxEntity.eventId = eventId;
+        outboxEntity.eventType = EventType.PERFORMED_SET.getJsonName();
+        outboxEntity.payload = objectMapper.writeValueAsString(performedSetEventEntity);
+        outboxEntity.createdAt = currentTimeMillis;
+
+        executor.execute(() -> {
+           performedSetEventDao.insertPerformedSetAndQueue(performedSetEventEntity, outboxEntity);
+        });
     }
 
-    public void logCompletedWorkout(int weekNumber, int dayNumber, String sessionNote, String workoutLabel){
+    public void logCompletedWorkout(int weekNumber, int dayNumber, String sessionNote, String workoutLabel) throws JsonProcessingException {
+        String eventId = UUID.randomUUID().toString();
+        long currentTimeMillis = System.currentTimeMillis();;
+
         WorkoutCompletedEventEntity workoutCompletedEventEntity = new WorkoutCompletedEventEntity();
-        workoutCompletedEventEntity.eventId = UUID.randomUUID().toString();
+        workoutCompletedEventEntity.eventId = eventId;
         workoutCompletedEventEntity.weekNumber = weekNumber;
         workoutCompletedEventEntity.dayNumber = dayNumber;
         workoutCompletedEventEntity.sessionNote = sessionNote;
         workoutCompletedEventEntity.workoutLabel = workoutLabel;
-        workoutCompletedEventEntity.completedAt = System.currentTimeMillis();
+        workoutCompletedEventEntity.completedAt = currentTimeMillis;
 
-        executor.execute(() -> workoutCompletedEventDao.insertWorkoutCompletedEvent(workoutCompletedEventEntity));
+        OutboxEntity outboxEntity = new OutboxEntity();
+        outboxEntity.eventId = eventId;
+        outboxEntity.eventType = EventType.WORKOUT_COMPLETED.getJsonName();
+        outboxEntity.payload = objectMapper.writeValueAsString(workoutCompletedEventEntity);
+        outboxEntity.createdAt = currentTimeMillis;
+
+        executor.execute(() -> {
+            workoutCompletedEventDao.insertWorkoutCompletedAndQueue(workoutCompletedEventEntity, outboxEntity);
+        });
     }
 
     //TODO probably want to use a model that works best for the viewmodel, just entity for now

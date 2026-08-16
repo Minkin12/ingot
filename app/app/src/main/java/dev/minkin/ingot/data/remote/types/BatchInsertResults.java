@@ -1,14 +1,15 @@
 package dev.minkin.ingot.data.remote.types;
 
 import java.util.List;
-import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class BatchInsertResults {
-    List<UUID> completedEvents;
-    List<UUID> failedEvents;
+    List<String> completedEvents;
+    List<String> failedEvents;
 }

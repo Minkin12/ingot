@@ -5,6 +5,8 @@ import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -170,7 +172,14 @@ public class WorkoutViewModel extends ViewModel {
     }
 
     public void confirmSet(String exerciseName, int setNumber, String weight, int reps, String note) {
-        executor.execute(() -> workoutRepo.logSet(weekNumber, dayNumber, exerciseName, setNumber, weight, reps, note));
+        executor.execute(() -> {
+            try {
+                workoutRepo.logSet(weekNumber, dayNumber, exerciseName, setNumber, weight, reps, note);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
         String key = exerciseName + "#" + setNumber;
         pendingWeights.remove(key);
         pendingReps.remove(key);
@@ -201,7 +210,11 @@ public class WorkoutViewModel extends ViewModel {
         this.sessionNote = note;
 
         executor.execute(() -> {
-            workoutRepo.logCompletedWorkout(weekNumber, dayNumber, note, workoutLabel);
+            try {
+                workoutRepo.logCompletedWorkout(weekNumber, dayNumber, note, workoutLabel);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
             finishComplete.postValue(true);
         });
     }
