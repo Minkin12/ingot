@@ -1,6 +1,7 @@
 package dev.minkin.ingot.data.repo;
 
 import android.content.res.AssetManager;
+import android.util.Log;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,11 +19,14 @@ import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 
 import dev.minkin.ingot.data.db.EventType;
+import dev.minkin.ingot.data.db.dao.AppSettingsDao;
 import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
 import dev.minkin.ingot.data.db.dao.TrainingMaxDao;
+import dev.minkin.ingot.data.db.entity.AppSettingsEntity;
 import dev.minkin.ingot.data.db.entity.OutboxEntity;
 import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
 import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
+import dev.minkin.ingot.data.repo.types.ProgramSummary;
 import dev.minkin.ingot.engine.Materializer;
 import dev.minkin.ingot.engine.ProgramLoader;
 import dev.minkin.ingot.engine.model.MajorLift;
@@ -34,44 +38,62 @@ import dev.minkin.ingot.engine.model.Program;
 public class ProgramRepository {
     private ProgramTemplateDao programTemplateDao;
     private TrainingMaxDao trainingMaxDao;
+    private AppSettingsDao appSettingsDao;
     private ExecutorService executor;
     private AssetManager assetManager;
-    private Program program;
+    private final Map<String, Program> programCache = new HashMap<>();
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    public ProgramRepository(ProgramTemplateDao programTemplateDao, TrainingMaxDao trainingMaxDao, ExecutorService executor, AssetManager assetManager){
+    public ProgramRepository(ProgramTemplateDao programTemplateDao, TrainingMaxDao trainingMaxDao, AppSettingsDao appSettingsDao,ExecutorService executor, AssetManager assetManager){
         this.programTemplateDao = programTemplateDao;
         this.trainingMaxDao = trainingMaxDao;
+        this.appSettingsDao = appSettingsDao;
         this.executor = executor;
         this.assetManager = assetManager;
     }
 
 
     public void ensureSeeded() throws IOException {
-        if (programTemplateDao.selectProgramTemplate() != null) {
-            return; // already seeded — idempotent no-op
+        for (String filename : assetManager.list("programs")) {
+            String programId = filename.replace(".json", "");
+            if (programTemplateDao.selectProgramTemplate(programId) != null) {
+                continue; // this program already seeded
+            }
+            seedOneProgram(programId, "programs/" + filename);
         }
+        ensureMaxesSeeded(); // todo this seeds maxes from a hardcoded source, later ask user on startup
+    }
 
-        String json = readAssetAsString("program.json");
-        Program program = ProgramLoader.loadProgram(
-                new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8)));
-
+    private void seedOneProgram(String programId, String assetPath) throws IOException {
+        String json = readAssetAsString(assetPath);
         ProgramTemplateEntity templateEntity = new ProgramTemplateEntity();
-        templateEntity.id = 0;
+        templateEntity.programId = programId;
         templateEntity.jsonBlob = json;
         executor.execute(() -> programTemplateDao.insertProgram(templateEntity));
+    }
 
+    private void ensureMaxesSeeded() throws IOException {
+        if (!trainingMaxDao.selectCurrentMaxes().isEmpty()) {
+            return; // maxes already exist — never re-seed, they're shared and versioned going forward
+        }
+
+        Program seedSource = getProgram("powerbuilding_4x");
+        Map<String, Double> seedMaxes = seedSource.getOneRepMaxes();
+        if (seedMaxes == null || seedMaxes.isEmpty()) {
+            Log.w("ProgramRepository", "No seed maxes available — starting-maxes onboarding flow needed (deferred)");
+            return;
+        }
         long now = System.currentTimeMillis();
         for (MajorLift lift : MajorLift.values()) {
+            Double maxVal = seedSource.getOneRepMaxes().get(lift.getJsonName());
+            if (maxVal == null) continue; // this lift has no seed value yet todo seed maxes with user input
             TrainingMaxEntity maxEntity = new TrainingMaxEntity();
             maxEntity.lift = lift.getJsonName();
-            Double maxVal = program.getOneRepMaxes().get(lift.getJsonName());
-            maxEntity.valueLbs = maxVal != null ? maxVal : 0.0;
+            maxEntity.valueLbs = maxVal;
             maxEntity.effectiveAt = now;
             executor.execute(() -> trainingMaxDao.insertMax(maxEntity));
         }
     }
-
 
     public Maxes getCurrentMaxes() {
         List<TrainingMaxEntity> rows = trainingMaxDao.selectCurrentMaxes();
@@ -83,8 +105,8 @@ public class ProgramRepository {
         return Maxes.fromJsonMap(byJsonName);
     }
 
-    public MaterializedSession materializeSession(int weekNumber, int dayNumber) throws IOException {
-        return Materializer.materialize(getProgram(), getCurrentMaxes(), weekNumber,dayNumber);
+    public MaterializedSession materializeSession(String programId, int weekNumber, int dayNumber) throws IOException {
+        return Materializer.materialize(getProgram(programId), getCurrentMaxes(), weekNumber, dayNumber);
     }
 
     public MaterializedSession enrich(MaterializedSession session,
@@ -117,18 +139,37 @@ public class ProgramRepository {
         trainingMaxDao.insertMaxAndQueue(trainingMaxEntity, outboxEntity);
     }
 
-    public Program getProgram() throws IOException {
-        if (this.program == null){
-            ProgramTemplateEntity entity = programTemplateDao.selectProgramTemplate();
-            if (entity == null){
-                throw new IllegalStateException("Program template not seeded");
+    public Program getProgram(String programId) throws IOException {
+        if (!programCache.containsKey(programId)) {
+            ProgramTemplateEntity entity = programTemplateDao.selectProgramTemplate(programId);
+            if (entity == null) {
+                throw new IllegalStateException("Program not seeded: " + programId);
             }
-            this.program = ProgramLoader.loadProgram(
-                    new ByteArrayInputStream(entity.jsonBlob.getBytes(StandardCharsets.UTF_8)));
+            programCache.put(programId, ProgramLoader.loadProgram(
+                    new ByteArrayInputStream(entity.jsonBlob.getBytes(StandardCharsets.UTF_8))));
         }
-        return this.program;
+        return programCache.get(programId);
     }
 
+    public String getActiveProgramId() {
+        String id = appSettingsDao.getActiveProgramId();
+        return id != null ? id : "powerbuilding_4x";
+    }
+
+    public void setActiveProgram(String programId) {
+        AppSettingsEntity entity = new AppSettingsEntity();
+        entity.activeProgramId = programId;
+        executor.execute(() -> appSettingsDao.setActiveProgram(entity));
+    }
+
+    public List<ProgramSummary> listAvailablePrograms() throws IOException {
+        List<ProgramSummary> summaries = new ArrayList<>();
+        for (String programId : programTemplateDao.selectAllProgramIds()) {
+            Program program = getProgram(programId);
+            summaries.add(new ProgramSummary(programId, program.getName()));
+        }
+        return summaries;
+    }
     private String readAssetAsString(String filename) {
         try (InputStream in = assetManager.open(filename)) {
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();

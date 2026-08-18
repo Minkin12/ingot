@@ -1,0 +1,449 @@
+{
+  "name": "Linear Progression 3x/Week",
+  "description": "3x/week full-body linear progression, anchored to your current training maxes. Starts conservatively (~60% of max) and climbs a small percentage each week on the four main lifts. Run it until a set genuinely stalls, then either repeat that week's weight or drop back and rebuild momentum.",
+  "units": "lbs",
+  "tracked_lifts": [
+    "squat",
+    "bench",
+    "deadlift",
+    "overhead_press"
+  ],
+  "load_rounding": 5,
+  "inferred_1rms_lbs": {
+    "overhead_press": 115
+  },
+  "weeks": [
+    {
+      "number": 1,
+      "label": "Week 1",
+      "days": [
+        {
+          "label": "DAY 1",
+          "day_number": 1,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.60,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Conservative starting weight — every set should finish with reps in reserve."
+            },
+            {
+              "name": "Barbell Bench Press",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.60,
+              "source_lift": "bench",
+              "isMaxTracking": true,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Controlled descent, full lockout."
+            },
+            {
+              "name": "Barbell Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "isMaxTracking": false,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Flat back, pull to the lower ribs. No tracked max for row yet — pick a weight you can do for 3x5 with room to spare."
+            }
+          ]
+        },
+        {
+          "label": "DAY 2",
+          "day_number": 2,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.62,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Same movement as Day 1 — small jump."
+            },
+            {
+              "name": "Overhead Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.60,
+              "source_lift": "overhead_press",
+              "isMaxTracking": true,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Strict — no leg drive. This stalls earliest of the four — that's normal."
+            },
+            {
+              "name": "Deadlift",
+              "warmup_sets": 2,
+              "working_sets": 1,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.55,
+              "source_lift": "deadlift",
+              "isMaxTracking": true,
+              "rpe": "6",
+              "rest": "2-4min",
+              "coach_notes": "One working set is enough — deadlift recovers slowly at this frequency."
+            }
+          ]
+        },
+        {
+          "label": "DAY 3",
+          "day_number": 3,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.64,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Third squat session this week — keep the bar speed crisp."
+            },
+            {
+              "name": "Barbell Bench Press",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.62,
+              "source_lift": "bench",
+              "isMaxTracking": true,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Controlled descent, full lockout."
+            },
+            {
+              "name": "Barbell Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "isMaxTracking": false,
+              "rpe": "6",
+              "rest": "2-3min",
+              "coach_notes": "Flat back, pull to the lower ribs. Add a small jump from Day 1 if it felt easy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "label": "Week 2",
+      "days": [
+        {
+          "label": "DAY 1",
+          "day_number": 1,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.66,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "6.5",
+              "rest": "2-3min",
+              "coach_notes": "If any set missed a rep last week, repeat last week's percentage instead of advancing."
+            },
+            {
+              "name": "Barbell Bench Press",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.65,
+              "source_lift": "bench",
+              "isMaxTracking": true,
+              "rpe": "6.5",
+              "rest": "2-3min",
+              "coach_notes": "Controlled descent, full lockout."
+            },
+            {
+              "name": "Barbell Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "isMaxTracking": false,
+              "rpe": "6.5",
+              "rest": "2-3min",
+              "coach_notes": "Flat back, pull to the lower ribs."
+            }
+          ]
+        },
+        {
+          "label": "DAY 2",
+          "day_number": 2,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.68,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "6.5",
+              "rest": "2-3min",
+              "coach_notes": "Keep the bar speed crisp."
+            },
+            {
+              "name": "Overhead Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.65,
+              "source_lift": "overhead_press",
+              "isMaxTracking": true,
+              "rpe": "6.5",
+              "rest": "2-3min",
+              "coach_notes": "Strict — no leg drive."
+            },
+            {
+              "name": "Deadlift",
+              "warmup_sets": 2,
+              "working_sets": 1,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.60,
+              "source_lift": "deadlift",
+              "isMaxTracking": true,
+              "rpe": "6.5",
+              "rest": "2-4min",
+              "coach_notes": "One working set — recovers slowly."
+            }
+          ]
+        },
+        {
+          "label": "DAY 3",
+          "day_number": 3,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.70,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Third squat session this week."
+            },
+            {
+              "name": "Barbell Bench Press",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.68,
+              "source_lift": "bench",
+              "isMaxTracking": true,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Controlled descent, full lockout."
+            },
+            {
+              "name": "Barbell Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "isMaxTracking": false,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Flat back, pull to the lower ribs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "label": "Week 3",
+      "days": [
+        {
+          "label": "DAY 1",
+          "day_number": 1,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.72,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Getting into real working weight now — brace properly."
+            },
+            {
+              "name": "Barbell Bench Press",
+              "warmup_sets": 2,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.70,
+              "source_lift": "bench",
+              "isMaxTracking": true,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Controlled descent, full lockout."
+            },
+            {
+              "name": "Barbell Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "isMaxTracking": false,
+              "rpe": "7",
+              "rest": "2-3min",
+              "coach_notes": "Flat back, pull to the lower ribs."
+            }
+          ]
+        },
+        {
+          "label": "DAY 2",
+          "day_number": 2,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 3,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.74,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "7.5",
+              "rest": "2-3min",
+              "coach_notes": "Keep the bar speed crisp."
+            },
+            {
+              "name": "Overhead Press",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.70,
+              "source_lift": "overhead_press",
+              "isMaxTracking": true,
+              "rpe": "7.5",
+              "rest": "2-3min",
+              "coach_notes": "Strict — no leg drive. If this stalled, hold here and keep advancing the other three."
+            },
+            {
+              "name": "Deadlift",
+              "warmup_sets": 3,
+              "working_sets": 1,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.65,
+              "source_lift": "deadlift",
+              "isMaxTracking": true,
+              "rpe": "7.5",
+              "rest": "2-4min",
+              "coach_notes": "One working set — recovers slowly."
+            }
+          ]
+        },
+        {
+          "label": "DAY 3",
+          "day_number": 3,
+          "type": "workout",
+          "exercises": [
+            {
+              "name": "Back Squat",
+              "warmup_sets": 3,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.76,
+              "source_lift": "squat",
+              "isMaxTracking": true,
+              "rpe": "8",
+              "rest": "2-4min",
+              "coach_notes": "Third squat session this week — real effort now."
+            },
+            {
+              "name": "Barbell Bench Press",
+              "warmup_sets": 3,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": 0.73,
+              "source_lift": "bench",
+              "isMaxTracking": true,
+              "rpe": "7.5",
+              "rest": "2-3min",
+              "coach_notes": "Controlled descent, full lockout."
+            },
+            {
+              "name": "Barbell Row",
+              "warmup_sets": 1,
+              "working_sets": 3,
+              "reps": "5",
+              "load": null,
+              "pct_1rm": null,
+              "source_lift": null,
+              "isMaxTracking": false,
+              "rpe": "7.5",
+              "rest": "2-3min",
+              "coach_notes": "Flat back, pull to the lower ribs."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -45,7 +45,7 @@ public class AppContainer {
         databaseExecutor = Executors.newFixedThreadPool(4);
 
         programRepository = new ProgramRepository(
-                db.programTemplateDao(), db.trainingMaxDao(), databaseExecutor, assets);
+                db.programTemplateDao(), db.trainingMaxDao(),db.appSettingsDao(), databaseExecutor, assets);
         workoutRepository = new WorkoutRepository(
                 db.performedSetEventDao(), db.workoutCompletedEventDao(), databaseExecutor);
         databaseExecutor.execute(() -> {

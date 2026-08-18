@@ -1,0 +1,373 @@
+[
+    {
+      "name": "Back Squat",
+      "muscleGroup": "legs",
+      "equipment": "barbell",
+      "sourceLift": "squat",
+      "isCompound": true
+    },
+    {
+      "name": "Front Squat",
+      "muscleGroup": "legs",
+      "equipment": "barbell",
+      "sourceLift": "front_squat",
+      "isCompound": true
+    },
+    {
+      "name": "Bulgarian Split Squat",
+      "muscleGroup": "legs",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Leg Press",
+      "muscleGroup": "legs",
+      "equipment": "machine",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Walking Lunge",
+      "muscleGroup": "legs",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Leg Extension",
+      "muscleGroup": "legs",
+      "equipment": "machine",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Standing Calf Raise",
+      "muscleGroup": "legs",
+      "equipment": "machine",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Barbell Bench Press",
+      "muscleGroup": "chest",
+      "equipment": "barbell",
+      "sourceLift": "bench",
+      "isCompound": true
+    },
+    {
+      "name": "Incline Barbell Bench Press",
+      "muscleGroup": "chest",
+      "equipment": "barbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Incline Dumbbell Press",
+      "muscleGroup": "chest",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Flat Dumbbell Press",
+      "muscleGroup": "chest",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Dumbbell Fly",
+      "muscleGroup": "chest",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Cable Chest Fly",
+      "muscleGroup": "chest",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Push-Up",
+      "muscleGroup": "chest",
+      "equipment": "bodyweight",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Dip",
+      "muscleGroup": "chest",
+      "equipment": "bodyweight",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Deadlift",
+      "muscleGroup": "back",
+      "equipment": "barbell",
+      "sourceLift": "deadlift",
+      "isCompound": true
+    },
+    {
+      "name": "Romanian Deadlift",
+      "muscleGroup": "hamstrings",
+      "equipment": "barbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Sumo Deadlift",
+      "muscleGroup": "back",
+      "equipment": "barbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Trap Bar Deadlift",
+      "muscleGroup": "back",
+      "equipment": "barbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Barbell Row",
+      "muscleGroup": "back",
+      "equipment": "barbell",
+      "sourceLift": "barbell_row",
+      "isCompound": true
+    },
+    {
+      "name": "Pendlay Row",
+      "muscleGroup": "back",
+      "equipment": "barbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Chest-Supported Row",
+      "muscleGroup": "back",
+      "equipment": "machine",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Seated Cable Row",
+      "muscleGroup": "back",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Lat Pulldown (Wide Grip)",
+      "muscleGroup": "back",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Weighted Pull-Up",
+      "muscleGroup": "back",
+      "equipment": "bodyweight",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Chin-Up",
+      "muscleGroup": "back",
+      "equipment": "bodyweight",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Barbell Hip Thrust",
+      "muscleGroup": "glutes",
+      "equipment": "barbell",
+      "sourceLift": "hip_thrust",
+      "isCompound": true
+    },
+    {
+      "name": "Glute Bridge",
+      "muscleGroup": "glutes",
+      "equipment": "bodyweight",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Cable Pull-Through",
+      "muscleGroup": "glutes",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Seated Leg Curl",
+      "muscleGroup": "hamstrings",
+      "equipment": "machine",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Lying Leg Curl",
+      "muscleGroup": "hamstrings",
+      "equipment": "machine",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Overhead Press",
+      "muscleGroup": "shoulders",
+      "equipment": "barbell",
+      "sourceLift": "overhead_press",
+      "isCompound": true
+    },
+    {
+      "name": "Seated DB Shoulder Press",
+      "muscleGroup": "shoulders",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Arnold Press",
+      "muscleGroup": "shoulders",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Dumbbell Lateral Raise",
+      "muscleGroup": "shoulders",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Cable Lateral Raise",
+      "muscleGroup": "shoulders",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Face Pull",
+      "muscleGroup": "shoulders",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Rear Delt Fly",
+      "muscleGroup": "shoulders",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Cable Triceps Pressdown",
+      "muscleGroup": "arms",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Overhead Triceps Extension",
+      "muscleGroup": "arms",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Close-Grip Bench Press",
+      "muscleGroup": "arms",
+      "equipment": "barbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Barbell Curl",
+      "muscleGroup": "arms",
+      "equipment": "barbell",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Dumbbell Curl",
+      "muscleGroup": "arms",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Hammer Curl",
+      "muscleGroup": "arms",
+      "equipment": "dumbbell",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Cable Curl",
+      "muscleGroup": "arms",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Ab Crunch Machine",
+      "muscleGroup": "core",
+      "equipment": "machine",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Hanging Knee Raise",
+      "muscleGroup": "core",
+      "equipment": "bodyweight",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Plank",
+      "muscleGroup": "core",
+      "equipment": "bodyweight",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Cable Woodchopper",
+      "muscleGroup": "core",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": false
+    },
+    {
+      "name": "Ab Wheel Rollout",
+      "muscleGroup": "core",
+      "equipment": "bodyweight",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Helms Row",
+      "muscleGroup": "back",
+      "equipment": "barbell",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Neutral-Grip Pulldown",
+      "muscleGroup": "back",
+      "equipment": "cable",
+      "sourceLift": null,
+      "isCompound": true
+    },
+    {
+      "name": "Seal Row",
+      "muscleGroup": "back",
+      "equipment": "machine",
+      "sourceLift": null,
+      "isCompound": true
+    }
+  ]

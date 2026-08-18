@@ -1,5 +1,5 @@
 {
-  "name": "Powerbuilding 4x/Week \u2014 Alternating Full Body / Push-Pull",
+  "name": "Powerbuilding 4x/Week — Alternating Full Body / Push-Pull",
   "description": "9-week wave-loaded program. Odd weeks = Full Body x4. Even weeks = Push/Pull x4. Deload week 5, taper week 9, optional max testing week 10.",
   "units": "lbs",
   "tracked_lifts": [
@@ -18,7 +18,7 @@
   "weeks": [
     {
       "number": 1,
-      "label": "Week 1 \u2014 Full Body",
+      "label": "Week 1 — Full Body",
       "days": [
         {
           "label": "FULL BODY 1",
@@ -35,7 +35,8 @@
               "source_lift": "squat",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+              "coach_notes": "Same bar speed as the top set, just lighter — don't let form drift.",
+              "isMaxTracking": true
             },
             {
               "name": "Romanian Deadlift",
@@ -48,7 +49,8 @@
               "rpe": "7",
               "rest": "2-3min",
               "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
-              "logged": "1 set back sore"
+              "logged": "1 set back sore",
+              "isMaxTracking": false
             },
             {
               "name": "Incline Dumbbell Press",
@@ -60,7 +62,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
               "name": "Chest-Supported Row",
@@ -73,10 +76,11 @@
               "rpe": "7",
               "rest": "1-2min",
               "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together.",
-              "logged": "Chess supported standing"
+              "logged": "Chess supported standing",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10-12",
@@ -84,12 +88,13 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "7",
-              "rest": "\u2014",
+              "rest": "—",
               "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
-              "logged": "15 reps 10 reps 10 reps"
+              "logged": "15 reps 10 reps 10 reps",
+              "isMaxTracking": false
             },
             {
-              "name": "Hanging Knee Raise (AMRAP)",
+              "name": "Hanging Knee Raise",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "AMRAP",
@@ -98,7 +103,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -117,7 +123,8 @@
               "source_lift": "bench",
               "rpe": "7",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
               "name": "Seated DB Shoulder Press",
@@ -129,8 +136,9 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure.",
-              "logged": "Pretty light"
+              "coach_notes": "Accessory pressing — controlled reps, stop 1-3 shy of failure.",
+              "logged": "Pretty light",
+              "isMaxTracking": false
             },
             {
               "name": "Barbell Hip Thrust (Backoff)",
@@ -142,10 +150,11 @@
               "source_lift": "hip_thrust",
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout.",
+              "isMaxTracking": true
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": 1,
               "working_sets": 4,
               "reps": "8",
@@ -155,7 +164,8 @@
               "rpe": "7",
               "rest": "2-3min",
               "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed.",
-              "logged": "Pull-ups neutral grip"
+              "logged": "Pull-ups neutral grip",
+              "isMaxTracking": false
             },
             {
               "name": "Cable Triceps Pressdown",
@@ -167,7 +177,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned, full lockout each rep."
+              "coach_notes": "Elbows pinned, full lockout each rep.",
+              "isMaxTracking": false
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -179,7 +190,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Lead with the elbows, control the negative."
+              "coach_notes": "Lead with the elbows, control the negative.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -199,10 +211,11 @@
               "rpe": "7",
               "rest": "3-5min",
               "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
-              "logged": 235
+              "logged": 235,
+              "isMaxTracking": true
             },
             {
-              "name": "Touch-and-Go Deadlift",
+              "name": "Deadlift (Backoff)",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "6",
@@ -211,8 +224,9 @@
               "source_lift": "deadlift",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep.",
-              "logged": "185. Rep 8"
+              "coach_notes": "Touch and go — Light tap and go, no bouncing. Re-brace at the top of every rep.",
+              "logged": "185. Rep 8",
+              "isMaxTracking": true
             },
             {
               "name": "Bulgarian Split Squat",
@@ -224,10 +238,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg — knee-dominant, easy on the low back.",
+              "isMaxTracking": false
             },
             {
-              "name": "Seal Row (or Chest-Supported Row)",
+              "name": "Seal Row",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "10",
@@ -236,8 +251,9 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum.",
-              "logged": "DB"
+              "coach_notes": "Dead-stop each rep — strict, no momentum.",
+              "logged": "DB",
+              "isMaxTracking": false
             },
             {
               "name": "Standing Calf Raise",
@@ -249,7 +265,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+              "coach_notes": "Full stretch at the bottom, pause hard at the top.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -268,7 +285,8 @@
               "source_lift": "hip_thrust",
               "rpe": "7",
               "rest": "3-5min",
-              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Volume)",
@@ -280,10 +298,11 @@
               "source_lift": "squat",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Controlled tempo, full depth, no grinders."
+              "coach_notes": "Controlled tempo, full depth, no grinders.",
+              "isMaxTracking": false
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 3,
               "working_sets": 3,
               "reps": "6",
@@ -292,10 +311,11 @@
               "source_lift": "bench",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
-              "name": "Helms Row (or One-Arm DB Row)",
+              "name": "Helms Row",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "10",
@@ -304,10 +324,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Easy on the lower back by design \u2014 stay strict."
+              "coach_notes": "Alt: One-Arm DB Row. Easy on the lower back by design — stay strict.",
+              "isMaxTracking": false
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "12",
@@ -316,10 +337,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             },
             {
-              "name": "Barbell (or EZ-Bar) Curl",
+              "name": "Barbell Curl",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10",
@@ -328,7 +350,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned at your sides, no swinging."
+              "coach_notes": "Elbows pinned at your sides, no swinging.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -336,7 +359,7 @@
     },
     {
       "number": 2,
-      "label": "Week 2 \u2014 Push / Pull",
+      "label": "Week 2 — Push / Pull",
       "days": [
         {
           "label": "PUSH 1",
@@ -353,7 +376,8 @@
               "source_lift": "squat",
               "rpe": "7.5",
               "rest": "3-5min",
-              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent."
+              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent.",
+              "isMaxTracking": true
             },
             {
               "name": "Barbell Bench Press (Volume)",
@@ -365,7 +389,8 @@
               "source_lift": "bench",
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Volume pressing at ~65-75% \u2014 leave 2-3 reps in the tank early in the block."
+              "coach_notes": "Volume pressing at ~65-75% — leave 2-3 reps in the tank early in the block.",
+              "isMaxTracking": false
             },
             {
               "name": "Seated DB Shoulder Press",
@@ -377,7 +402,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+              "coach_notes": "Accessory pressing — controlled reps, stop 1-3 shy of failure.",
+              "isMaxTracking": false
             },
             {
               "name": "Standing Calf Raise",
@@ -389,7 +415,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+              "coach_notes": "Full stretch at the bottom, pause hard at the top.",
+              "isMaxTracking": false
             },
             {
               "name": "Cable Triceps Pressdown",
@@ -401,7 +428,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned, full lockout each rep."
+              "coach_notes": "Elbows pinned, full lockout each rep.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -420,7 +448,8 @@
               "source_lift": "deadlift",
               "rpe": "7.5",
               "rest": "3-5min",
-              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "isMaxTracking": true
             },
             {
               "name": "Seated Leg Curl",
@@ -432,7 +461,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Knee flexion only \u2014 hamstring work with zero spinal load after the deadlifts."
+              "coach_notes": "Knee flexion only — hamstring work with zero spinal load after the deadlifts.",
+              "isMaxTracking": false
             },
             {
               "name": "Pendlay Row",
@@ -444,7 +474,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Reset on the floor each rep. Flat back."
+              "coach_notes": "Reset on the floor each rep. Flat back.",
+              "isMaxTracking": false
             },
             {
               "name": "Lat Pulldown (Wide Grip)",
@@ -456,10 +487,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Lead with your elbows, no body English."
+              "coach_notes": "Lead with your elbows, no body English.",
+              "isMaxTracking": false
             },
             {
-              "name": "Barbell (or EZ-Bar) Curl",
+              "name": "Barbell Curl",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10",
@@ -468,10 +500,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned at your sides, no swinging."
+              "coach_notes": "Elbows pinned at your sides, no swinging.",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10-12",
@@ -479,11 +512,12 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "7",
-              "rest": "\u2014",
-              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+              "rest": "—",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "isMaxTracking": false
             },
             {
-              "name": "Hanging Knee Raise (AMRAP)",
+              "name": "Hanging Knee Raise",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "AMRAP",
@@ -492,7 +526,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -511,10 +546,11 @@
               "source_lift": "bench",
               "rpe": "7.5",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "6",
@@ -523,7 +559,8 @@
               "source_lift": "bench",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Volume)",
@@ -535,7 +572,8 @@
               "source_lift": "squat",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Controlled tempo, full depth, no grinders."
+              "coach_notes": "Controlled tempo, full depth, no grinders.",
+              "isMaxTracking": false
             },
             {
               "name": "Incline Dumbbell Press",
@@ -547,10 +585,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "12",
@@ -559,7 +598,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -578,10 +618,11 @@
               "source_lift": "hip_thrust",
               "rpe": "7.5",
               "rest": "3-5min",
-              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze."
+              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze.",
+              "isMaxTracking": true
             },
             {
-              "name": "Barbell RDL",
+              "name": "Romanian Deadlift",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "8",
@@ -590,7 +631,8 @@
               "source_lift": "deadlift",
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
+              "isMaxTracking": false
             },
             {
               "name": "Bulgarian Split Squat",
@@ -602,10 +644,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg — knee-dominant, easy on the low back.",
+              "isMaxTracking": false
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": 1,
               "working_sets": 4,
               "reps": "8",
@@ -614,7 +657,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Full dead hang to chin over bar."
+              "coach_notes": "Full dead hang to chin over bar.",
+              "isMaxTracking": false
             },
             {
               "name": "Chest-Supported Row",
@@ -626,10 +670,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Pause and squeeze the shoulder blades together."
+              "coach_notes": "Pause and squeeze the shoulder blades together.",
+              "isMaxTracking": false
             },
             {
-              "name": "Cable Face Pull",
+              "name": "Face Pull",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "15-20",
@@ -638,7 +683,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
+              "coach_notes": "Rear delts and upper back — keep it light and strict.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -646,7 +692,7 @@
     },
     {
       "number": 3,
-      "label": "Week 3 \u2014 Full Body",
+      "label": "Week 3 — Full Body",
       "days": [
         {
           "label": "FULL BODY 1",
@@ -663,7 +709,8 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "3-5min",
-              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent."
+              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Backoff)",
@@ -675,7 +722,8 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+              "coach_notes": "Same bar speed as the top set, just lighter — don't let form drift.",
+              "isMaxTracking": true
             },
             {
               "name": "Incline Dumbbell Press",
@@ -687,7 +735,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
               "name": "Chest-Supported Row",
@@ -699,10 +748,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together."
+              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together.",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10-12",
@@ -710,11 +760,12 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "8",
-              "rest": "\u2014",
-              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+              "rest": "—",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "isMaxTracking": false
             },
             {
-              "name": "Hanging Knee Raise (AMRAP)",
+              "name": "Hanging Knee Raise",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "AMRAP",
@@ -723,7 +774,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -742,7 +794,8 @@
               "source_lift": "bench",
               "rpe": "8",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
               "name": "Seated DB Shoulder Press",
@@ -754,7 +807,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+              "coach_notes": "Accessory pressing — controlled reps, stop 1-3 shy of failure.",
+              "isMaxTracking": false
             },
             {
               "name": "Barbell Hip Thrust (Backoff)",
@@ -766,10 +820,11 @@
               "source_lift": "hip_thrust",
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout.",
+              "isMaxTracking": true
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": 1,
               "working_sets": 4,
               "reps": "8",
@@ -778,7 +833,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed."
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed.",
+              "isMaxTracking": false
             },
             {
               "name": "Cable Triceps Pressdown",
@@ -790,7 +846,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned, full lockout each rep."
+              "coach_notes": "Elbows pinned, full lockout each rep.",
+              "isMaxTracking": false
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -802,7 +859,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Lead with the elbows, control the negative."
+              "coach_notes": "Lead with the elbows, control the negative.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -821,10 +879,11 @@
               "source_lift": "deadlift",
               "rpe": "8",
               "rest": "3-5min",
-              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "isMaxTracking": true
             },
             {
-              "name": "Touch-and-Go Deadlift",
+              "name": "Deadlift (Backoff)",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "6",
@@ -833,7 +892,8 @@
               "source_lift": "deadlift",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep."
+              "coach_notes": "Touch and go — Light tap and go, no bouncing. Re-brace at the top of every rep.",
+              "isMaxTracking": true
             },
             {
               "name": "Bulgarian Split Squat",
@@ -845,7 +905,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg — knee-dominant, easy on the low back.",
+              "isMaxTracking": false
             },
             {
               "name": "Neutral-Grip Pulldown",
@@ -857,10 +918,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Pull your elbows down and back against your sides."
+              "coach_notes": "Pull your elbows down and back against your sides.",
+              "isMaxTracking": false
             },
             {
-              "name": "Seal Row (or Chest-Supported Row)",
+              "name": "Seal Row",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "10",
@@ -869,7 +931,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum."
+              "coach_notes": "Dead-stop each rep — strict, no momentum.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -888,7 +951,8 @@
               "source_lift": "hip_thrust",
               "rpe": "8",
               "rest": "3-5min",
-              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Volume)",
@@ -900,10 +964,11 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Controlled tempo, full depth, no grinders."
+              "coach_notes": "Controlled tempo, full depth, no grinders.",
+              "isMaxTracking": false
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 3,
               "working_sets": 3,
               "reps": "6",
@@ -912,10 +977,11 @@
               "source_lift": "bench",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
-              "name": "Helms Row (or One-Arm DB Row)",
+              "name": "Helms Row",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "10",
@@ -924,10 +990,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Easy on the lower back by design \u2014 stay strict."
+              "coach_notes": "Alt: One-Arm DB Row. Easy on the lower back by design — stay strict.",
+              "isMaxTracking": false
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "12",
@@ -936,10 +1003,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             },
             {
-              "name": "Barbell (or EZ-Bar) Curl",
+              "name": "Barbell Curl",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10",
@@ -948,7 +1016,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned at your sides, no swinging."
+              "coach_notes": "Elbows pinned at your sides, no swinging.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -956,7 +1025,7 @@
     },
     {
       "number": 4,
-      "label": "Week 4 \u2014 Push / Pull",
+      "label": "Week 4 — Push / Pull",
       "days": [
         {
           "label": "PUSH 1",
@@ -973,7 +1042,8 @@
               "source_lift": "squat",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent."
+              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Backoff)",
@@ -985,7 +1055,8 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Crisp bar speed \u2014 don't let form drift."
+              "coach_notes": "Crisp bar speed — don't let form drift.",
+              "isMaxTracking": true
             },
             {
               "name": "Barbell Bench Press (Volume)",
@@ -997,7 +1068,8 @@
               "source_lift": "bench",
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Volume pressing at ~65-75% \u2014 leave 2-3 reps in the tank early in the block."
+              "coach_notes": "Volume pressing at ~65-75% — leave 2-3 reps in the tank early in the block.",
+              "isMaxTracking": false
             },
             {
               "name": "Standing Calf Raise",
@@ -1009,7 +1081,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+              "coach_notes": "Full stretch at the bottom, pause hard at the top.",
+              "isMaxTracking": false
             },
             {
               "name": "Cable Triceps Pressdown",
@@ -1021,7 +1094,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned, full lockout each rep."
+              "coach_notes": "Elbows pinned, full lockout each rep.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1040,7 +1114,8 @@
               "source_lift": "deadlift",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "isMaxTracking": true
             },
             {
               "name": "Seated Leg Curl",
@@ -1052,7 +1127,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Knee flexion only \u2014 hamstring work with zero spinal load after the deadlifts."
+              "coach_notes": "Knee flexion only — hamstring work with zero spinal load after the deadlifts.",
+              "isMaxTracking": false
             },
             {
               "name": "Pendlay Row",
@@ -1064,7 +1140,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Reset on the floor each rep. Flat back."
+              "coach_notes": "Reset on the floor each rep. Flat back.",
+              "isMaxTracking": false
             },
             {
               "name": "Lat Pulldown (Wide Grip)",
@@ -1076,10 +1153,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Lead with your elbows, no body English."
+              "coach_notes": "Lead with your elbows, no body English.",
+              "isMaxTracking": false
             },
             {
-              "name": "Barbell (or EZ-Bar) Curl",
+              "name": "Barbell Curl",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10",
@@ -1088,10 +1166,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned at your sides, no swinging."
+              "coach_notes": "Elbows pinned at your sides, no swinging.",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10-12",
@@ -1099,11 +1178,12 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "8",
-              "rest": "\u2014",
-              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+              "rest": "—",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "isMaxTracking": false
             },
             {
-              "name": "Hanging Knee Raise (AMRAP)",
+              "name": "Hanging Knee Raise",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "AMRAP",
@@ -1112,7 +1192,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1131,10 +1212,11 @@
               "source_lift": "bench",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "6",
@@ -1143,7 +1225,8 @@
               "source_lift": "bench",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Volume)",
@@ -1155,7 +1238,8 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Controlled tempo, full depth, no grinders."
+              "coach_notes": "Controlled tempo, full depth, no grinders.",
+              "isMaxTracking": false
             },
             {
               "name": "Incline Dumbbell Press",
@@ -1167,7 +1251,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -1179,10 +1264,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Strict, controlled \u2014 these are a weekly staple."
+              "coach_notes": "Strict, controlled — these are a weekly staple.",
+              "isMaxTracking": false
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "12",
@@ -1191,7 +1277,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1201,7 +1288,7 @@
           "type": "workout",
           "exercises": [
             {
-              "name": "Barbell RDL",
+              "name": "Romanian Deadlift",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "8",
@@ -1210,7 +1297,8 @@
               "source_lift": "deadlift",
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
+              "isMaxTracking": false
             },
             {
               "name": "Bulgarian Split Squat",
@@ -1222,10 +1310,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg — knee-dominant, easy on the low back.",
+              "isMaxTracking": false
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": 1,
               "working_sets": 4,
               "reps": "8",
@@ -1234,7 +1323,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Full dead hang to chin over bar."
+              "coach_notes": "Full dead hang to chin over bar.",
+              "isMaxTracking": false
             },
             {
               "name": "Chest-Supported Row",
@@ -1246,10 +1336,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Pause and squeeze the shoulder blades together."
+              "coach_notes": "Pause and squeeze the shoulder blades together.",
+              "isMaxTracking": false
             },
             {
-              "name": "Cable Face Pull",
+              "name": "Face Pull",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "15-20",
@@ -1258,7 +1349,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
+              "coach_notes": "Rear delts and upper back — keep it light and strict.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -1266,7 +1358,7 @@
     },
     {
       "number": 5,
-      "label": "Week 5 \u2014 Deload (Full Body)",
+      "label": "Week 5 — Deload (Full Body)",
       "days": [
         {
           "label": "FULL BODY 1",
@@ -1283,7 +1375,8 @@
               "source_lift": "squat",
               "rpe": "6",
               "rest": "3-5min",
-              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent."
+              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Backoff)",
@@ -1295,10 +1388,11 @@
               "source_lift": "squat",
               "rpe": "6",
               "rest": "2-4min",
-              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+              "coach_notes": "Same bar speed as the top set, just lighter — don't let form drift.",
+              "isMaxTracking": true
             },
             {
-              "name": "Barbell RDL",
+              "name": "Romanian Deadlift",
               "warmup_sets": 1,
               "working_sets": 2,
               "reps": "8",
@@ -1307,7 +1401,8 @@
               "source_lift": "deadlift",
               "rpe": "6",
               "rest": "2-3min",
-              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
+              "isMaxTracking": false
             },
             {
               "name": "Incline Dumbbell Press",
@@ -1319,10 +1414,11 @@
               "source_lift": null,
               "rpe": "6",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "10-12",
@@ -1330,11 +1426,12 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "6",
-              "rest": "\u2014",
-              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+              "rest": "—",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "isMaxTracking": false
             },
             {
-              "name": "Hanging Knee Raise (AMRAP)",
+              "name": "Hanging Knee Raise",
               "warmup_sets": null,
               "working_sets": 2,
               "reps": "AMRAP",
@@ -1343,7 +1440,8 @@
               "source_lift": null,
               "rpe": "6",
               "rest": "1-2min",
-              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1362,7 +1460,8 @@
               "source_lift": "bench",
               "rpe": "6",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
               "name": "Seated DB Shoulder Press",
@@ -1374,7 +1473,8 @@
               "source_lift": null,
               "rpe": "6",
               "rest": "2-3min",
-              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+              "coach_notes": "Accessory pressing — controlled reps, stop 1-3 shy of failure.",
+              "isMaxTracking": false
             },
             {
               "name": "Barbell Hip Thrust (Backoff)",
@@ -1386,10 +1486,11 @@
               "source_lift": "hip_thrust",
               "rpe": "6",
               "rest": "2-3min",
-              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout.",
+              "isMaxTracking": true
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": 1,
               "working_sets": 2,
               "reps": "8",
@@ -1398,7 +1499,8 @@
               "source_lift": null,
               "rpe": "6",
               "rest": "2-3min",
-              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed."
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed.",
+              "isMaxTracking": false
             },
             {
               "name": "Cable Triceps Pressdown",
@@ -1410,7 +1512,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned, full lockout each rep."
+              "coach_notes": "Elbows pinned, full lockout each rep.",
+              "isMaxTracking": false
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -1422,7 +1525,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Lead with the elbows, control the negative."
+              "coach_notes": "Lead with the elbows, control the negative.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1441,10 +1545,11 @@
               "source_lift": "deadlift",
               "rpe": "6",
               "rest": "3-5min",
-              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "isMaxTracking": true
             },
             {
-              "name": "Touch-and-Go Deadlift",
+              "name": "Deadlift (Backoff)",
               "warmup_sets": 0,
               "working_sets": 1,
               "reps": "6",
@@ -1453,7 +1558,8 @@
               "source_lift": "deadlift",
               "rpe": "6",
               "rest": "2-4min",
-              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep."
+              "coach_notes": "Touch and go — Light tap and go, no bouncing. Re-brace at the top of every rep.",
+              "isMaxTracking": true
             },
             {
               "name": "Bulgarian Split Squat",
@@ -1465,7 +1571,8 @@
               "source_lift": null,
               "rpe": "6",
               "rest": "1-2min",
-              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg — knee-dominant, easy on the low back.",
+              "isMaxTracking": false
             },
             {
               "name": "Neutral-Grip Pulldown",
@@ -1477,10 +1584,11 @@
               "source_lift": null,
               "rpe": "6",
               "rest": "1-2min",
-              "coach_notes": "Pull your elbows down and back against your sides."
+              "coach_notes": "Pull your elbows down and back against your sides.",
+              "isMaxTracking": false
             },
             {
-              "name": "Seal Row (or Chest-Supported Row)",
+              "name": "Seal Row",
               "warmup_sets": 1,
               "working_sets": 2,
               "reps": "10",
@@ -1489,7 +1597,8 @@
               "source_lift": null,
               "rpe": "6",
               "rest": "1-2min",
-              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum."
+              "coach_notes": "Dead-stop each rep — strict, no momentum.",
+              "isMaxTracking": false
             },
             {
               "name": "Standing Calf Raise",
@@ -1501,7 +1610,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+              "coach_notes": "Full stretch at the bottom, pause hard at the top.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1520,10 +1630,11 @@
               "source_lift": "hip_thrust",
               "rpe": "6",
               "rest": "3-5min",
-              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard.",
+              "isMaxTracking": true
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 3,
               "working_sets": 2,
               "reps": "6",
@@ -1532,10 +1643,11 @@
               "source_lift": "bench",
               "rpe": "6",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
-              "name": "Helms Row (or One-Arm DB Row)",
+              "name": "Helms Row",
               "warmup_sets": 1,
               "working_sets": 2,
               "reps": "10",
@@ -1544,10 +1656,11 @@
               "source_lift": null,
               "rpe": "6",
               "rest": "2-3min",
-              "coach_notes": "Easy on the lower back by design \u2014 stay strict."
+              "coach_notes": "Alt: One-Arm DB Row. Easy on the lower back by design — stay strict.",
+              "isMaxTracking": false
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "12",
@@ -1556,10 +1669,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             },
             {
-              "name": "Barbell (or EZ-Bar) Curl",
+              "name": "Barbell Curl",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "10",
@@ -1568,7 +1682,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned at your sides, no swinging."
+              "coach_notes": "Elbows pinned at your sides, no swinging.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -1576,7 +1691,7 @@
     },
     {
       "number": 6,
-      "label": "Week 6 \u2014 Push / Pull",
+      "label": "Week 6 — Push / Pull",
       "days": [
         {
           "label": "PUSH 1",
@@ -1593,7 +1708,8 @@
               "source_lift": "squat",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent."
+              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Backoff)",
@@ -1605,7 +1721,8 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Crisp bar speed \u2014 don't let form drift."
+              "coach_notes": "Crisp bar speed — don't let form drift.",
+              "isMaxTracking": true
             },
             {
               "name": "Barbell Bench Press (Volume)",
@@ -1617,7 +1734,8 @@
               "source_lift": "bench",
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Volume pressing at ~65-75% \u2014 leave 2-3 reps in the tank early in the block."
+              "coach_notes": "Volume pressing at ~65-75% — leave 2-3 reps in the tank early in the block.",
+              "isMaxTracking": false
             },
             {
               "name": "Seated DB Shoulder Press",
@@ -1629,7 +1747,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+              "coach_notes": "Accessory pressing — controlled reps, stop 1-3 shy of failure.",
+              "isMaxTracking": false
             },
             {
               "name": "Standing Calf Raise",
@@ -1641,7 +1760,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+              "coach_notes": "Full stretch at the bottom, pause hard at the top.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1660,7 +1780,8 @@
               "source_lift": "deadlift",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "isMaxTracking": true
             },
             {
               "name": "Seated Leg Curl",
@@ -1672,7 +1793,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Knee flexion only \u2014 hamstring work with zero spinal load after the deadlifts."
+              "coach_notes": "Knee flexion only — hamstring work with zero spinal load after the deadlifts.",
+              "isMaxTracking": false
             },
             {
               "name": "Pendlay Row",
@@ -1684,7 +1806,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Reset on the floor each rep. Flat back."
+              "coach_notes": "Reset on the floor each rep. Flat back.",
+              "isMaxTracking": false
             },
             {
               "name": "Lat Pulldown (Wide Grip)",
@@ -1696,10 +1819,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Lead with your elbows, no body English."
+              "coach_notes": "Lead with your elbows, no body English.",
+              "isMaxTracking": false
             },
             {
-              "name": "Barbell (or EZ-Bar) Curl",
+              "name": "Barbell Curl",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10",
@@ -1708,10 +1832,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned at your sides, no swinging."
+              "coach_notes": "Elbows pinned at your sides, no swinging.",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10-12",
@@ -1719,11 +1844,12 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "8",
-              "rest": "\u2014",
-              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+              "rest": "—",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "isMaxTracking": false
             },
             {
-              "name": "Hanging Knee Raise (AMRAP)",
+              "name": "Hanging Knee Raise",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "AMRAP",
@@ -1732,7 +1858,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1751,10 +1878,11 @@
               "source_lift": "bench",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "6",
@@ -1763,7 +1891,8 @@
               "source_lift": "bench",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Volume)",
@@ -1775,7 +1904,8 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Controlled tempo, full depth, no grinders."
+              "coach_notes": "Controlled tempo, full depth, no grinders.",
+              "isMaxTracking": false
             },
             {
               "name": "Incline Dumbbell Press",
@@ -1787,7 +1917,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -1799,10 +1930,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Strict, controlled \u2014 these are a weekly staple."
+              "coach_notes": "Strict, controlled — these are a weekly staple.",
+              "isMaxTracking": false
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "12",
@@ -1811,7 +1943,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1830,10 +1963,11 @@
               "source_lift": "hip_thrust",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze."
+              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze.",
+              "isMaxTracking": true
             },
             {
-              "name": "Barbell RDL",
+              "name": "Romanian Deadlift",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "8",
@@ -1842,10 +1976,11 @@
               "source_lift": "deadlift",
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
+              "isMaxTracking": false
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": 1,
               "working_sets": 4,
               "reps": "8",
@@ -1854,7 +1989,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Full dead hang to chin over bar."
+              "coach_notes": "Full dead hang to chin over bar.",
+              "isMaxTracking": false
             },
             {
               "name": "Chest-Supported Row",
@@ -1866,10 +2002,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Pause and squeeze the shoulder blades together."
+              "coach_notes": "Pause and squeeze the shoulder blades together.",
+              "isMaxTracking": false
             },
             {
-              "name": "Cable Face Pull",
+              "name": "Face Pull",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "15-20",
@@ -1878,7 +2015,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
+              "coach_notes": "Rear delts and upper back — keep it light and strict.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -1886,7 +2024,7 @@
     },
     {
       "number": 7,
-      "label": "Week 7 \u2014 Full Body",
+      "label": "Week 7 — Full Body",
       "days": [
         {
           "label": "FULL BODY 1",
@@ -1903,7 +2041,8 @@
               "source_lift": "squat",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent."
+              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Backoff)",
@@ -1915,10 +2054,11 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+              "coach_notes": "Same bar speed as the top set, just lighter — don't let form drift.",
+              "isMaxTracking": true
             },
             {
-              "name": "Barbell RDL",
+              "name": "Romanian Deadlift",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "8",
@@ -1927,7 +2067,8 @@
               "source_lift": "deadlift",
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
+              "isMaxTracking": false
             },
             {
               "name": "Incline Dumbbell Press",
@@ -1939,7 +2080,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
               "name": "Chest-Supported Row",
@@ -1951,10 +2093,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together."
+              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together.",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10-12",
@@ -1962,8 +2105,9 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "8",
-              "rest": "\u2014",
-              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+              "rest": "—",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -1982,7 +2126,8 @@
               "source_lift": "bench",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
               "name": "Seated DB Shoulder Press",
@@ -1994,7 +2139,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+              "coach_notes": "Accessory pressing — controlled reps, stop 1-3 shy of failure.",
+              "isMaxTracking": false
             },
             {
               "name": "Barbell Hip Thrust (Backoff)",
@@ -2006,10 +2152,11 @@
               "source_lift": "hip_thrust",
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout.",
+              "isMaxTracking": true
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": 1,
               "working_sets": 4,
               "reps": "8",
@@ -2018,7 +2165,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "2-3min",
-              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed."
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed.",
+              "isMaxTracking": false
             },
             {
               "name": "Cable Triceps Pressdown",
@@ -2030,7 +2178,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned, full lockout each rep."
+              "coach_notes": "Elbows pinned, full lockout each rep.",
+              "isMaxTracking": false
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -2042,7 +2191,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Lead with the elbows, control the negative."
+              "coach_notes": "Lead with the elbows, control the negative.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2061,10 +2211,11 @@
               "source_lift": "deadlift",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "isMaxTracking": true
             },
             {
-              "name": "Touch-and-Go Deadlift",
+              "name": "Deadlift (Backoff)",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "6",
@@ -2073,7 +2224,8 @@
               "source_lift": "deadlift",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep."
+              "coach_notes": "Touch and go — Light tap and go, no bouncing. Re-brace at the top of every rep.",
+              "isMaxTracking": true
             },
             {
               "name": "Bulgarian Split Squat",
@@ -2085,7 +2237,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg — knee-dominant, easy on the low back.",
+              "isMaxTracking": false
             },
             {
               "name": "Neutral-Grip Pulldown",
@@ -2097,10 +2250,11 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Pull your elbows down and back against your sides."
+              "coach_notes": "Pull your elbows down and back against your sides.",
+              "isMaxTracking": false
             },
             {
-              "name": "Seal Row (or Chest-Supported Row)",
+              "name": "Seal Row",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "10",
@@ -2109,7 +2263,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum."
+              "coach_notes": "Dead-stop each rep — strict, no momentum.",
+              "isMaxTracking": false
             },
             {
               "name": "Standing Calf Raise",
@@ -2121,7 +2276,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+              "coach_notes": "Full stretch at the bottom, pause hard at the top.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2140,7 +2296,8 @@
               "source_lift": "hip_thrust",
               "rpe": "8.5",
               "rest": "3-5min",
-              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Volume)",
@@ -2152,10 +2309,11 @@
               "source_lift": "squat",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Controlled tempo, full depth, no grinders."
+              "coach_notes": "Controlled tempo, full depth, no grinders.",
+              "isMaxTracking": false
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 3,
               "working_sets": 3,
               "reps": "6",
@@ -2164,10 +2322,11 @@
               "source_lift": "bench",
               "rpe": "8",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "12",
@@ -2176,10 +2335,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             },
             {
-              "name": "Barbell (or EZ-Bar) Curl",
+              "name": "Barbell Curl",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10",
@@ -2188,7 +2348,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned at your sides, no swinging."
+              "coach_notes": "Elbows pinned at your sides, no swinging.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -2196,7 +2357,7 @@
     },
     {
       "number": 8,
-      "label": "Week 8 \u2014 Push / Pull",
+      "label": "Week 8 — Push / Pull",
       "days": [
         {
           "label": "PUSH 1",
@@ -2213,7 +2374,8 @@
               "source_lift": "squat",
               "rpe": "9",
               "rest": "3-5min",
-              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent."
+              "coach_notes": "Heaviest squat work of the week. Brace hard, drive up with intent.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Backoff)",
@@ -2225,7 +2387,8 @@
               "source_lift": "squat",
               "rpe": "9",
               "rest": "2-4min",
-              "coach_notes": "Crisp bar speed \u2014 don't let form drift."
+              "coach_notes": "Crisp bar speed — don't let form drift.",
+              "isMaxTracking": true
             },
             {
               "name": "Barbell Bench Press (Volume)",
@@ -2237,7 +2400,8 @@
               "source_lift": "bench",
               "rpe": "9",
               "rest": "2-3min",
-              "coach_notes": "Volume pressing at ~65-75% \u2014 leave 2-3 reps in the tank early in the block."
+              "coach_notes": "Volume pressing at ~65-75% — leave 2-3 reps in the tank early in the block.",
+              "isMaxTracking": false
             },
             {
               "name": "Seated DB Shoulder Press",
@@ -2249,7 +2413,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "2-3min",
-              "coach_notes": "Accessory pressing \u2014 controlled reps, stop 1-3 shy of failure."
+              "coach_notes": "Accessory pressing — controlled reps, stop 1-3 shy of failure.",
+              "isMaxTracking": false
             },
             {
               "name": "Standing Calf Raise",
@@ -2261,7 +2426,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+              "coach_notes": "Full stretch at the bottom, pause hard at the top.",
+              "isMaxTracking": false
             },
             {
               "name": "Cable Triceps Pressdown",
@@ -2273,7 +2439,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned, full lockout each rep."
+              "coach_notes": "Elbows pinned, full lockout each rep.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2292,7 +2459,8 @@
               "source_lift": "deadlift",
               "rpe": "9",
               "rest": "3-5min",
-              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "isMaxTracking": true
             },
             {
               "name": "Pendlay Row",
@@ -2304,7 +2472,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "2-3min",
-              "coach_notes": "Reset on the floor each rep. Flat back."
+              "coach_notes": "Reset on the floor each rep. Flat back.",
+              "isMaxTracking": false
             },
             {
               "name": "Lat Pulldown (Wide Grip)",
@@ -2316,10 +2485,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Lead with your elbows, no body English."
+              "coach_notes": "Lead with your elbows, no body English.",
+              "isMaxTracking": false
             },
             {
-              "name": "Barbell (or EZ-Bar) Curl",
+              "name": "Barbell Curl",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10",
@@ -2328,10 +2498,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned at your sides, no swinging."
+              "coach_notes": "Elbows pinned at your sides, no swinging.",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "10-12",
@@ -2339,11 +2510,12 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "9",
-              "rest": "\u2014",
-              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+              "rest": "—",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "isMaxTracking": false
             },
             {
-              "name": "Hanging Knee Raise (AMRAP)",
+              "name": "Hanging Knee Raise",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "AMRAP",
@@ -2352,7 +2524,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2371,10 +2544,11 @@
               "source_lift": "bench",
               "rpe": "9",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "6",
@@ -2383,7 +2557,8 @@
               "source_lift": "bench",
               "rpe": "9",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Volume)",
@@ -2395,7 +2570,8 @@
               "source_lift": "squat",
               "rpe": "9",
               "rest": "2-4min",
-              "coach_notes": "Controlled tempo, full depth, no grinders."
+              "coach_notes": "Controlled tempo, full depth, no grinders.",
+              "isMaxTracking": false
             },
             {
               "name": "Incline Dumbbell Press",
@@ -2407,7 +2583,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -2419,10 +2596,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Strict, controlled \u2014 these are a weekly staple."
+              "coach_notes": "Strict, controlled — these are a weekly staple.",
+              "isMaxTracking": false
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "12",
@@ -2431,7 +2609,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2450,10 +2629,11 @@
               "source_lift": "hip_thrust",
               "rpe": "9",
               "rest": "3-5min",
-              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze."
+              "coach_notes": "Heaviest hip thrust work of the week. Lock out hard, 1-count squeeze.",
+              "isMaxTracking": true
             },
             {
-              "name": "Barbell RDL",
+              "name": "Romanian Deadlift",
               "warmup_sets": 1,
               "working_sets": 3,
               "reps": "8",
@@ -2462,7 +2642,8 @@
               "source_lift": "deadlift",
               "rpe": "9",
               "rest": "2-3min",
-              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
+              "isMaxTracking": false
             },
             {
               "name": "Bulgarian Split Squat",
@@ -2474,10 +2655,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg — knee-dominant, easy on the low back.",
+              "isMaxTracking": false
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": 1,
               "working_sets": 4,
               "reps": "8",
@@ -2486,10 +2668,11 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "2-3min",
-              "coach_notes": "Full dead hang to chin over bar."
+              "coach_notes": "Full dead hang to chin over bar.",
+              "isMaxTracking": false
             },
             {
-              "name": "Cable Face Pull",
+              "name": "Face Pull",
               "warmup_sets": 0,
               "working_sets": 3,
               "reps": "15-20",
@@ -2498,7 +2681,8 @@
               "source_lift": null,
               "rpe": "9",
               "rest": "1-2min",
-              "coach_notes": "Rear delts and upper back \u2014 keep it light and strict."
+              "coach_notes": "Rear delts and upper back — keep it light and strict.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -2506,7 +2690,7 @@
     },
     {
       "number": 9,
-      "label": "Week 9 \u2014 Taper",
+      "label": "Week 9 — Taper",
       "days": [
         {
           "label": "FULL BODY 1",
@@ -2523,7 +2707,8 @@
               "source_lift": "squat",
               "rpe": "7",
               "rest": "3-5min",
-              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent."
+              "coach_notes": "Heaviest squat work of the week. Brace hard, own the descent, drive up with intent.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Backoff)",
@@ -2535,10 +2720,11 @@
               "source_lift": "squat",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Same bar speed as the top set, just lighter \u2014 don't let form drift."
+              "coach_notes": "Same bar speed as the top set, just lighter — don't let form drift.",
+              "isMaxTracking": true
             },
             {
-              "name": "Barbell RDL",
+              "name": "Romanian Deadlift",
               "warmup_sets": 1,
               "working_sets": 2,
               "reps": "8",
@@ -2547,7 +2733,8 @@
               "source_lift": "deadlift",
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off."
+              "coach_notes": "Auto-calculated at ~55-65% of your DEADLIFT 1RM: an RDL max is typically ~80-85% of a conventional pull, so this puts sets of 8 at a moderate RPE. Adjust if it feels off.",
+              "isMaxTracking": false
             },
             {
               "name": "Incline Dumbbell Press",
@@ -2559,7 +2746,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "30-45\u00b0 incline, deep stretch at the bottom, don't flare excessively."
+              "coach_notes": "30-45° incline, deep stretch at the bottom, don't flare excessively.",
+              "isMaxTracking": false
             },
             {
               "name": "Chest-Supported Row",
@@ -2571,10 +2759,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together."
+              "coach_notes": "Row to your lower ribs, pause and squeeze the shoulder blades together.",
+              "isMaxTracking": false
             },
             {
-              "name": "Ab Crunch Machine  (superset \u2193)",
+              "name": "Ab Crunch Machine",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "10-12",
@@ -2582,11 +2771,12 @@
               "pct_1rm": null,
               "source_lift": null,
               "rpe": "7",
-              "rest": "\u2014",
-              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest."
+              "rest": "—",
+              "coach_notes": "Superset: go straight from crunches into the knee raises with no rest.",
+              "isMaxTracking": false
             },
             {
-              "name": "Hanging Knee Raise (AMRAP)",
+              "name": "Hanging Knee Raise",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "AMRAP",
@@ -2595,7 +2785,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair."
+              "coach_notes": "As many controlled reps as possible right after each crunch set. Rest after the pair.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2614,7 +2805,8 @@
               "source_lift": "bench",
               "rpe": "7",
               "rest": "3-5min",
-              "coach_notes": "Comfortable arch, controlled touch, explode off the chest."
+              "coach_notes": "Comfortable arch, controlled touch, explode off the chest.",
+              "isMaxTracking": true
             },
             {
               "name": "Barbell Hip Thrust (Backoff)",
@@ -2626,10 +2818,11 @@
               "source_lift": "hip_thrust",
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout."
+              "coach_notes": "Chin tucked, ribs down, hard 1-count squeeze at lockout.",
+              "isMaxTracking": true
             },
             {
-              "name": "Weighted Pull-Up (or Lat Pulldown)",
+              "name": "Weighted Pull-Up",
               "warmup_sets": null,
               "working_sets": 3,
               "reps": "8",
@@ -2638,7 +2831,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed."
+              "coach_notes": "Full dead hang to chin over bar. Sub pulldown if needed.",
+              "isMaxTracking": false
             },
             {
               "name": "Cable Triceps Pressdown",
@@ -2650,7 +2844,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Elbows pinned, full lockout each rep."
+              "coach_notes": "Elbows pinned, full lockout each rep.",
+              "isMaxTracking": false
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -2662,7 +2857,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Lead with the elbows, control the negative."
+              "coach_notes": "Lead with the elbows, control the negative.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2681,10 +2877,11 @@
               "source_lift": "deadlift",
               "rpe": "7",
               "rest": "3-5min",
-              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away."
+              "coach_notes": "Pull the slack out of the bar, brace, drive the floor away.",
+              "isMaxTracking": true
             },
             {
-              "name": "Touch-and-Go Deadlift",
+              "name": "Deadlift (Backoff)",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "6",
@@ -2693,7 +2890,8 @@
               "source_lift": "deadlift",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Light tap and go, no bouncing. Re-brace at the top of every rep."
+              "coach_notes": "Touch and go — Light tap and go, no bouncing. Re-brace at the top of every rep.",
+              "isMaxTracking": true
             },
             {
               "name": "Bulgarian Split Squat",
@@ -2705,7 +2903,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Rear foot elevated, most of the weight in the front leg \u2014 knee-dominant, easy on the low back."
+              "coach_notes": "Rear foot elevated, most of the weight in the front leg — knee-dominant, easy on the low back.",
+              "isMaxTracking": false
             },
             {
               "name": "Neutral-Grip Pulldown",
@@ -2717,10 +2916,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Pull your elbows down and back against your sides."
+              "coach_notes": "Pull your elbows down and back against your sides.",
+              "isMaxTracking": false
             },
             {
-              "name": "Seal Row (or Chest-Supported Row)",
+              "name": "Seal Row",
               "warmup_sets": 1,
               "working_sets": 2,
               "reps": "10",
@@ -2729,7 +2929,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Dead-stop each rep \u2014 strict, no momentum."
+              "coach_notes": "Dead-stop each rep — strict, no momentum.",
+              "isMaxTracking": false
             },
             {
               "name": "Standing Calf Raise",
@@ -2741,7 +2942,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Full stretch at the bottom, pause hard at the top."
+              "coach_notes": "Full stretch at the bottom, pause hard at the top.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2760,7 +2962,8 @@
               "source_lift": "hip_thrust",
               "rpe": "7",
               "rest": "3-5min",
-              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard."
+              "coach_notes": "Heaviest hip thrust work of the week. Drive through mid-foot, lock out hard.",
+              "isMaxTracking": true
             },
             {
               "name": "Back Squat (Volume)",
@@ -2772,10 +2975,11 @@
               "source_lift": "squat",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Controlled tempo, full depth, no grinders."
+              "coach_notes": "Controlled tempo, full depth, no grinders.",
+              "isMaxTracking": false
             },
             {
-              "name": "Strict Bench Press (Backoff)",
+              "name": "Barbell Bench Press (Backoff)",
               "warmup_sets": 3,
               "working_sets": 2,
               "reps": "6",
@@ -2784,10 +2988,11 @@
               "source_lift": "bench",
               "rpe": "7",
               "rest": "2-4min",
-              "coach_notes": "Dead-stop 1-count pause on the chest every rep."
+              "coach_notes": "Dead-stop 1-count pause on the chest every rep.",
+              "isMaxTracking": true
             },
             {
-              "name": "Helms Row (or One-Arm DB Row)",
+              "name": "Helms Row",
               "warmup_sets": 1,
               "working_sets": 2,
               "reps": "10",
@@ -2796,10 +3001,11 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "2-3min",
-              "coach_notes": "Easy on the lower back by design \u2014 stay strict."
+              "coach_notes": "Alt: One-Arm DB Row. Easy on the lower back by design — stay strict.",
+              "isMaxTracking": false
             },
             {
-              "name": "Overhead Cable Triceps Extension",
+              "name": "Overhead Triceps Extension",
               "warmup_sets": 0,
               "working_sets": 2,
               "reps": "12",
@@ -2808,7 +3014,8 @@
               "source_lift": null,
               "rpe": "8",
               "rest": "1-2min",
-              "coach_notes": "Big stretch behind the head, constant tension on the triceps."
+              "coach_notes": "Big stretch behind the head, constant tension on the triceps.",
+              "isMaxTracking": false
             }
           ]
         }
@@ -2833,7 +3040,8 @@
               "source_lift": null,
               "rpe": "9.5-10",
               "rest": "4-6min",
-              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10. Spotter + safeties."
+              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10. Spotter + safeties.",
+              "isMaxTracking": true
             },
             {
               "name": "Seated Leg Curl",
@@ -2845,7 +3053,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Light \u2014 testing day, not a volume day."
+              "coach_notes": "Light — testing day, not a volume day.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2864,7 +3073,8 @@
               "source_lift": null,
               "rpe": "9.5-10",
               "rest": "4-6min",
-              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10. Use a spotter."
+              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10. Use a spotter.",
+              "isMaxTracking": true
             },
             {
               "name": "Dumbbell Lateral Raise",
@@ -2876,7 +3086,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Kept light."
+              "coach_notes": "Kept light.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2895,7 +3106,8 @@
               "source_lift": null,
               "rpe": "9.5-10",
               "rest": "4-6min",
-              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10."
+              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10.",
+              "isMaxTracking": true
             },
             {
               "name": "Chest-Supported Row",
@@ -2907,7 +3119,8 @@
               "source_lift": null,
               "rpe": "7",
               "rest": "1-2min",
-              "coach_notes": "Kept light \u2014 priority today is the pull."
+              "coach_notes": "Kept light — priority today is the pull.",
+              "isMaxTracking": false
             }
           ]
         },
@@ -2926,7 +3139,8 @@
               "source_lift": null,
               "rpe": "9.5-10",
               "rest": "4-6min",
-              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10."
+              "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10.",
+              "isMaxTracking": true
             }
           ]
         }

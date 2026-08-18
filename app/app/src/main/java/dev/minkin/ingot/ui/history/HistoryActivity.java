@@ -36,8 +36,6 @@ public class HistoryActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Workouts Completed");
         }
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.getNavigationIcon().setTint(getResources().getColor(android.R.color.white, getTheme()));
 
         AppContainer container = ((IngotApplication) getApplication()).container;
         viewModel = new ViewModelProvider(this, new HistoryViewModelFactory(container))

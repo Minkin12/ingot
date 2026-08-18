@@ -5,11 +5,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.OnBackPressedDispatcher;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.Locale;
 
 import dev.minkin.ingot.AppContainer;
 import dev.minkin.ingot.IngotApplication;
@@ -60,10 +63,24 @@ public class WorkoutActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.getNavigationIcon().setTint(getResources().getColor(android.R.color.white, getTheme()));
 
         viewModel.getUiState().observe(this, this::render);
+
+        viewModel.getMaxSuggestion().observe(this, suggestion -> {
+            if (suggestion == null) return;
+
+            String liftName = suggestion.getLift().getDisplayName();
+            String message = String.format(Locale.US,
+                    "That set suggests your %s max may be closer to %.0f lbs (current: %.0f). Update it?",
+                    liftName, suggestion.getEstimated1RM(), suggestion.getCurrentMax());
+
+            new AlertDialog.Builder(this)
+                    .setTitle("New max?")
+                    .setMessage(message)
+                    .setPositiveButton("Update", (d, w) -> viewModel.confirmMaxSuggestion(suggestion))
+                    .setNegativeButton("Not now", (d, w) -> viewModel.dismissMaxSuggestion())
+                    .show();
+        });
     }
 
     private void setupExerciseList() {

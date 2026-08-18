@@ -28,6 +28,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 
+import dev.minkin.ingot.data.db.dao.AppSettingsDao;
 import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
 import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
 import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
@@ -43,6 +44,8 @@ public class ProgramRepositoryTest {
     @Mock
     private TrainingMaxDao trainingMaxDao;
     @Mock
+    private AppSettingsDao appSettingsDao;
+    @Mock
     private ExecutorService executorService;
     @Mock
     private AssetManager assetManager;
@@ -54,7 +57,7 @@ public class ProgramRepositoryTest {
     @Before
     public void setUp() {
         closeable = MockitoAnnotations.openMocks(this);
-        programRepository = new ProgramRepository(programTemplateDao, trainingMaxDao, executorService, assetManager);
+        programRepository = new ProgramRepository(programTemplateDao, trainingMaxDao,appSettingsDao, executorService, assetManager);
 
         // Mock executor to run synchronously
         doAnswer(invocation -> {
@@ -66,7 +69,7 @@ public class ProgramRepositoryTest {
 
     @Test
     public void ensureSeeded_alreadySeeded_doesNothing() throws IOException {
-        when(programTemplateDao.selectProgramTemplate()).thenReturn(new ProgramTemplateEntity());
+        when(programTemplateDao.selectProgramTemplate("")).thenReturn(new ProgramTemplateEntity());
 
         programRepository.ensureSeeded();
 
@@ -78,7 +81,7 @@ public class ProgramRepositoryTest {
     @Test
     public void ensureSeeded_notSeeded_seedsData() throws IOException {
         String testJson = "{\"name\": \"Test Program\", \"oneRepMaxes\": {\"squat\": 100, \"bench\": 80, \"deadlift\": 120, \"hip_thrust\": 150}, \"weeks\": []}";
-        when(programTemplateDao.selectProgramTemplate()).thenReturn(null);
+        when(programTemplateDao.selectProgramTemplate("")).thenReturn(null);
         InputStream inputStream = new ByteArrayInputStream(testJson.getBytes(StandardCharsets.UTF_8));
         when(assetManager.open("program.json")).thenReturn(inputStream);
 
@@ -136,8 +139,8 @@ public class ProgramRepositoryTest {
 
     @Test(expected = IllegalStateException.class)
     public void materializeSession_notSeeded_throwsException() throws IOException {
-        when(programTemplateDao.selectProgramTemplate()).thenReturn(null);
-        programRepository.materializeSession(1, 1);
+        when(programTemplateDao.selectProgramTemplate("")).thenReturn(null);
+        programRepository.materializeSession("",1, 1);
     }
 
     @Test
