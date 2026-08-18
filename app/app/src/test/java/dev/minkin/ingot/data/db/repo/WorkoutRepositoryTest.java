@@ -25,6 +25,7 @@ import java.util.concurrent.ExecutorService;
 import dev.minkin.ingot.data.db.dao.OutboxDao;
 import dev.minkin.ingot.data.db.dao.PerformedSetEventDao;
 import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
+import dev.minkin.ingot.data.db.entity.OutboxEntity;
 import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.db.entity.WorkoutCompletedEventEntity;
 import dev.minkin.ingot.data.repo.WorkoutRepository;
@@ -61,7 +62,8 @@ public class WorkoutRepositoryTest {
         workoutRepository.logSet(1, 2, "Squat", 1, "100", 5, "Felt good");
         
         ArgumentCaptor<PerformedSetEventEntity> captor = ArgumentCaptor.forClass(PerformedSetEventEntity.class);
-        verify(performedSetEventDao, times(1)).insertPerformedSetEvent(captor.capture());
+        ArgumentCaptor<OutboxEntity> captor2 = ArgumentCaptor.forClass(OutboxEntity.class);
+        verify(performedSetEventDao, times(1)).insertPerformedSetAndQueue(captor.capture(), captor2.capture());
         
         PerformedSetEventEntity entity = captor.getValue();
         assertEquals(1, entity.weekNumber);
@@ -78,7 +80,9 @@ public class WorkoutRepositoryTest {
         workoutRepository.logCompletedWorkout(1, 2, "Good session", "FULL BODY 2");
         
         ArgumentCaptor<WorkoutCompletedEventEntity> captor = ArgumentCaptor.forClass(WorkoutCompletedEventEntity.class);
-        verify(workoutCompletedEventDao, times(1)).insertWorkoutCompletedEvent(captor.capture());
+        ArgumentCaptor<OutboxEntity> captor2 = ArgumentCaptor.forClass(OutboxEntity.class);
+
+        verify(workoutCompletedEventDao, times(1)).insertWorkoutCompletedAndQueue(captor.capture(), captor2.capture());
         
         WorkoutCompletedEventEntity entity = captor.getValue();
         assertEquals(1, entity.weekNumber);

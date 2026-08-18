@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 
 import dev.minkin.ingot.data.db.dao.AppSettingsDao;
+import dev.minkin.ingot.data.db.entity.OutboxEntity;
 import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
 import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
 import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
@@ -69,7 +70,9 @@ public class ProgramRepositoryTest {
 
     @Test
     public void ensureSeeded_alreadySeeded_doesNothing() throws IOException {
-        when(programTemplateDao.selectProgramTemplate("")).thenReturn(new ProgramTemplateEntity());
+        when(assetManager.list("programs")).thenReturn(new String[]{"powerbuilding_4x.json"});
+        when(programTemplateDao.selectProgramTemplate("powerbuilding_4x")).thenReturn(new ProgramTemplateEntity());
+        when(trainingMaxDao.selectCurrentMaxes()).thenReturn(List.of(new TrainingMaxEntity()));
 
         programRepository.ensureSeeded();
 
@@ -81,17 +84,26 @@ public class ProgramRepositoryTest {
     @Test
     public void ensureSeeded_notSeeded_seedsData() throws IOException {
         String testJson = "{\"name\": \"Test Program\", \"oneRepMaxes\": {\"squat\": 100, \"bench\": 80, \"deadlift\": 120, \"hip_thrust\": 150}, \"weeks\": []}";
-        when(programTemplateDao.selectProgramTemplate("")).thenReturn(null);
+        when(assetManager.list("programs")).thenReturn(new String[]{"powerbuilding_4x.json"});
+
+        ProgramTemplateEntity seeded = new ProgramTemplateEntity();
+        seeded.programId = "powerbuilding_4x";
+        seeded.jsonBlob = testJson;
+
+        when(programTemplateDao.selectProgramTemplate("powerbuilding_4x"))
+                .thenReturn(null)
+                .thenReturn(seeded);
+
         InputStream inputStream = new ByteArrayInputStream(testJson.getBytes(StandardCharsets.UTF_8));
-        when(assetManager.open("program.json")).thenReturn(inputStream);
+        when(assetManager.open("programs/powerbuilding_4x.json")).thenReturn(inputStream);
 
         programRepository.ensureSeeded();
 
         verify(programTemplateDao, times(1)).insertProgram(any(ProgramTemplateEntity.class));
-        
+
         ArgumentCaptor<TrainingMaxEntity> captor = ArgumentCaptor.forClass(TrainingMaxEntity.class);
         verify(trainingMaxDao, times(MajorLift.values().length)).insertMax(captor.capture());
-        
+
         List<TrainingMaxEntity> insertedMaxes = captor.getAllValues();
         assertEquals(4, insertedMaxes.size());
         
@@ -139,14 +151,14 @@ public class ProgramRepositoryTest {
 
     @Test(expected = IllegalStateException.class)
     public void materializeSession_notSeeded_throwsException() throws IOException {
-        when(programTemplateDao.selectProgramTemplate("")).thenReturn(null);
-        programRepository.materializeSession("",1, 1);
+        when(programTemplateDao.selectProgramTemplate("powerbuilding_4x")).thenReturn(null);
+        programRepository.materializeSession("powerbuilding_4x", 1, 1);
     }
 
     @Test
     public void recordNewMax_insertsMax() throws JsonProcessingException {
         programRepository.recordNewMax(MajorLift.SQUAT, 200.0);
-        verify(trainingMaxDao, times(1)).insertMax(any(TrainingMaxEntity.class));
+        verify(trainingMaxDao, times(1)).insertMaxAndQueue(any(TrainingMaxEntity.class), any(OutboxEntity.class));
     }
 
     @org.junit.After
