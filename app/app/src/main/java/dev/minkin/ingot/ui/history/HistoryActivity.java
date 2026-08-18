@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedDispatcher;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,9 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import dev.minkin.ingot.AppContainer;
 import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
+import dev.minkin.ingot.ui.InsetAwareActivity;
 import dev.minkin.ingot.ui.history.adapters.HistoryAdapter;
 
-public class HistoryActivity extends AppCompatActivity {
+public class HistoryActivity extends InsetAwareActivity {
 
     private HistoryViewModel viewModel;
     private HistoryAdapter adapter;
@@ -24,6 +24,8 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+
+        applyStatusBarInsets(R.id.rootLayout);
 
         RecyclerView historyList = findViewById(R.id.historyList);
         historyList.setLayoutManager(new LinearLayoutManager(this));

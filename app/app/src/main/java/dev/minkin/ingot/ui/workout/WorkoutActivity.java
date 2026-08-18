@@ -6,7 +6,6 @@ import android.widget.TextView;
 
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,10 +16,11 @@ import java.util.Locale;
 import dev.minkin.ingot.AppContainer;
 import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
+import dev.minkin.ingot.ui.InsetAwareActivity;
 import dev.minkin.ingot.ui.workout.adapters.ExerciseCardAdapter;
 import dev.minkin.ingot.ui.workout.types.WorkoutUiState;
 
-public class WorkoutActivity extends AppCompatActivity {
+public class WorkoutActivity extends InsetAwareActivity {
 
     private WorkoutViewModel viewModel;
     private ExerciseCardAdapter adapter;
@@ -33,6 +33,8 @@ public class WorkoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
+
+        applyStatusBarInsets(R.id.rootLayout);
 
         workoutTitle = findViewById(R.id.workoutTitle);
         exerciseList = findViewById(R.id.exerciseList);

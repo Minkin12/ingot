@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +19,7 @@ import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
 import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
 import dev.minkin.ingot.engine.model.MaterializedSession;
+import dev.minkin.ingot.ui.InsetAwareActivity;
 import dev.minkin.ingot.ui.history.HistoryActivity;
 import dev.minkin.ingot.ui.home.adapters.WeekPillAdapter;
 import dev.minkin.ingot.ui.home.adapters.WorkoutRowAdapter;
@@ -28,7 +28,7 @@ import dev.minkin.ingot.ui.home.types.WorkoutState;
 import dev.minkin.ingot.ui.program.ProgramPickerActivity;
 import dev.minkin.ingot.ui.workout.WorkoutActivity;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends InsetAwareActivity {
     private RecyclerView weekStrip;
     private RecyclerView workoutList;
     private WeekPillAdapter pillAdapter;
@@ -38,6 +38,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        applyStatusBarInsets(R.id.rootLayout);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

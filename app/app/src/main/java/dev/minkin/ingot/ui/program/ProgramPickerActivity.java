@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,10 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import dev.minkin.ingot.AppContainer;
 import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
+import dev.minkin.ingot.ui.InsetAwareActivity;
 import dev.minkin.ingot.ui.home.HomeActivity;
 import dev.minkin.ingot.ui.program.adapters.ProgramPickerAdapter;
 
-public class ProgramPickerActivity extends AppCompatActivity {
+public class ProgramPickerActivity extends InsetAwareActivity {
 
     private ProgramPickerViewModel viewModel;
     private ProgramPickerAdapter adapter;
@@ -27,6 +27,8 @@ public class ProgramPickerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_program_picker);
+
+        applyStatusBarInsets(R.id.rootLayout);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
