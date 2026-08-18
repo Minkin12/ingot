@@ -1,5 +1,7 @@
 package dev.minkin.ingot.ui.workout;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -17,11 +19,13 @@ import java.util.concurrent.ExecutorService;
 import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.repo.ProgramRepository;
 import dev.minkin.ingot.data.repo.WorkoutRepository;
+import dev.minkin.ingot.engine.Rounding;
+import dev.minkin.ingot.engine.model.MajorLift;
 import dev.minkin.ingot.engine.model.MaterializedExercise;
 import dev.minkin.ingot.engine.model.MaterializedSession;
-
 import dev.minkin.ingot.ui.formatting.ExerciseFormatter;
 import dev.minkin.ingot.ui.workout.types.ExerciseUiState;
+import dev.minkin.ingot.ui.workout.types.MaxSuggestion;
 import dev.minkin.ingot.ui.workout.types.SetRowUiState;
 import dev.minkin.ingot.ui.workout.types.WorkoutUiState;
 
@@ -44,6 +48,8 @@ public class WorkoutViewModel extends ViewModel {
     private final MediatorLiveData<WorkoutUiState> uiState = new MediatorLiveData<>();
     private final MutableLiveData<Boolean> finishComplete = new MutableLiveData<>();
     private final LiveData<List<PerformedSetEventEntity>> liveSets;
+    private final MutableLiveData<MaxSuggestion> maxSuggestion = new MutableLiveData<>();
+
 
     public WorkoutViewModel(ProgramRepository programRepo, WorkoutRepository workoutRepo,
                             ExecutorService executor, int weekNumber, int dayNumber) {
@@ -62,7 +68,8 @@ public class WorkoutViewModel extends ViewModel {
     private void loadEnrichedSession() {
         executor.execute(() -> {
             try {
-                MaterializedSession session = programRepo.materializeSession(weekNumber, dayNumber);
+                String programId = programRepo.getActiveProgramId();
+                MaterializedSession session = programRepo.materializeSession(programId, weekNumber, dayNumber);
                 Map<String, String> prefill = buildPrefillMap(session);
                 enrichedSession = programRepo.enrich(session, prefill);
                 workoutLabel = enrichedSession.getLabel();
@@ -178,12 +185,59 @@ public class WorkoutViewModel extends ViewModel {
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }
+            checkForPotentialMaxIncrease(exerciseName, weight, reps);
         });
 
         String key = exerciseName + "#" + setNumber;
         pendingWeights.remove(key);
         pendingReps.remove(key);
         pendingNotes.remove(key);
+    }
+
+    private void checkForPotentialMaxIncrease(String exerciseName, String weight, int reps) {
+        if (enrichedSession == null || reps > 8) return;
+
+        MaterializedExercise me = findExerciseByName(enrichedSession, exerciseName);
+        if (me == null || !me.getExercise().getIsMaxTracking()) return;
+
+        String sourceLiftStr = me.getExercise().getSourceLift();
+        if (sourceLiftStr == null) return;
+
+        double weightLbs;
+        try {
+            weightLbs = Double.parseDouble(weight);
+        } catch (NumberFormatException e) {
+            return;
+        }
+        //Epley formula rounded to nearest 5
+        double estimated1RM = Rounding.toNearestFive(weightLbs * (1 + reps / 30.0));
+
+        MajorLift lift = MajorLift.fromJson(sourceLiftStr);
+        double currentMax = programRepo.getCurrentMaxes().getMaxWeight(lift);
+
+        if (estimated1RM > currentMax) {
+            maxSuggestion.postValue(new MaxSuggestion(lift, estimated1RM, currentMax));
+        }
+    }
+
+    private MaterializedExercise findExerciseByName(MaterializedSession session, String name) {
+        for (MaterializedExercise me : session.getExercises()) {
+            if (me.getExercise().getName().equals(name)) {
+                return me;
+            }
+        }
+        return null;
+    }
+
+    public void confirmMaxSuggestion(MaxSuggestion suggestion) {
+        executor.execute(() -> {
+            try {
+                programRepo.recordNewMax(suggestion.getLift(), suggestion.getEstimated1RM());
+            } catch (JsonProcessingException e) {
+                Log.e("WorkoutViewModel", "Failed to record new max", e);
+            }
+        });
+        maxSuggestion.postValue(null);
     }
 
     public void updatePendingWeight(String exerciseName, int setNumber, String weight) {
@@ -225,5 +279,13 @@ public class WorkoutViewModel extends ViewModel {
 
     public LiveData<WorkoutUiState> getUiState() {
         return uiState;
+    }
+
+    public LiveData<MaxSuggestion> getMaxSuggestion() {
+        return maxSuggestion;
+    }
+
+    public void dismissMaxSuggestion() {
+        maxSuggestion.postValue(null);
     }
 }

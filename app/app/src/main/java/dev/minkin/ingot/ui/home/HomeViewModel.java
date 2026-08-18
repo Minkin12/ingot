@@ -46,8 +46,9 @@ public class HomeViewModel extends ViewModel {
             if (completed == null || started == null) return;
 
             Program program;
+            String programId = programRepo.getActiveProgramId();
             try {
-                program = programRepo.getProgram();
+                program = programRepo.getProgram(programId);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -63,7 +64,7 @@ public class HomeViewModel extends ViewModel {
             for (Day day : program.getWeek(weekToShow).getDays()) {
                 MaterializedSession session;
                 try {
-                    session = programRepo.materializeSession(weekToShow, day.getDayNumber());
+                    session = programRepo.materializeSession(programId, weekToShow, day.getDayNumber());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

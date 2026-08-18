@@ -2,9 +2,12 @@ package dev.minkin.ingot.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +25,7 @@ import dev.minkin.ingot.ui.home.adapters.WeekPillAdapter;
 import dev.minkin.ingot.ui.home.adapters.WorkoutRowAdapter;
 import dev.minkin.ingot.ui.home.types.HomeUiState;
 import dev.minkin.ingot.ui.home.types.WorkoutState;
+import dev.minkin.ingot.ui.program.ProgramPickerActivity;
 import dev.minkin.ingot.ui.workout.WorkoutActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -34,6 +38,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         weekStrip = findViewById(R.id.weekStrip);
         workoutList = findViewById(R.id.workoutList);
@@ -66,8 +73,26 @@ public class HomeActivity extends AppCompatActivity {
         });
         workoutList.setAdapter(rowAdapter);
 
+        findViewById(R.id.viewHistoryButton).setOnClickListener(v ->
+                startActivity(new Intent(HomeActivity.this, HistoryActivity.class)));
+
 
         viewModel.getUiState().observe(this, this::render);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_choose_program) {
+            startActivity(new Intent(this, ProgramPickerActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void render(HomeUiState state) {

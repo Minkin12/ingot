@@ -20,4 +20,5 @@ public class Exercise {
     String rest;
     @JsonAlias("coach_notes")
     String coachNotes;
+    Boolean isMaxTracking;
 }

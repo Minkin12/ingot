@@ -1,29 +1,30 @@
 package dev.minkin.ingot.engine.model;
 
 public enum MajorLift {
-    SQUAT("squat"),
-    BENCH("bench"),
-    DEADLIFT("deadlift"),
-    HIP_THRUST("hip_thrust");
+    SQUAT("squat", "Squat"),
+    BENCH("bench", "Bench"),
+    DEADLIFT("deadlift", "Deadlift"),
+    HIP_THRUST("hip_thrust", "Hip Thrust");
 
     private final String jsonName;
+    private final String displayName;
 
-    MajorLift(String jsonName) {
+    MajorLift(String jsonName, String displayName) {
         this.jsonName = jsonName;
+        this.displayName = displayName;
     }
 
     public String getJsonName() {
         return jsonName;
     }
 
-    /** Maps a source_lift string from program.json to a Lift.
-     *  Returns null for accessories (no source_lift in the JSON). */
+    public String getDisplayName() {
+        return displayName;
+    }
+
     public static MajorLift fromJson(String value) {
-        if (value == null) {
-            return null;
-        }
         for (MajorLift lift : values()) {
-            if (lift.jsonName.equalsIgnoreCase(value)) {
+            if (lift.jsonName.equals(value)) {
                 return lift;
             }
         }
