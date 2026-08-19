@@ -25,6 +25,7 @@ import dev.minkin.ingot.ui.home.adapters.WeekPillAdapter;
 import dev.minkin.ingot.ui.home.adapters.WorkoutRowAdapter;
 import dev.minkin.ingot.ui.home.types.HomeUiState;
 import dev.minkin.ingot.ui.home.types.WorkoutState;
+import dev.minkin.ingot.ui.maxes.EditMaxesActivity;
 import dev.minkin.ingot.ui.program.ProgramPickerActivity;
 import dev.minkin.ingot.ui.workout.WorkoutActivity;
 
@@ -92,6 +93,9 @@ public class HomeActivity extends InsetAwareActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_choose_program) {
             startActivity(new Intent(this, ProgramPickerActivity.class));
+            return true;
+        } else if (item.getItemId() == R.id.action_edit_maxes) {
+            startActivity(new Intent(this, EditMaxesActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

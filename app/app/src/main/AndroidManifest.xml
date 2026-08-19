@@ -37,6 +37,10 @@
             android:name=".ui.program.ProgramPickerActivity"
             android:exported="false"
             android:parentActivityName=".ui.home.HomeActivity" />
+        <activity
+            android:name=".ui.maxes.EditMaxesActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.home.HomeActivity" />
     </application>
 
 </manifest>

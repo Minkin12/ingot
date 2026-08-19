@@ -67,7 +67,7 @@ public class ProgramPickerActivity extends InsetAwareActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
     }
 }

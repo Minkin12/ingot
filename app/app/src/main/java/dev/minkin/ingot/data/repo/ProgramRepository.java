@@ -13,8 +13,10 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 
@@ -44,7 +46,7 @@ public class ProgramRepository {
     private final Map<String, Program> programCache = new HashMap<>();
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    public ProgramRepository(ProgramTemplateDao programTemplateDao, TrainingMaxDao trainingMaxDao, AppSettingsDao appSettingsDao,ExecutorService executor, AssetManager assetManager){
+    public ProgramRepository(ProgramTemplateDao programTemplateDao, TrainingMaxDao trainingMaxDao, AppSettingsDao appSettingsDao, ExecutorService executor, AssetManager assetManager) {
         this.programTemplateDao = programTemplateDao;
         this.trainingMaxDao = trainingMaxDao;
         this.appSettingsDao = appSettingsDao;
@@ -69,29 +71,35 @@ public class ProgramRepository {
         ProgramTemplateEntity templateEntity = new ProgramTemplateEntity();
         templateEntity.programId = programId;
         templateEntity.jsonBlob = json;
-        executor.execute(() -> programTemplateDao.insertProgram(templateEntity));
+        programTemplateDao.insertProgram(templateEntity);
     }
 
     private void ensureMaxesSeeded() throws IOException {
-        if (!trainingMaxDao.selectCurrentMaxes().isEmpty()) {
-            return; // maxes already exist — never re-seed, they're shared and versioned going forward
+        List<TrainingMaxEntity> existing = trainingMaxDao.selectCurrentMaxes();
+        Set<String> existingLifts = new HashSet<>();
+        for (TrainingMaxEntity e : existing) {
+            existingLifts.add(e.lift);
         }
 
         Program seedSource = getProgram("powerbuilding_4x");
         Map<String, Double> seedMaxes = seedSource.getOneRepMaxes();
-        if (seedMaxes == null || seedMaxes.isEmpty()) {
-            Log.w("ProgramRepository", "No seed maxes available — starting-maxes onboarding flow needed (deferred)");
-            return;
-        }
         long now = System.currentTimeMillis();
+
         for (MajorLift lift : MajorLift.values()) {
-            Double maxVal = seedSource.getOneRepMaxes().get(lift.getJsonName());
-            if (maxVal == null) continue; // this lift has no seed value yet todo seed maxes with user input
+            if (existingLifts.contains(lift.getJsonName())) {
+                continue; // already has a max, don't touch it
+            }
+            Double maxVal = (seedMaxes != null) ? seedMaxes.get(lift.getJsonName()) : null;
+            if (maxVal == null) {
+                Log.w("ProgramRepository", "No seed max for " + lift.getDisplayName()
+                        + " — using placeholder (45 lbs). Update it in Edit Maxes.");
+                maxVal = 45.0;
+            }
             TrainingMaxEntity maxEntity = new TrainingMaxEntity();
             maxEntity.lift = lift.getJsonName();
             maxEntity.valueLbs = maxVal;
             maxEntity.effectiveAt = now;
-            executor.execute(() -> trainingMaxDao.insertMax(maxEntity));
+            trainingMaxDao.insertMax(maxEntity);
         }
     }
 
@@ -170,6 +178,7 @@ public class ProgramRepository {
         }
         return summaries;
     }
+
     private String readAssetAsString(String filename) {
         try (InputStream in = assetManager.open(filename)) {
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();

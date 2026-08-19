@@ -4,7 +4,10 @@ public enum MajorLift {
     SQUAT("squat", "Squat"),
     BENCH("bench", "Bench"),
     DEADLIFT("deadlift", "Deadlift"),
-    HIP_THRUST("hip_thrust", "Hip Thrust");
+    HIP_THRUST("hip_thrust", "Hip Thrust"),
+    OVERHEAD_PRESS("overhead_press", "Overhead Press"),
+    FRONT_SQUAT("front_squat", "Front Squat"),
+    BARBELL_ROW("barbell_row", "Barbell Row");
 
     private final String jsonName;
     private final String displayName;
