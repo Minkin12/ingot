@@ -5,6 +5,7 @@ import dev.minkin.ingot.backend.projection.entity.SessionHistoryEntity;
 import dev.minkin.ingot.backend.projection.model.WorkoutCompletedEvent;
 import dev.minkin.ingot.backend.projection.repository.SessionHistoryRepository;
 import io.nats.client.*;
+import io.nats.client.api.ConsumerConfiguration;
 import io.nats.client.api.StreamInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -32,9 +33,13 @@ public class SessionHistoryConsumer {
                 msg.nak();
             }
         };
+        ConsumerConfiguration consumerConfig = ConsumerConfiguration.builder()
+                .durable("history-projection")
+                .maxDeliver(5)
+                .build();
         PushSubscribeOptions options = PushSubscribeOptions.builder()
                 .stream("INGOT_EVENT_STREAM")
-                .durable("history-projection")
+                .configuration(consumerConfig)
                 .build();
 
         jetStream.subscribe("events.workout_completed", dispatcher, handler, false, options);

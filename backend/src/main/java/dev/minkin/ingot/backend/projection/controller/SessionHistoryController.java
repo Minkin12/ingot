@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/history")
+@RequestMapping("/api/v1")
 public class SessionHistoryController {
 
     private final SessionHistoryRepository repository;
@@ -18,7 +18,7 @@ public class SessionHistoryController {
         this.repository = repository;
     }
 
-    @GetMapping
+    @GetMapping("/history")
     public List<SessionHistoryEntity> getHistory() {
         return repository.findAllByOrderByCompletedAtDesc();
     }
