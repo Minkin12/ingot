@@ -30,6 +30,11 @@ public class TonnageController {
         return tonnageRepository.findAllByExerciseNameOrderByWeekNumberAscDayNumberAsc(exerciseName);
     }
 
+    @GetMapping("/tonnage/week/{weekNumber}/day/{dayNumber}")
+    public List<TonnageEntity> getTonnageForDay(@PathVariable int weekNumber, @PathVariable int dayNumber) {
+        return tonnageRepository.findAllByWeekNumberAndDayNumber(weekNumber, dayNumber);
+    }
+
     @GetMapping("/tonnage/week/{weekNumber}")
     public List<TonnageWeekSummary> getTonnageForWeek(@PathVariable int weekNumber) {
         return tonnageRepository.getWeekSummary(weekNumber);

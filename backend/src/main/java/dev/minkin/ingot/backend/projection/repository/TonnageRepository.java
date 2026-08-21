@@ -18,6 +18,8 @@ public interface TonnageRepository extends JpaRepository<TonnageEntity, Long> {
     Optional<TonnageEntity> findByWeekNumberAndDayNumberAndExerciseNameAndSetNumber(
             int weekNumber, int dayNumber, String exerciseName, int setNumber);
 
+    List<TonnageEntity> findAllByWeekNumberAndDayNumber(int weekNumber, int dayNumber);
+
     @Query(value = """
             SELECT week_number, day_number, exercise_name,
                    SUM(CAST(weight_lbs AS DOUBLE PRECISION) * reps) AS total_tonnage,
