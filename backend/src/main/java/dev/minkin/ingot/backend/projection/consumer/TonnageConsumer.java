@@ -1,9 +1,9 @@
 package dev.minkin.ingot.backend.projection.consumer;
 
 import dev.minkin.ingot.backend.ingest.model.Event;
-import dev.minkin.ingot.backend.projection.entity.PersonalRecordEntity;
+import dev.minkin.ingot.backend.projection.entity.TonnageEntity;
 import dev.minkin.ingot.backend.projection.model.PerformedSetEvent;
-import dev.minkin.ingot.backend.projection.repository.PersonalRecordRepository;
+import dev.minkin.ingot.backend.projection.repository.TonnageRepository;
 import io.nats.client.*;
 import io.nats.client.api.ConsumerConfiguration;
 import io.nats.client.api.StreamInfo;
@@ -12,16 +12,17 @@ import org.springframework.stereotype.Component;
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Slf4j
 @Component
-public class PersonalRecordsConsumer {
-    private final PersonalRecordRepository personalRecordRepository;
+public class TonnageConsumer {
+    private final TonnageRepository tonnageRepository;
     private final ObjectMapper objectMapper;
 
     //Unused stream info param structurally confirms nats setup runs before consumer setup
-    public PersonalRecordsConsumer(Connection connection, JetStream jetStream, PersonalRecordRepository personalRecordRepository, ObjectMapper objectMapper, StreamInfo ingotEventStream) throws Exception {
-        this.personalRecordRepository = personalRecordRepository;
+    public TonnageConsumer(Connection connection, JetStream jetStream, TonnageRepository tonnageRepository, ObjectMapper objectMapper, StreamInfo ingotEventStream) throws Exception {
+        this.tonnageRepository = tonnageRepository;
         this.objectMapper = objectMapper;
         Dispatcher dispatcher = connection.createDispatcher();
         MessageHandler handler = (Message msg) -> {
@@ -35,7 +36,7 @@ public class PersonalRecordsConsumer {
             }
         };
         ConsumerConfiguration consumerConfig = ConsumerConfiguration.builder()
-                .durable("personal-records-projection")
+                .durable("tonnage-projection")
                 .maxDeliver(5)
                 .build();
         PushSubscribeOptions options = PushSubscribeOptions.builder()
@@ -51,20 +52,33 @@ public class PersonalRecordsConsumer {
 
         Event event = objectMapper.readValue(msg.getData(), Event.class);
         PerformedSetEvent performedSetEvent = objectMapper.readValue(event.getPayload(), PerformedSetEvent.class);
-        double reps = performedSetEvent.getReps();
-        double weight = Double.parseDouble(performedSetEvent.getWeightLbs());
-        double estimated1rm = weight * (1 + reps /30);
 
-        Optional<PersonalRecordEntity> existing = personalRecordRepository.findById(performedSetEvent.getExerciseName());
-        if (existing.isEmpty() || estimated1rm > existing.get().getEstimated_1rm()){
-            PersonalRecordEntity updatedRecord = new PersonalRecordEntity();
-            updatedRecord.setExerciseName(performedSetEvent.getExerciseName());
-            updatedRecord.setBestWeightLbs(performedSetEvent.getWeightLbs());
-            updatedRecord.setBestReps(performedSetEvent.getReps());
-            updatedRecord.setEstimated_1rm(Math.round(Double.parseDouble(performedSetEvent.getWeightLbs()) * (1 + performedSetEvent.getReps()/30.0)));
-            updatedRecord.setAchievedAt(event.getCompletedAt());
-            updatedRecord.setSourceEventId(event.getEventId());
-            personalRecordRepository.save(updatedRecord);
+        int week = performedSetEvent.getWeekNumber();
+        int day = performedSetEvent.getDayNumber();
+        String exerciseName = performedSetEvent.getExerciseName();
+        int setNumber = performedSetEvent.getSetNumber();
+        int reps = performedSetEvent.getReps();
+        String weightLbs = performedSetEvent.getWeightLbs();
+        UUID eventId = event.getEventId();
+
+        Optional<TonnageEntity> existing = tonnageRepository
+                .findByWeekNumberAndDayNumberAndExerciseNameAndSetNumber(week, day, exerciseName, setNumber);
+
+        TonnageEntity entity;
+        if (existing.isPresent()) {
+            entity = existing.get();
+        } else {
+            entity = new TonnageEntity();
         }
+
+        entity.setWeekNumber(week);
+        entity.setDayNumber(day);
+        entity.setExerciseName(exerciseName);
+        entity.setSetNumber(setNumber);
+        entity.setWeightLbs(weightLbs);
+        entity.setReps(reps);
+        entity.setSourceEventId(eventId);
+
+        tonnageRepository.save(entity);
     }
 }

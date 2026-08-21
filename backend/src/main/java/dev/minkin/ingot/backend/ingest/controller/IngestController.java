@@ -5,7 +5,6 @@ import dev.minkin.ingot.backend.ingest.model.Event;
 import dev.minkin.ingot.backend.ingest.model.EventBatchRequest;
 import dev.minkin.ingot.backend.ingest.repository.EventRepository;
 import io.nats.client.JetStream;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,13 +21,18 @@ import java.util.UUID;
 @RestController
 @RequestMapping("api/v1")
 @Slf4j
-@AllArgsConstructor
 public class IngestController {
 
     EventRepository eventRepository;
     JetStream jetStream;
     ObjectMapper objectMapper;
 
+
+    public IngestController(EventRepository eventRepository, JetStream jetStream, ObjectMapper objectMapper) {
+        this.eventRepository = eventRepository;
+        this.jetStream = jetStream;
+        this.objectMapper = objectMapper;
+    }
 
     @PostMapping("/batchInsertEvents")
     public ResponseEntity<BatchInsertResults> batchInsertEvents(@RequestBody EventBatchRequest batchRequest) {

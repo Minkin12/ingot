@@ -14,5 +14,5 @@ public interface OutboxDao {
     List<OutboxEntity> getAllQueuedEvents();
 
     @Query("Delete from outbox where eventId in (:eventIds)")
-    void deleteQueuedEvent(List<String> eventIds);
+    void deleteQueuedEvents(List<String> eventIds);
 }

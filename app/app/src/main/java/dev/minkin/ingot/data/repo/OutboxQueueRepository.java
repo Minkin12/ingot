@@ -29,7 +29,7 @@ public class OutboxQueueRepository {
     }
 
     public void clearProcessedEvents(List<String> eventIds) {
-        outboxDao.deleteQueuedEvent(eventIds);
+        outboxDao.deleteQueuedEvents(eventIds);
     }
 
     public BatchInsertResults batchInsertEvents(EventBatchRequest eventBatchRequest) throws IOException {

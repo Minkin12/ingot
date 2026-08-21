@@ -47,8 +47,8 @@ public class NatsJetStreamConfiguration {
                 .name("INGOT_EVENT_STREAM")
                 .subjects("events.*")
                 .storageType(StorageType.File)
-                .retentionPolicy(RetentionPolicy.WorkQueue) //this deletes message when they are acked, use LIMITS to keep them till max age
-                .maxAge(Duration.ofDays(30))
+                .retentionPolicy(RetentionPolicy.Limits)
+                .maxAge(Duration.ofDays(10))
                 .build();
 
         try {

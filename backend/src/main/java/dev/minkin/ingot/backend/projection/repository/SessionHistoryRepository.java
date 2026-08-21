@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.UUID;
 
 public interface SessionHistoryRepository extends JpaRepository<SessionHistoryEntity, UUID> {
-    List<SessionHistoryEntity> findAllByOrderByCompletedAtDesc();
+    List<SessionHistoryEntity> findAllByOrderByWeekNumberAscDayNumberAsc();
 }

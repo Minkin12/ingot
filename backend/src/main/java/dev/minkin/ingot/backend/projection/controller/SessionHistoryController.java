@@ -20,6 +20,6 @@ public class SessionHistoryController {
 
     @GetMapping("/history")
     public List<SessionHistoryEntity> getHistory() {
-        return repository.findAllByOrderByCompletedAtDesc();
+        return repository.findAllByOrderByWeekNumberAscDayNumberAsc();
     }
 }
