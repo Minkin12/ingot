@@ -1,15 +1,15 @@
-package dev.minkin.ingot.backend.projection.model;
-
-import lombok.*;
+package dev.minkin.ingot.data.repo.types;
 
 import java.util.List;
 
-@Getter
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Setter
-@AllArgsConstructor
+@Getter
 @NoArgsConstructor
-@Builder
-public class WorkoutCompletedEvent {
+public class WorkoutCompletedPayload {
     private int weekNumber;
     private int dayNumber;
     private String sessionNote;

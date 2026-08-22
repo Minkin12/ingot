@@ -8,6 +8,7 @@ import androidx.work.BackoffPolicy;
 import androidx.work.Constraints;
 import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.NetworkType;
+import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
@@ -27,6 +28,7 @@ import dev.minkin.ingot.data.repo.OutboxQueueRepository;
 import dev.minkin.ingot.data.repo.ProgramRepository;
 import dev.minkin.ingot.data.repo.WorkoutRepository;
 import dev.minkin.ingot.data.worker.SyncWorker;
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
@@ -36,7 +38,7 @@ public class AppContainer {
     public final WorkoutRepository workoutRepository;
     public final HistoryRepository historyRepository;
     public final OutboxQueueRepository outboxQueueRepository;
-    private final IngotApi ingotApi;
+    public final IngotApi ingotApi;
 
     public AppContainer(Context context) throws IOException {
         IngotDatabase db = Room.databaseBuilder(context, IngotDatabase.class, "ingot_db").fallbackToDestructiveMigration().build();
@@ -80,8 +82,17 @@ public class AppContainer {
         mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
         mapper.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES);
 
+        OkHttpClient client = new OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(10, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(false)
+                .connectionPool(new okhttp3.ConnectionPool(0, 1, TimeUnit.NANOSECONDS))
+                .build();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BuildConfig.INGOT_API_BASE_URL)
+                .client(client)
                 .addConverterFactory(JacksonConverterFactory.create(mapper))
                 .build();
 

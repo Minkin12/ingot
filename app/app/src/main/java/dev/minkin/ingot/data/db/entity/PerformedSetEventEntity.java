@@ -33,6 +33,5 @@ public class PerformedSetEventEntity {
     // Epoch millis when the set was logged.
     public long loggedAt;
 
-    // TODO Used later for workout completion events maybe
     public String type;
 }

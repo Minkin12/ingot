@@ -11,7 +11,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface IngotApi {
-    @GET("/api/v1/history")
+    @GET("/api/v1/session-history")
     Call<List<SessionHistoryEntry>> getSessionHistory();
 
     @POST("/api/v1/batchInsertEvents")

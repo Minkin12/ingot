@@ -52,6 +52,7 @@ public class Materializer {
                 .weekNumber(weekNumber)
                 .dayNumber(dayNumber)
                 .label(day.getLabel())
+                .type(day.getType())
                 .exercises(materializedExerciseList)
                 .build();
     }

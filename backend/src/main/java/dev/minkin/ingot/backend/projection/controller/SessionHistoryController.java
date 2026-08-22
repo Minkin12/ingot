@@ -18,7 +18,7 @@ public class SessionHistoryController {
         this.repository = repository;
     }
 
-    @GetMapping("/history")
+    @GetMapping("/session-history")
     public List<SessionHistoryEntity> getHistory() {
         return repository.findAllByOrderByWeekNumberAscDayNumberAsc();
     }

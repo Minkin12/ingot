@@ -53,7 +53,7 @@ public class PersonalRecordsConsumer {
         PerformedSetEvent performedSetEvent = objectMapper.readValue(event.getPayload(), PerformedSetEvent.class);
         double reps = performedSetEvent.getReps();
         double weight = Double.parseDouble(performedSetEvent.getWeightLbs());
-        double estimated1rm = weight * (1 + reps /30);
+        double estimated1rm = reps != 1 ? weight * (1 + reps /30) : weight;
 
         Optional<PersonalRecordEntity> existing = personalRecordRepository.findById(performedSetEvent.getExerciseName());
         if (existing.isEmpty() || estimated1rm > existing.get().getEstimated_1rm()){

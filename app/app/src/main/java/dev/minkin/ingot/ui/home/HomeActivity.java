@@ -2,6 +2,7 @@ package dev.minkin.ingot.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -18,6 +19,8 @@ import dev.minkin.ingot.AppContainer;
 import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.R;
 import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
+import dev.minkin.ingot.data.remote.IngotApi;
+import dev.minkin.ingot.data.remote.types.SessionHistoryEntry;
 import dev.minkin.ingot.engine.model.MaterializedSession;
 import dev.minkin.ingot.ui.InsetAwareActivity;
 import dev.minkin.ingot.ui.history.HistoryActivity;

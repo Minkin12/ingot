@@ -1,5 +1,7 @@
 package dev.minkin.ingot.data.repo;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -16,6 +18,8 @@ import dev.minkin.ingot.data.db.entity.OutboxEntity;
 import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.db.entity.WorkoutCompletedEventEntity;
 import dev.minkin.ingot.data.db.entity.types.SessionCoordinates;
+import dev.minkin.ingot.data.repo.types.TestResult;
+import dev.minkin.ingot.data.repo.types.WorkoutCompletedPayload;
 
 public class WorkoutRepository {
     private PerformedSetEventDao performedSetEventDao;
@@ -31,7 +35,7 @@ public class WorkoutRepository {
 
     public void logSet(int weekNumber, int dayNumber, String exercise, int setNumber, String weight, int reps, String note) throws JsonProcessingException {
         String eventId = UUID.randomUUID().toString();
-        long currentTimeMillis = System.currentTimeMillis();;
+        long currentTimeMillis = System.currentTimeMillis();
 
         PerformedSetEventEntity performedSetEventEntity = new PerformedSetEventEntity();
         performedSetEventEntity.eventId = eventId;
@@ -55,7 +59,7 @@ public class WorkoutRepository {
         });
     }
 
-    public void logCompletedWorkout(int weekNumber, int dayNumber, String sessionNote, String workoutLabel) throws JsonProcessingException {
+    public void logCompletedWorkout(int weekNumber, int dayNumber, String sessionNote, String workoutLabel, List<TestResult> testResults) throws JsonProcessingException {
         String eventId = UUID.randomUUID().toString();
         long currentTimeMillis = System.currentTimeMillis();;
 
@@ -67,10 +71,18 @@ public class WorkoutRepository {
         workoutCompletedEventEntity.workoutLabel = workoutLabel;
         workoutCompletedEventEntity.completedAt = currentTimeMillis;
 
+        WorkoutCompletedPayload payload = new WorkoutCompletedPayload();
+        payload.setWeekNumber(weekNumber);
+        payload.setDayNumber(dayNumber);
+        payload.setSessionNote(sessionNote);
+        payload.setWorkoutLabel(workoutLabel);
+        payload.setTestResults(testResults);
+
+        Log.d("Workout Repository", objectMapper.writeValueAsString(payload));
         OutboxEntity outboxEntity = new OutboxEntity();
         outboxEntity.eventId = eventId;
         outboxEntity.eventType = EventType.WORKOUT_COMPLETED.getJsonName();
-        outboxEntity.payload = objectMapper.writeValueAsString(workoutCompletedEventEntity);
+        outboxEntity.payload = objectMapper.writeValueAsString(payload);
         outboxEntity.createdAt = currentTimeMillis;
 
         executor.execute(() -> {

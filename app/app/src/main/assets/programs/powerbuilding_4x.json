@@ -3028,7 +3028,7 @@
         {
           "label": "SQUAT TEST",
           "day_number": 1,
-          "type": "workout",
+          "type": "test",
           "exercises": [
             {
               "name": "Back Squat",
@@ -3037,7 +3037,7 @@
               "reps": "1+",
               "load": 260,
               "pct_1rm": null,
-              "source_lift": null,
+              "source_lift": "squat",
               "rpe": "9.5-10",
               "rest": "4-6min",
               "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10. Spotter + safeties.",
@@ -3061,7 +3061,7 @@
         {
           "label": "BENCH TEST",
           "day_number": 2,
-          "type": "workout",
+          "type": "test",
           "exercises": [
             {
               "name": "Barbell Bench Press",
@@ -3070,7 +3070,7 @@
               "reps": "1+",
               "load": 180,
               "pct_1rm": null,
-              "source_lift": null,
+              "source_lift": "bench",
               "rpe": "9.5-10",
               "rest": "4-6min",
               "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10. Use a spotter.",
@@ -3094,7 +3094,7 @@
         {
           "label": "DEADLIFT TEST",
           "day_number": 3,
-          "type": "workout",
+          "type": "test",
           "exercises": [
             {
               "name": "Deadlift",
@@ -3103,7 +3103,7 @@
               "reps": "1+",
               "load": 275,
               "pct_1rm": null,
-              "source_lift": null,
+              "source_lift": "deadlift",
               "rpe": "9.5-10",
               "rest": "4-6min",
               "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10.",
@@ -3127,7 +3127,7 @@
         {
           "label": "HIP THRUST TEST",
           "day_number": 4,
-          "type": "workout",
+          "type": "test",
           "exercises": [
             {
               "name": "Barbell Hip Thrust",
@@ -3136,7 +3136,7 @@
               "reps": "1+",
               "load": 275,
               "pct_1rm": null,
-              "source_lift": null,
+              "source_lift": "hip_thrust",
               "rpe": "9.5-10",
               "rest": "4-6min",
               "coach_notes": "Start at 100%, jump ~2.5% each attempt until RPE 9.5-10.",

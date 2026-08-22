@@ -77,7 +77,7 @@ public class WorkoutRepositoryTest {
 
     @Test
     public void logCompletedWorkout_insertsWorkoutCompletedEvent() throws JsonProcessingException {
-        workoutRepository.logCompletedWorkout(1, 2, "Good session", "FULL BODY 2");
+        workoutRepository.logCompletedWorkout(1, 2, "Good session", "FULL BODY 2", List.of());
         
         ArgumentCaptor<WorkoutCompletedEventEntity> captor = ArgumentCaptor.forClass(WorkoutCompletedEventEntity.class);
         ArgumentCaptor<OutboxEntity> captor2 = ArgumentCaptor.forClass(OutboxEntity.class);

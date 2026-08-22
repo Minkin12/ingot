@@ -19,6 +19,7 @@ import java.util.concurrent.ExecutorService;
 import dev.minkin.ingot.data.db.entity.PerformedSetEventEntity;
 import dev.minkin.ingot.data.repo.ProgramRepository;
 import dev.minkin.ingot.data.repo.WorkoutRepository;
+import dev.minkin.ingot.data.repo.types.TestResult;
 import dev.minkin.ingot.engine.Rounding;
 import dev.minkin.ingot.engine.model.MajorLift;
 import dev.minkin.ingot.engine.model.MaterializedExercise;
@@ -210,7 +211,7 @@ public class WorkoutViewModel extends ViewModel {
             return;
         }
         //Epley formula rounded to nearest 5
-        double estimated1RM = Rounding.toNearestFive(weightLbs * (1 + reps / 30.0));
+        double estimated1RM = reps != 1 ? Rounding.toNearestFive(weightLbs * (1 + reps / 30.0)) : weightLbs ;
 
         MajorLift lift = MajorLift.fromJson(sourceLiftStr);
         double currentMax = programRepo.getCurrentMaxes().getMaxWeight(lift);
@@ -264,13 +265,41 @@ public class WorkoutViewModel extends ViewModel {
         this.sessionNote = note;
 
         executor.execute(() -> {
+            List<TestResult> testResults = null;
+            Log.d("Workout Repository", enrichedSession.getType());
+            if (enrichedSession != null && "test".equals(enrichedSession.getType())) {
+                testResults = buildTestResults(liveSets.getValue());
+            }
+
             try {
-                workoutRepo.logCompletedWorkout(weekNumber, dayNumber, note, workoutLabel);
+                workoutRepo.logCompletedWorkout(weekNumber, dayNumber, note, workoutLabel, testResults);
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }
             finishComplete.postValue(true);
         });
+    }
+
+    private List<TestResult> buildTestResults(List<PerformedSetEventEntity> sets) {
+        List<TestResult> results = new ArrayList<>();
+        if (sets == null) return results;
+
+        for (MaterializedExercise me : enrichedSession.getExercises()) {
+            if (!me.getExercise().getIsMaxTracking()) continue;
+
+            String sourceLiftStr = me.getExercise().getSourceLift();
+            if (sourceLiftStr == null) continue;
+
+            PerformedSetEventEntity match = findPerformed(sets, me.getExercise().getName(), 1);
+            if (match == null) continue;
+
+            TestResult result = new TestResult();
+            result.setLift(sourceLiftStr);
+            result.setWeightLbs(match.weightLbs);
+            result.setReps(match.reps);
+            results.add(result);
+        }
+        return results;
     }
 
     public LiveData<Boolean> getFinishComplete() {

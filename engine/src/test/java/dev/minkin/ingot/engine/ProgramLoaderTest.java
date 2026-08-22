@@ -1,12 +1,14 @@
 package dev.minkin.ingot.engine;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import dev.minkin.ingot.engine.model.Program;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+
+import dev.minkin.ingot.engine.model.Program;
 
 class ProgramLoaderTest {
 
