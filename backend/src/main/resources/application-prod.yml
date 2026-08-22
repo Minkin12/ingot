@@ -15,4 +15,4 @@ spring:
 logging:
   level:
     root: info
-    dev.minkin.ingot: info
+    dev.minkin.ingot: debug
