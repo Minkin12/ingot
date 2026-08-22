@@ -9,5 +9,6 @@ public class AppSettingsEntity {
     public int id = 0;
 
     public String activeProgramId;
+    public Long lastPullSyncedAt;
 }
 

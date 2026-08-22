@@ -63,44 +63,8 @@ public class ProgramRepository {
             }
             seedOneProgram(programId, "programs/" + filename);
         }
+        seedAppSettings();
         ensureMaxesSeeded(); // todo this seeds maxes from a hardcoded source, later ask user on startup
-    }
-
-    private void seedOneProgram(String programId, String assetPath) throws IOException {
-        String json = readAssetAsString(assetPath);
-        ProgramTemplateEntity templateEntity = new ProgramTemplateEntity();
-        templateEntity.programId = programId;
-        templateEntity.jsonBlob = json;
-        programTemplateDao.insertProgram(templateEntity);
-    }
-
-    private void ensureMaxesSeeded() throws IOException {
-        List<TrainingMaxEntity> existing = trainingMaxDao.selectCurrentMaxes();
-        Set<String> existingLifts = new HashSet<>();
-        for (TrainingMaxEntity e : existing) {
-            existingLifts.add(e.lift);
-        }
-
-        Program seedSource = getProgram("powerbuilding_4x");
-        Map<String, Double> seedMaxes = seedSource.getOneRepMaxes();
-        long now = System.currentTimeMillis();
-
-        for (MajorLift lift : MajorLift.values()) {
-            if (existingLifts.contains(lift.getJsonName())) {
-                continue; // already has a max, don't touch it
-            }
-            Double maxVal = (seedMaxes != null) ? seedMaxes.get(lift.getJsonName()) : null;
-            if (maxVal == null) {
-                Log.w("ProgramRepository", "No seed max for " + lift.getDisplayName()
-                        + " — using placeholder (45 lbs). Update it in Edit Maxes.");
-                maxVal = 45.0;
-            }
-            TrainingMaxEntity maxEntity = new TrainingMaxEntity();
-            maxEntity.lift = lift.getJsonName();
-            maxEntity.valueLbs = maxVal;
-            maxEntity.effectiveAt = now;
-            trainingMaxDao.insertMax(maxEntity);
-        }
     }
 
     public Maxes getCurrentMaxes() {
@@ -165,9 +129,7 @@ public class ProgramRepository {
     }
 
     public void setActiveProgram(String programId) {
-        AppSettingsEntity entity = new AppSettingsEntity();
-        entity.activeProgramId = programId;
-        executor.execute(() -> appSettingsDao.setActiveProgram(entity));
+        executor.execute(() -> appSettingsDao.setActiveProgramId(programId));
     }
 
     public List<ProgramSummary> listAvailablePrograms() throws IOException {
@@ -177,6 +139,18 @@ public class ProgramRepository {
             summaries.add(new ProgramSummary(programId, program.getName()));
         }
         return summaries;
+    }
+
+    public void insertTrainingMax(TrainingMaxEntity trainingMaxEntity) {
+        trainingMaxDao.insertMax(trainingMaxEntity);
+    }
+
+    public Long getLastPullSyncedAt() {
+        return appSettingsDao.getLastPullSyncedAt();
+    }
+
+    public void setLastPullSyncedAt(Long since){
+        appSettingsDao.setLastPullSyncedAt(since);
     }
 
     private String readAssetAsString(String filename) {
@@ -190,6 +164,50 @@ public class ProgramRepository {
             return buffer.toString(StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new IllegalStateException("Failed to read bundled asset: " + filename, e);
+        }
+    }
+
+    private void seedAppSettings() {
+        AppSettingsEntity appSettingsEntity = new AppSettingsEntity();
+        appSettingsEntity.id = 0;
+        appSettingsEntity.activeProgramId = "powerbuilding_4x";
+        appSettingsDao.ensureRowExists(appSettingsEntity);
+    }
+
+    private void seedOneProgram(String programId, String assetPath) throws IOException {
+        String json = readAssetAsString(assetPath);
+        ProgramTemplateEntity templateEntity = new ProgramTemplateEntity();
+        templateEntity.programId = programId;
+        templateEntity.jsonBlob = json;
+        programTemplateDao.insertProgram(templateEntity);
+    }
+
+    private void ensureMaxesSeeded() throws IOException {
+        List<TrainingMaxEntity> existing = trainingMaxDao.selectCurrentMaxes();
+        Set<String> existingLifts = new HashSet<>();
+        for (TrainingMaxEntity e : existing) {
+            existingLifts.add(e.lift);
+        }
+
+        Program seedSource = getProgram("powerbuilding_4x");
+        Map<String, Double> seedMaxes = seedSource.getOneRepMaxes();
+        long now = System.currentTimeMillis();
+
+        for (MajorLift lift : MajorLift.values()) {
+            if (existingLifts.contains(lift.getJsonName())) {
+                continue; // already has a max, don't touch it
+            }
+            Double maxVal = (seedMaxes != null) ? seedMaxes.get(lift.getJsonName()) : null;
+            if (maxVal == null) {
+                Log.w("ProgramRepository", "No seed max for " + lift.getDisplayName()
+                        + " — using placeholder (45 lbs). Update it in Edit Maxes.");
+                maxVal = 45.0;
+            }
+            TrainingMaxEntity maxEntity = new TrainingMaxEntity();
+            maxEntity.lift = lift.getJsonName();
+            maxEntity.valueLbs = maxVal;
+            maxEntity.effectiveAt = now;
+            trainingMaxDao.insertMax(maxEntity);
         }
     }
 }

@@ -13,8 +13,10 @@ public interface TrainingMaxHistoryRepository extends JpaRepository<TrainingMaxH
     List<TrainingMaxHistoryEntity> findAllByLiftOrderByAchievedAtDesc(String lift);
 
     List<TrainingMaxHistoryEntity> findAllByOrderByAchievedAtDesc();
-    
+
     Optional<TrainingMaxHistoryEntity> findTopByLiftOrderByAchievedAtDesc(String lift);
+
+    List<TrainingMaxHistoryEntity> findAllByAchievedAtGreaterThanOrderByAchievedAtAsc(long since);
 
     @Query(value = """
             SELECT * FROM ingot.training_max_history h

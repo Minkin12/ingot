@@ -1,2 +1,3 @@
 /build
-src/main/res/xml/network_security_config.xml
+src/debug/res/xml/network_security_config.xml
+src/debug/AndroidManifest.xml

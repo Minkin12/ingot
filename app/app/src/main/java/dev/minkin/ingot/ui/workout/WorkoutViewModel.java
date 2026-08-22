@@ -197,6 +197,7 @@ public class WorkoutViewModel extends ViewModel {
 
     private void checkForPotentialMaxIncrease(String exerciseName, String weight, int reps) {
         if (enrichedSession == null || reps > 8) return;
+        if ("test".equals(enrichedSession.getType())) return; // popup wont fire during test weeks
 
         MaterializedExercise me = findExerciseByName(enrichedSession, exerciseName);
         if (me == null || !me.getExercise().getIsMaxTracking()) return;

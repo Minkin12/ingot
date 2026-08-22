@@ -8,7 +8,6 @@ import androidx.work.BackoffPolicy;
 import androidx.work.Constraints;
 import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.NetworkType;
-import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
@@ -86,8 +85,8 @@ public class AppContainer {
                 .connectTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10, TimeUnit.SECONDS)
-                .retryOnConnectionFailure(false)
-                .connectionPool(new okhttp3.ConnectionPool(0, 1, TimeUnit.NANOSECONDS))
+//                .retryOnConnectionFailure(false)
+//                .connectionPool(new okhttp3.ConnectionPool(0, 1, TimeUnit.NANOSECONDS))
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()

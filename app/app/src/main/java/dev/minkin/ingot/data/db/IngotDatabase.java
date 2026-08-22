@@ -16,7 +16,7 @@ import dev.minkin.ingot.data.db.dao.ProgramTemplateDao;
 import dev.minkin.ingot.data.db.dao.TrainingMaxDao;
 import dev.minkin.ingot.data.db.dao.WorkoutCompletedEventDao;
 
-@Database(version = 5, entities = {TrainingMaxEntity.class,
+@Database(version = 6, entities = {TrainingMaxEntity.class,
         ProgramTemplateEntity.class,
         PerformedSetEventEntity.class,
         WorkoutCompletedEventEntity.class,

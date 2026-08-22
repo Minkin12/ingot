@@ -1,7 +1,5 @@
 package dev.minkin.ingot.data.repo;
 
-import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -78,7 +76,6 @@ public class WorkoutRepository {
         payload.setWorkoutLabel(workoutLabel);
         payload.setTestResults(testResults);
 
-        Log.d("Workout Repository", objectMapper.writeValueAsString(payload));
         OutboxEntity outboxEntity = new OutboxEntity();
         outboxEntity.eventId = eventId;
         outboxEntity.eventType = EventType.WORKOUT_COMPLETED.getJsonName();

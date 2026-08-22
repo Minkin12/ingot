@@ -12,12 +12,21 @@ import dev.minkin.ingot.data.db.entity.ProgramTemplateEntity;
 
 @Dao
 public interface AppSettingsDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void setActiveProgram(AppSettingsEntity entity);
-
     @Query("SELECT activeProgramId FROM app_settings WHERE id = 0")
     String getActiveProgramId();
 
+    @Query("UPDATE app_settings SET activeProgramId = :programId WHERE id = 0")
+    void setActiveProgramId(String programId);
+
     @Query("SELECT programId, jsonBlob FROM program_template")
     List<ProgramTemplateEntity> selectAllPrograms();
+
+    @Query("SELECT lastPullSyncedAt FROM app_settings WHERE id = 0")
+    Long getLastPullSyncedAt();
+
+    @Query("UPDATE app_settings SET lastPullSyncedAt = :timestamp WHERE id = 0")
+    void setLastPullSyncedAt(long timestamp);
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    void ensureRowExists(AppSettingsEntity entity);
 }

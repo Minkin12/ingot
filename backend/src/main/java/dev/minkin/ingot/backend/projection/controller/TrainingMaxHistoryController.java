@@ -3,10 +3,7 @@ package dev.minkin.ingot.backend.projection.controller;
 import dev.minkin.ingot.backend.projection.entity.TrainingMaxHistoryEntity;
 import dev.minkin.ingot.backend.projection.repository.TrainingMaxHistoryRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,13 @@ public class TrainingMaxHistoryController {
     @GetMapping("/training-maxes/{lift}/history")
     public List<TrainingMaxHistoryEntity> getHistoryForLift(@PathVariable String lift) {
         return trainingMaxHistoryRepository.findAllByLiftOrderByAchievedAtDesc(lift);
+    }
+
+    @GetMapping("/training-maxes/sync")
+    public List<TrainingMaxHistoryEntity> getMaxesSince(@RequestParam(required = false) Long since) {
+        if (since == null) {
+            return trainingMaxHistoryRepository.getCurrentMaxes();
+        }
+        return trainingMaxHistoryRepository.findAllByAchievedAtGreaterThanOrderByAchievedAtAsc(since);
     }
 }

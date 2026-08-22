@@ -15,10 +15,14 @@ import java.util.UUID;
 import dev.minkin.ingot.AppContainer;
 import dev.minkin.ingot.IngotApplication;
 import dev.minkin.ingot.data.db.entity.OutboxEntity;
+import dev.minkin.ingot.data.db.entity.TrainingMaxEntity;
 import dev.minkin.ingot.data.remote.types.BatchInsertResults;
 import dev.minkin.ingot.data.remote.types.Event;
 import dev.minkin.ingot.data.remote.types.EventBatchRequest;
+import dev.minkin.ingot.data.remote.types.TrainingMaxHistoryDto;
 import dev.minkin.ingot.data.repo.OutboxQueueRepository;
+import dev.minkin.ingot.engine.model.MajorLift;
+import retrofit2.Response;
 
 public class SyncWorker extends Worker {
 
@@ -81,14 +85,42 @@ public class SyncWorker extends Worker {
             outboxQueueRepository.clearProcessedEvents(results.getCompletedEvents());
             Log.d("SyncWorker", "Cleared " + results.getCompletedEvents().size() + " processed events");
 
-            return Result.success();
-
         } catch (Exception e) {
             Log.d("SyncWorker", "Object batch sync failed ", e);
             return Result.retry();
 
         }
 
+        try {
+            pullAndApplyMaxUpdates(appContainer);
+        } catch (Exception e) {
+            Log.d("SyncWorker", "Max updates pull from server failed ", e);
+            return Result.retry();
+        }
 
+
+        return Result.success();
+    }
+
+    private void pullAndApplyMaxUpdates(AppContainer appContainer) throws IOException {
+        Long since = appContainer.programRepository.getLastPullSyncedAt();
+        Response<List<TrainingMaxHistoryDto>> response = appContainer.ingotApi.getMaxesSince(since).execute();
+
+        if (!response.isSuccessful() || response.body() == null) {
+            Log.e("SyncWorker", "Pull sync failed: " + response.code());
+        }
+
+        long latestTimestamp = since != null ? since : 0;
+        for (TrainingMaxHistoryDto dto : response.body()) {
+            MajorLift lift = MajorLift.fromJson(dto.getLift());
+            TrainingMaxEntity entity = new TrainingMaxEntity();
+            entity.lift = lift.getJsonName();
+            entity.valueLbs = Double.parseDouble(dto.getValueLbs());
+            entity.effectiveAt = dto.getAchievedAt();
+            appContainer.programRepository.insertTrainingMax(entity);
+            latestTimestamp = Math.max(latestTimestamp, dto.getAchievedAt());
+        }
+
+        appContainer.programRepository.setLastPullSyncedAt(latestTimestamp);
     }
 }
