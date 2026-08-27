@@ -100,7 +100,7 @@ public class AppContainer {
 
     private PeriodicWorkRequest buildWorkRequest() {
         Constraints constraints = new Constraints.Builder()
-                .setRequiredNetworkType(NetworkType.UNMETERED)
+                .setRequiredNetworkType(NetworkType.CONNECTED)
                 .build();
 
         return new PeriodicWorkRequest.Builder(

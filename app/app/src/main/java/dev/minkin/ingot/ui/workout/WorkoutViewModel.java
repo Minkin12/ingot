@@ -42,7 +42,7 @@ public class WorkoutViewModel extends ViewModel {
     private String workoutLabel = "";
 
     private final Map<String, String> pendingWeights = new HashMap<>();
-    private final Map<String, Integer> pendingReps = new HashMap<>();
+    private final Map<String, String> pendingReps = new HashMap<>();
     private final Map<String, String> pendingNotes = new HashMap<>();
     private final Map<String, Integer> extraSetCounts = new HashMap<>();
 
@@ -108,7 +108,7 @@ public class WorkoutViewModel extends ViewModel {
 
                 List<SetRowUiState> rows = new ArrayList<>();
                 String runningPrefillWeight = (me.getLoad() != null) ? me.getLoad() : "";
-                int runningPrefillReps = parseRepsFallback(me.getExercise().getReps());
+                String runningPrefillReps = me.getExercise().getReps();
 
                 for (int setNumber = 1; setNumber <= totalSets; setNumber++) {
                     PerformedSetEventEntity performed = findPerformed(performedSets, name, setNumber);
@@ -117,16 +117,16 @@ public class WorkoutViewModel extends ViewModel {
                     boolean hasPendingEdit = pendingWeights.containsKey(key) || pendingReps.containsKey(key) || pendingNotes.containsKey(key);
 
                     if (performed != null && !hasPendingEdit) {
-                        rows.add(new SetRowUiState(setNumber, performed.weightLbs, performed.reps,
+                        rows.add(new SetRowUiState(setNumber, performed.weightLbs, String.valueOf(performed.reps),
                                 performed.note, true));
                         runningPrefillWeight = performed.weightLbs;
-                        runningPrefillReps = performed.reps;
+                        runningPrefillReps = String.valueOf(performed.reps);
 
                     } else {
                         String weight = pendingWeights.getOrDefault(key,
                                 performed != null ? performed.weightLbs : runningPrefillWeight);
-                        int reps = pendingReps.getOrDefault(key,
-                                performed != null ? performed.reps : runningPrefillReps);
+                        String reps = pendingReps.getOrDefault(key,
+                                performed != null ? String.valueOf(performed.reps) : runningPrefillReps);
                         String note = pendingNotes.getOrDefault(key,
                                 performed != null ? performed.note : null);
 
@@ -166,12 +166,16 @@ public class WorkoutViewModel extends ViewModel {
     private String summarizeLastTime(String exerciseName) {
         List<PerformedSetEventEntity> last = workoutRepo.getLastTimeForExercise(exerciseName);
         if (last.isEmpty()) return null;
-        StringBuilder reps = new StringBuilder();
+        StringBuilder summary = new StringBuilder();
         for (PerformedSetEventEntity e : last) {
-            if (reps.length() > 0) reps.append(", ");
-            reps.append(e.reps);
+            if (summary.length() > 0) {
+                summary.append(", ");
+            }
+            summary.append(e.weightLbs);
+            summary.append(" x ");
+            summary.append(e.reps);
         }
-        return last.get(0).weightLbs + " × " + reps;
+        return summary.toString();
     }
 
     public void setActiveExercise(int index) {
@@ -180,13 +184,15 @@ public class WorkoutViewModel extends ViewModel {
     }
 
     public void confirmSet(String exerciseName, int setNumber, String weight, int reps, String note) {
+        String cleanWeight = (weight != null && !weight.isBlank()) ? weight : "0";
+
         executor.execute(() -> {
             try {
-                workoutRepo.logSet(weekNumber, dayNumber, exerciseName, setNumber, weight, reps, note);
+                workoutRepo.logSet(weekNumber, dayNumber, exerciseName, setNumber, cleanWeight, reps, note);
             } catch (JsonProcessingException e) {
                 throw new RuntimeException(e);
             }
-            checkForPotentialMaxIncrease(exerciseName, weight, reps);
+            checkForPotentialMaxIncrease(exerciseName, cleanWeight, reps);
         });
 
         String key = exerciseName + "#" + setNumber;
@@ -248,7 +254,7 @@ public class WorkoutViewModel extends ViewModel {
     }
 
     public void updatePendingReps(String exerciseName, int setNumber, int reps) {
-        pendingReps.put(exerciseName + "#" + setNumber, reps);
+        pendingReps.put(exerciseName + "#" + setNumber, String.valueOf(reps));
         recompute(liveSets.getValue());
     }
 
@@ -267,7 +273,7 @@ public class WorkoutViewModel extends ViewModel {
 
         executor.execute(() -> {
             List<TestResult> testResults = null;
-            Log.d("Workout Repository", enrichedSession.getType());
+//            Log.d("Workout Repository", enrichedSession.getType());
             if (enrichedSession != null && "test".equals(enrichedSession.getType())) {
                 testResults = buildTestResults(liveSets.getValue());
             }

@@ -139,8 +139,21 @@ public class ExerciseCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         noteButton.setOnClickListener(v -> promptForText(context, "Note for set " + set.getSetNumber(),
                 set.getNote(), text -> callback.onEditNote(exerciseName, set.getSetNumber(), text)));
 
-        confirmButton.setOnClickListener(v -> callback.onConfirmSet(
-                exerciseName, set.getSetNumber(), set.getWeight(), set.getReps(), set.getNote()));
+        confirmButton.setOnClickListener(v -> {
+            int repsValue;
+            try {
+                repsValue = Integer.parseInt(set.getReps().trim());
+            } catch (NumberFormatException | NullPointerException e) {
+                new AlertDialog.Builder(context)
+                        .setTitle("Invalid reps")
+                        .setMessage("Reps must be a whole number.")
+                        .setPositiveButton("OK", null)
+                        .show();
+                return;
+            }
+
+            callback.onConfirmSet(exerciseName, set.getSetNumber(), set.getWeight(), repsValue, set.getNote());
+        });
 
         return row;
     }
@@ -148,11 +161,11 @@ public class ExerciseCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private interface NumberCallback { void onValue(int value); }
     private interface TextCallback { void onValue(String value); }
 
-    private void promptForNumber(android.content.Context context, String title, int current,
+    private void promptForNumber(android.content.Context context, String title, String current,
                                  NumberCallback cb) {
         EditText input = new EditText(context);
         input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-        input.setText(String.valueOf(current));
+        input.setText(current);
         new AlertDialog.Builder(context)
                 .setTitle(title)
                 .setView(input)

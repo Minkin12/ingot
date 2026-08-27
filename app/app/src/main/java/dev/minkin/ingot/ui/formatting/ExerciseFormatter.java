@@ -13,7 +13,7 @@ public class ExerciseFormatter {
         String loadText = (me.getLoad() != null)
                 ? String.format(Locale.US, "%s lbs", me.getLoad())
                 : "—";
-        return String.format(Locale.US, "%s — %d×%s @ %s",
-                ex.getName(), ex.getWorkingSets(), ex.getReps(), loadText);
+        return String.format(Locale.US, " %d×%s @ %s",
+                ex.getWorkingSets(), ex.getReps(), loadText);
     }
 }
