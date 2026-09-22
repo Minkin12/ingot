@@ -2,7 +2,7 @@
 
 ## Why
 
-I wanted a training app built around exactly how I actually program my own lifting — plan-driven, percentage-based, no guesswork on load each session — and I wanted to use the project to get real, hands-on practice with the kind of event-driven distributed systems I work with professionally: durable messaging, idempotent ingestion, independently rebuildable read models. App is functional but a work in progress
+I wanted a training app built around exactly how I actually program my own lifting — plan-driven, percentage-based, no guesswork on load each session — and I wanted to use the project to get real, hands-on practice with Android and event-driven systems. App is functional but a work in progress
 
 ## What it does
 
@@ -11,7 +11,7 @@ I wanted a training app built around exactly how I actually program my own lifti
 - Detects when a heavy set suggests a new personal max and lets you confirm the update.
 - Recognizes designated test days and updates your official training max from the result, feeding future sessions' prescribed loads.
 - Tracks completed workouts, personal records, and training volume on a home server, independent of any single device.
-- Supports running the same program through multiple cycles, carrying forward an updated training max each time.
+- Supports running the same program through multiple cycles, carrying forward an updated training max each time. (todo)
 
 ## Design
 
